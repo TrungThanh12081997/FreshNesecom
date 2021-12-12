@@ -1,9 +1,14 @@
 import React from "react";
-import "./style.css";
+import "./style.scss";
+import HeaderContact from "./HeaderContact"
+import HeaderBottom from "./HeaderBottom";
 export function Header() {
-  return (
-    <div>
-      <h1>Header ne</h1>
-    </div>
-  );
+    return (
+        <div className="header">
+            <div className="container-fluid">
+                <HeaderContact />
+                <HeaderBottom />
+            </div>
+        </div>
+    );
 }
