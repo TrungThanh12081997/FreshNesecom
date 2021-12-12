@@ -1,7 +1,11 @@
 import React from "react";
 // import "../../assets/img";
-export default function HeaderBottom() {
+import HeaderSearch from "./HeaderSearch";
 
+export default function HeaderBottom() {
+    // document.querySelector(".header__select-content").addEventListener("click", () => {
+    //     document.querySelector(".header__select-option").classList.toggle("active");
+    // })
 
 
 
@@ -27,64 +31,7 @@ export default function HeaderBottom() {
                 </a>
 
             </div>
-            <div className="header__search">
-                <div className="header__select">
-
-                    <div className="header__select-content">
-                        <p className="">
-                            All categories
-
-                        </p>
-
-                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.81348 1.53326L4.55348 4.27326C4.67838 4.39743 4.84735 4.46712 5.02348 4.46712C5.1996 4.46712 5.36857 4.39743 5.49348 4.27326L8.16014 1.6066" stroke="#6A983C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="bevel" />
-                        </svg>
-
-
-                    </div>
-                    <div className="header__select-option">
-                        <div className="select__option">
-                            <p className="">
-                                Most popular
-
-                            </p>
-
-
-
-
-                        </div>
-
-
-
-
-                        <div className="select__option">
-                            <p className="">
-                                Everything
-
-                            </p>
-
-
-
-
-                        </div>
-                    </div>
-
-                </div>
-                <input className="header__input" />
-                <div className="header__find">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8.19303 10.4333C10.7704 10.4333 12.8597 8.34394 12.8597 5.76661C12.8597 3.18928 10.7704 1.09995 8.19303 1.09995C5.61571 1.09995 3.52637 3.18928 3.52637 5.76661C3.52637 8.34394 5.61571 10.4333 8.19303 10.4333Z" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="bevel" />
-                        <path d="M4.81319 9.24002L1.68652 12.3667" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="bevel" />
-                    </svg>
-
-
-                </div>
-
-
-
-
-
-            </div>
+            <HeaderSearch />
             <div className="header__right">
                 <a href="#" className="header__right-item">
                     <svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,13 +43,16 @@ export default function HeaderBottom() {
                 <a href="#" className="header__right-item cart">
                     <svg width="24" height="22" viewBox="0 0 24 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.8896 19.8499H6.10955C5.79187 19.8501 5.48326 19.7439 5.23309 19.5481C4.98291 19.3523 4.80562 19.0783 4.72955 18.7699L2.07955 8.15986C2.05369 8.05657 2.05174 7.94874 2.07383 7.84458C2.09593 7.74042 2.1415 7.64267 2.20707 7.55878C2.27264 7.47489 2.35649 7.40706 2.45223 7.36046C2.54797 7.31386 2.65307 7.28971 2.75955 7.28986H21.2396C21.346 7.28971 21.4511 7.31386 21.5469 7.36046C21.6426 7.40706 21.7265 7.47489 21.792 7.55878C21.8576 7.64267 21.9032 7.74042 21.9253 7.84458C21.9474 7.94874 21.9454 8.05657 21.9196 8.15986L19.2696 18.7699C19.1935 19.0783 19.0162 19.3523 18.766 19.5481C18.5158 19.7439 18.2072 19.8501 17.8896 19.8499V19.8499Z" stroke="#151515" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M9.79941 2.14993L6.89941 7.28993" stroke="#151515" strokeWidth="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M13.8799 2.14993L16.7899 7.28993" stroke="#151515" strokeWidth="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.79941 2.14993L6.89941 7.28993" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" strokeLineJoin="round" />
+                        <path d="M13.8799 2.14993L16.7899 7.28993" stroke="#151515" strokeWidth="2.5" strokeLinecap="round" strokeLineJoin="round" />
                     </svg>
+                    <div className="cart__noti">
+                        4
+                    </div>
 
                 </a>
             </div>
 
-        </div>
+        </div >
     )
 }
