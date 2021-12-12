@@ -1,11 +1,13 @@
-import { Footer, Header } from "./components";
-
+import { Footer, Header, Nav, Category } from "./components";
+import "./assets/css/style.scss"
 function App() {
   return (
     <div className="App">
-      {/* <h1>Header</h1> */}
+
       <Header />
+      <Nav />
       <Footer />
+
     </div>
   );
 }

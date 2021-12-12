@@ -146,7 +146,7 @@ font-family: $o;
         }
         .cart{
           position:relative;
-          &::after{
+          &__noti{
             --numberNoti:16px;
             position:absolute;
             content:"4";
