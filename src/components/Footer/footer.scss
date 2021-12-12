@@ -1,0 +1,43 @@
+@import "../../assets/style.scss";
+
+// SCSS ITEM-FOOTER
+.titleFooter {
+  font-family: PoppinsSemiBold;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+
+  .nameItem {
+    font-size: 14px;
+    font-family: OpenSansRegular;
+    color: $clTextGreen;
+    margin-bottom: 16px;
+  }
+}
+.footerBottom {
+  ul {
+    display: flex;
+    margin-bottom: 16px;
+  }
+  a {
+    padding: 4px 10px;
+    display: inline-block;
+    background: $clBtnFooter;
+    border-radius: 12px;
+    font-family: PoppinsSemiBold;
+    font-size: 12px;
+    margin-right: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #151515;
+  }
+}
+.coppy {
+  font-family: OpenSansRegular;
+  font-size: 14px;
+  margin-top: 48px;
+  color: $clTextBlack;
+}
