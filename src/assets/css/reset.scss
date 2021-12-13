@@ -79,12 +79,21 @@ time,
 mark,
 audio,
 video {
+<<<<<<< HEAD
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+=======
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+>>>>>>> master
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -98,6 +107,20 @@ hgroup,
 menu,
 nav,
 section {
+<<<<<<< HEAD
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+=======
 	display: block;
 }
 body {
@@ -110,21 +133,34 @@ ul {
 blockquote,
 q {
 	quotes: none;
+>>>>>>> master
 }
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
+<<<<<<< HEAD
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+=======
 	content: "";
 	content: none;
 }
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+>>>>>>> master
 }
 
 *::before,
 *::after {
+<<<<<<< HEAD
+  box-sizing: inherit;
+=======
 	box-sizing: inherit;
 }
 
@@ -457,4 +493,5 @@ template {
 
 [hidden] {
 	display: none;
+>>>>>>> master
 }

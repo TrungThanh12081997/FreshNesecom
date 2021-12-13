@@ -1,4 +1,14 @@
 import React from "react";
+<<<<<<< HEAD
+import "./header.scss";
+
+export function Header() {
+  return (
+    <header>
+      <div className="container"></div>
+    </header>
+  );
+=======
 import "./style.scss";
 import HeaderContact from "./HeaderContact"
 import HeaderBottom from "./HeaderBottom";
@@ -11,4 +21,5 @@ export function Header() {
             </div>
         </div>
     );
+>>>>>>> master
 }

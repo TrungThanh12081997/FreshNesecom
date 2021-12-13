@@ -3,7 +3,10 @@ import "./assets/css/style.scss"
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD:src/App.js
+=======
 
+>>>>>>> master:src/App.jsx
       <Header />
       <Nav />
       <Footer />
