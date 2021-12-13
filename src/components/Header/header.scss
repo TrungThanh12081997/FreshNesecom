@@ -1,4 +1,4 @@
-@import "../../assets/style.scss";
+@import "../../assets/css/style.scss";
 
 .header {
   .container-fluid {
@@ -11,7 +11,7 @@
         justify-content: center;
         .header__contact-item {
           margin-right: 33px;
-          // font-family: $o;
+          font-family: $o;
           font-style: normal;
           font-weight: normal;
           font-size: 12px;
@@ -20,7 +20,7 @@
 
           color: #151515;
           &.active {
-            // color: $green-cl;
+            color: $green-cl;
           }
         }
       }
@@ -149,13 +149,13 @@
             content: "4";
             left: -40%;
             bottom: -40%;
-            // background-color: $orange-cl;
             color: white;
             border-radius: 50%;
-            // height: var(--numberNoti);
-            // width: var(--numberNoti);
-            // @include mid(true);
-            // @include text(12px, p, 12px, white, none);
+            background-color: $orange-cl;
+            height: var(--numberNoti);
+            width: var(--numberNoti);
+            @include mid(true);
+            @include text(12px, p, 12px, white, none);
           }
         }
       }

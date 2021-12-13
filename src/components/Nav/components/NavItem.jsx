@@ -1,5 +1,5 @@
 import react from "react";
-import nav from "./index.jsx"
+import nav from "../index.jsx"
 export default function NavItem({ title }) {
     return (
         <div className="nav__item">
