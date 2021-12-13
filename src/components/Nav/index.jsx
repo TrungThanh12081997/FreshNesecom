@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import NavItem from "./NavItem"
+import NavItem from "./components/NavItem"
 export function Nav() {
     return (
         <div className="nav">
