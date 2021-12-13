@@ -1,25 +1,15 @@
 import React from "react";
-<<<<<<< HEAD
-import "./header.scss";
+import HeaderContact from "./components/HeaderContact";
+import HeaderBottom from "./components/HeaderBottom";
+import "../Header/header.scss";
 
 export function Header() {
   return (
-    <header>
-      <div className="container"></div>
-    </header>
+    <div className="header">
+      <div className="container-fluid">
+        <HeaderContact />
+        <HeaderBottom />
+      </div>
+    </div>
   );
-=======
-import "./style.scss";
-import HeaderContact from "./HeaderContact"
-import HeaderBottom from "./HeaderBottom";
-export function Header() {
-    return (
-        <div className="header">
-            <div className="container-fluid">
-                <HeaderContact />
-                <HeaderBottom />
-            </div>
-        </div>
-    );
->>>>>>> master
 }
