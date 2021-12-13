@@ -139,6 +139,7 @@ export function Footer() {
   // });
 
   return (
+<<<<<<< HEAD
     <footer>
       <div className="container">
         <div className="footerTop">
@@ -205,5 +206,10 @@ export function Footer() {
         <div className="coppy">© 2016 WOODER, Demo by CFD</div>
       </div>
     </footer>
+=======
+    <div>
+      {/* <h1>footer ne</h1> */}
+    </div>
+>>>>>>> master
   );
 }
