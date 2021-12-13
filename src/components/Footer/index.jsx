@@ -150,7 +150,6 @@ export function Footer() {
         </div>
         <div className="footerBottom">
           <div className="titleFooter">Product tags</div>
-          {/* <TagFooter nameTag={itemtags} /> */}
           <div className="tagTop">{elementsTag}</div>
         </div>
         <div className="coppy">© 2016 WOODER, Demo by CFD</div>
