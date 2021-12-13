@@ -7,6 +7,7 @@ export function Header() {
   return (
     <div className="header">
       <div className="container-fluid">
+        <img src="./img/demo.jpg" alt="" />
         <HeaderContact />
         <HeaderBottom />
       </div>

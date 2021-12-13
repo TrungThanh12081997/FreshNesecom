@@ -1,5 +1,6 @@
 import React from "react";
 import ItemFooter from "./components/ItemFooter";
+import "../Footer/footer.scss";
 // import TagFooter from "./components/TagFooter";
 
 export function Footer() {
