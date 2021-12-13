@@ -16,13 +16,13 @@ export default function HeaderContact() {
         </a>
       </div>
       <div className="header__contact-list">
-        <a href="#" className="header__contact-item active">
+        <a href="#" className="header__contact-item active m-right">
           Blog
         </a>
-        <a href="#" className="header__contact-item active">
+        <a href="#" className="header__contact-item active  m-right">
           About Us
         </a>
-        <a href="#" className="header__contact-item active">
+        <a href="#" className="header__contact-item active  m-right">
           Careers
         </a>
       </div>

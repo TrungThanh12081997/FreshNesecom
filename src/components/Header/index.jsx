@@ -6,7 +6,7 @@ import "../Header/header.scss";
 export function Header() {
   return (
     <div className="header">
-      <div className="container-fluid">
+      <div className="container">
         <img src="./img/demo.jpg" alt="" />
         <HeaderContact />
         <HeaderBottom />

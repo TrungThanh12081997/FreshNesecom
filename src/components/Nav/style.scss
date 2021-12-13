@@ -1,9 +1,9 @@
-@import "../../assets/style.scss";
+@import "../../assets/css/style.scss";
 
 .nav {
   --nav: 16px;
   padding: 16px 0;
-  .container-fluid {
+  .container {
     .flex {
       display: flex;
     }
@@ -14,9 +14,10 @@
   align-items: center;
   padding-right: 40px;
   cursor: pointer;
+  transition: $t $cubic;
   &-content {
     &:hover {
-      color: #000;
+      color: $green-cl;
     }
     font-weight: 500;
     transition: $t $cubic;
