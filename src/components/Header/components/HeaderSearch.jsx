@@ -2,14 +2,29 @@ import React from "react";
 import "../../Header/header.scss";
 // import "../../assets/img";
 export default function HeaderSearch() {
-  // document.querySelector(".header__select-content").addEventListener("click", () => {
-  //     document.querySelector(".header__select-option").classList.toggle("active");
-  // })
+  const handleHistory = () => {
+    const his = document.querySelector(".header__select-option")
+
+    // const cur = document.querySelector(".header__select-content p")
+
+    his.classList.toggle("active");
+
+  }
+  const changeCur = function (e) {
+    document.querySelector(".header__select-option").classList.remove("active");
+
+    const cur = document.querySelector(".header__select-content p");
+    const his = e.currentTarget.textContent;
+    e.currentTarget.innerHTML = cur.textContent;
+    document.querySelector(".header__select-content p").innerHTML = his;
+
+
+  }
 
   return (
     <div className="header__search">
       <div className="header__select">
-        <div className="header__select-content">
+        <div onClick={handleHistory} className="header__select-content">
           <p className="">All categories</p>
 
           <svg
@@ -30,11 +45,11 @@ export default function HeaderSearch() {
         </div>
         <div className="header__select-option">
           <div className="select__option">
-            <p className="">Most popular</p>
+            <p onClick={changeCur} className="">Most popular</p>
           </div>
 
           <div className="select__option">
-            <p className="">Everything</p>
+            <p onClick={changeCur} className="">Everything</p>
           </div>
         </div>
       </div>

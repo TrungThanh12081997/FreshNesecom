@@ -12,10 +12,11 @@
 .nav__item {
   display: flex;
   align-items: center;
-  padding-right: 40px;
   cursor: pointer;
   transition: $t $cubic;
   &-content {
+    // padding-right: 40px;
+    padding-right:33px;
     &:hover {
       color: $green-cl;
     }
@@ -27,5 +28,6 @@
     width: 8px;
     height: 5px;
     margin-left: 4px;
+  
   }
 }
