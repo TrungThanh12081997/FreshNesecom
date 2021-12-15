@@ -3,11 +3,17 @@
 .button{
     width:max-content;
     height:max-content;
-    @include text(15px,"pb",23px,$black-cl,none);
+    @include text(15px,$pb,23px,$black-cl,none);
   border-width: 2px;
   border-style: solid;
     @include mid(true);
-    .size{
+    border-radius: 12px;
+    cursor: pointer;
+    transition:  $t $cubic;
+    &:hover{
+        opacity:0.8;
+    }
+    &.size{
         &-large{
             padding:17px 48px;
         }
@@ -19,7 +25,7 @@
 
         }
     }
-    .background{
+    &.background{
         &-green{
             background-color: $green-cl;
         }
@@ -27,7 +33,7 @@
             background-color: $white-cl;
         }
     }
-    .color{
+    &.color{
         &-white{
             color:$white-cl;
         }
@@ -35,7 +41,7 @@
             color:$black-cl;
         }
     }
-    .border{
+    &.border{
         &-green{
          border-color: $green-cl;
         }
