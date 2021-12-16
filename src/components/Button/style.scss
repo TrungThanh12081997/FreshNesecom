@@ -1,0 +1,55 @@
+@import "../../assets/css/style.scss";
+
+.button{
+    width:max-content;
+    height:max-content;
+    @include text(15px,$pb,23px,$black-cl,none);
+  border-width: 2px;
+  border-style: solid;
+    @include mid(true);
+    border-radius: 12px;
+    cursor: pointer;
+    transition:  $t $cubic;
+    &:hover{
+        opacity:0.8;
+    }
+    &.size{
+        &-large{
+            padding:17px 48px;
+        }
+        &-middle{
+            padding:13px 16px;
+
+        }&-small{
+            padding:7px 12px;
+
+        }
+    }
+    &.background{
+        &-green{
+            background-color: $green-cl;
+        }
+        &-white{
+            background-color: $white-cl;
+        }
+    }
+    &.color{
+        &-white{
+            color:$white-cl;
+        }
+        &-black{
+            color:$black-cl;
+        }
+    }
+    &.border{
+        &-green{
+         border-color: $green-cl;
+        }
+        &-bold{
+            border-color: #46760A;
+        }
+        &-none{
+            border-color: $white-cl;
+        }
+    }
+}
