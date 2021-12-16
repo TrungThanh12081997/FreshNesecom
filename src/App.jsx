@@ -1,5 +1,5 @@
 import { Footer, Header, Nav, Category } from "./components";
-import "./assets/style.scss";
+import "./assets/css/style.scss";
 function App() {
   return (
     <div className="App">

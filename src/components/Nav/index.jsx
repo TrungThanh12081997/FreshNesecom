@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.scss";
-import NavItem from "./NavItem"
+import NavItem from "./components/NavItem"
 export function Nav() {
     return (
         <div className="nav">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="flex">
 
                     <NavItem title="Bakery" />

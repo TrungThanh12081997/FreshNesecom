@@ -1,7 +1,7 @@
-@import "../../assets/style.scss";
+@import "../../assets/css/style.scss";
 
 .header {
-  .container-fluid {
+  .container {
     .header__contact {
       display: flex;
       padding: 16px 0;
@@ -11,16 +11,20 @@
         justify-content: center;
         .header__contact-item {
           margin-right: 33px;
-          // font-family: $o;
+          font-family: $o;
           font-style: normal;
           font-weight: normal;
           font-size: 12px;
           line-height: 16px;
           text-decoration: none;
 
+          &.m-right{
+            margin-left:33px;
+            margin-right:0px;
+          }
           color: #151515;
           &.active {
-            // color: $green-cl;
+            color: $green-cl;
           }
         }
       }
@@ -81,7 +85,7 @@
           -moz-appearance: none;
           text-indent: 1px;
           text-overflow: "";
-          // font-family: $pb;
+          font-family: $pb;
 
           font-size: 15px;
           line-height: 22px;
@@ -101,7 +105,7 @@
             visibility: hidden;
             height: calc(var(--search) * 2);
             display: block;
-            // transition: $t $cubic;
+            transition: $t $cubic;
             .select__option {
               height: var(--search);
               display: flex;
@@ -122,7 +126,7 @@
           border-radius: 12px;
           font-size: 14px;
           line-height: 19px;
-          // font-family: $o;
+          font-family: $o;
         }
       }
       .header__right {
@@ -149,13 +153,13 @@
             content: "4";
             left: -40%;
             bottom: -40%;
-            // background-color: $orange-cl;
             color: white;
             border-radius: 50%;
-            // height: var(--numberNoti);
-            // width: var(--numberNoti);
-            // @include mid(true);
-            // @include text(12px, p, 12px, white, none);
+            background-color: $orange-cl;
+            height: var(--numberNoti);
+            width: var(--numberNoti);
+            @include mid(true);
+            @include text(12px, p, 12px, white, none);
           }
         }
       }
