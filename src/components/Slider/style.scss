@@ -1,0 +1,53 @@
+@import "../../assets/css/style.scss";
+.slider{
+    padding-top:70px;
+    padding-bottom:90px;
+    
+
+    .container{
+        .slider__content{
+            // display: flex;
+            // justify-content: space-between;
+            .slider__title{
+                display: flex;
+                justify-content: space-between;
+                span{
+                    width: max-content;
+                    @include text(18px,$pb,27px,$black-cl,none);
+                }
+            }
+            }
+        }
+        .slider__list{
+            display: flex;
+            text-align: center;
+            .slider__item{
+                padding:24px 32px 40px 32px;
+                margin:0 32px;
+                width:370px;
+                .slider__item-text{
+                    text-align: center;
+                    @include text(15px,$p,23px,$black-cl,none);
+                }
+                h5{
+                    @include mid(true);
+                    margin-top: 24px;
+                    @include text(12px,$p,18px,$gray-cl,none);
+                }
+            }
+
+        }
+    
+
+}
+
+
+.test{
+    display: flex;
+    justify-content: space-between;
+    .span{
+        display: block;
+        width: max-content;
+        @include text(18px,$pb,27px,$black-cl,none);
+    }
+}

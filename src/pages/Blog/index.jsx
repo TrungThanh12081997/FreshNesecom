@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Contact() {
+export default function Blog() {
     return (
         <div>
-            contact
+
         </div>
     )
 }

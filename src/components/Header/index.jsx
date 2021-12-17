@@ -14,8 +14,8 @@ export function Header() {
         <img src="./img/demo.jpg" alt="" />
         <HeaderContact />
         <HeaderBottom />
-        <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"
-          color="white" size="large" />
+        {/* <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"
+          color="white" size="large" /> */}
 
       </div>
     </div>

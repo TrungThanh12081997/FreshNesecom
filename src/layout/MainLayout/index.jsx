@@ -6,18 +6,18 @@ import Button from "../../components/Button"
 export default function MainLayout(children) {
     return (
         <>
-            <ul>
+            {/* <ul>
                 <li>
                     <Link to='/'>Home</Link>
                 </li>
                 <li>
                     <Link to='/about'>About</Link>
                 </li>
-            </ul>
-            <Header />
+            </ul> */}
+
             <Outlet />
-            <Button />
-            <Footer />
+
+
         </>
     )
 }
