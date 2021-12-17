@@ -2,7 +2,7 @@ import React from "react";
 import HeaderContact from "./components/HeaderContact";
 import HeaderBottom from "./components/HeaderBottom";
 import "../Header/header.scss";
-import Button from ".././Button"
+import Button from ".././Button";
 import { GreenLeft, WhiteLeft } from "../ArrowIcon/index";
 
 // import { GreenLeft } from "../ArrowIcon";
@@ -14,9 +14,8 @@ export function Header() {
         <img src="./img/demo.jpg" alt="" />
         <HeaderContact />
         <HeaderBottom />
-        <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"
-          color="white" size="large" />
-
+        {/* <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"
+          color="white" size="large" /> */}
       </div>
     </div>
   );
@@ -24,4 +23,3 @@ export function Header() {
 //// có lỗi ngay terminal coi cài file button giống chú k giùm t đi t import btn vo cái header test đó
 
 // button cho nào đây
-

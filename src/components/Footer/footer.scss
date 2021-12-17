@@ -6,16 +6,15 @@
   font-size: 18px;
   margin-bottom: 16px;
 }
+.nameItem {
+  font-size: 14px;
+  font-family: OpenSansRegular;
+  color: $clTextGreen;
+  margin-bottom: 16px;
+}
 .footerTop {
   display: flex;
   justify-content: space-between;
-
-  .nameItem {
-    font-size: 14px;
-    font-family: OpenSansRegular;
-    color: $clTextGreen;
-    margin-bottom: 16px;
-  }
 }
 .footerBottom {
   .tagTop {

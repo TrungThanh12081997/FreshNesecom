@@ -1,6 +1,14 @@
 import React from "react";
+import "../Home/home.scss";
+import Category from "./components/Category";
+import "../../components/Footer/footer.scss";
+import Banner from "./components/Banner";
 
-
-export default function Home() {
-  return <div>homePage</div>;
+export default function HomePage() {
+  return (
+    <div className="container">
+      <Category />
+      <Banner />
+    </div>
+  );
 }
