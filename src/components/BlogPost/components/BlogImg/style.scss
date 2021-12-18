@@ -1,0 +1,34 @@
+@import "../../../../assets/css/style.scss";
+.blog__img {
+    overflow: hidden;
+    &.size {
+        &-large {
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-middle {
+            --height: 180px;
+            height: var(--height);
+            margin-bottom: 24px;
+            border-radius: 12px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &-small {
+            --height: 90px;
+            width: var(--height);
+            height: var(--height);
+            border-radius: 12px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

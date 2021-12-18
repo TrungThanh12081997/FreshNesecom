@@ -1,8 +1,8 @@
 import React from 'react'
-import { GreenRight } from '../../ArrowIcon/'
-import Button from '../../Button'
-import "../style.scss"
-export default function SliderTitle({ title }) {
+import { GreenRight } from '../ArrowIcon'
+import Button from '../Button'
+import "./style.scss"
+export default function BarTitle({ title }) {
     return (
         <div className='test'>
             <span className="span">{title}</span>

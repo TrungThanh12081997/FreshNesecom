@@ -1,0 +1,25 @@
+@import "../../../../assets/css/style.scss";
+.blog__item {
+    height: 450px;
+    position: relative;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    overflow: hidden;
+    &.size {
+        &-small {
+            max-width: 270px;
+            margin: 0 30px;
+            width: max-content;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+        &-middle {
+        }
+        &-large {
+            max-width: 470px;
+            width: max-content;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+    }
+}
