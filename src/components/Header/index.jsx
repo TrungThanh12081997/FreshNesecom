@@ -16,6 +16,10 @@ export function Header() {
         <HeaderBottom />
         {/* <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"
           color="white" size="large" /> */}
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
       </div>
     </div>
   );
