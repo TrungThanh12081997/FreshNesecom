@@ -14,9 +14,10 @@ export default function HomePage() {
         </div>
       </div>
     </>
-  );}
+  );
+}
 
 // export default function Home() {
-  // return
-  //  <div>homePage</div>;
+// return
+//  <div>homePage</div>;
 // }
