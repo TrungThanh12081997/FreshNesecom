@@ -6,9 +6,13 @@ import Banner from "./components/Banner";
 
 export default function HomePage() {
   return (
-    <div className="container">
-      <Category />
-      <Banner />
-    </div>
+    <>
+      <div className="container">
+        <div className="homePage">
+          <Category />
+          <Banner />
+        </div>
+      </div>
+    </>
   );
 }

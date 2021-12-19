@@ -32,7 +32,7 @@ export default function Category({ activeItem }) {
 
   return (
     <>
-      <div className="container">
+      <div className="category">
         <ItemFooter
           titleFooter="Category menu"
           nameItem={itemCategory}

@@ -132,3 +132,4 @@ export function IconCategory() {
 export function ImgBanner() {
   return <img src={imgBanner} alt="" />;
 }
+
