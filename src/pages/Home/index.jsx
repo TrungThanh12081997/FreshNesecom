@@ -1,7 +1,18 @@
-import React from "react";
-
+import React from 'react'
+import { Nav } from '../../components'
+import BlogPost from '../../components/BlogPost'
+import Slider from '../../components/Slider'
 
 export default function Home() {
-  return
-  //  <div>homePage</div>;
+  return (
+    <>
+      {/* <Header /> */}
+      <Nav />
+      <Slider />
+      <BlogPost />
+      {/* <Footer /> */}
+
+
+    </>
+  )
 }

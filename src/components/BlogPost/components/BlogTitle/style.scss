@@ -1,15 +1,28 @@
 @import "../../../../assets/css/style.scss";
-.blog__title{
-    margin-bottom:16px;
-    &.size{
-        &-small{
-            @include text(15px,$pb,23px,$black-cl,none);
+.blog__title {
+    margin-bottom: 16px;
+    cursor: pointer;
+    &.size {
+        &-small {
+            @include text(15px, $pb, 23px, $black-cl, none);
+            &:hover {
+                color: $green-cl;
+                transition: $t $cubic;
+            }
         }
-        &-middle{
-            @include text(18px,$pb,27px,$black-cl,none);
+        &-middle {
+            @include text(18px, $pb, 27px, $black-cl, none);
+            &:hover {
+                color: $green-cl;
+                transition: $t $cubic;
+            }
         }
-        &-large{
-            @include text(22px,$p,33px,$white-cl,none);
+        &-large {
+            @include text(22px, $p, 33px, $white-cl, none);
+            &:hover {
+                color: $green-cl;
+                transition: $t $cubic;
+            }
         }
     }
 }

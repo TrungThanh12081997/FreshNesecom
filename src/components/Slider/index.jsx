@@ -10,7 +10,8 @@ export default function Slider() {
         // initialIndex: 3,
         wrapAround: true,
         groupCells: true
-        , groupCells: 3, groupCells: '80%',
+        , groupCells: 3,
+        //  groupCells: '80%',
         fade: true,
         // adaptiveHeight: true,
         pageDots: false,
@@ -18,9 +19,7 @@ export default function Slider() {
 
 
     }
-    const handleNext = () => {
-        document.querySelector(".slider__list").flickity("next");
-    }
+
 
     return (
         <section className='slider'>
@@ -40,10 +39,20 @@ export default function Slider() {
                     reloadOnUpdate // default false
                     static // default false
                 >
-                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
-                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
-                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
-                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
                 </Flickity>
                 <div className="prev__btn">
                     {/* <div className="prev__btn-icon">
