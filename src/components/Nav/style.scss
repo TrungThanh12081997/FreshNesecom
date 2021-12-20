@@ -6,6 +6,7 @@
   .container {
     .flex {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 }
@@ -14,9 +15,10 @@
   align-items: center;
   cursor: pointer;
   transition: $t $cubic;
+
   &-content {
     // padding-right: 40px;
-    padding-right:33px;
+    padding-right: 33px;
     &:hover {
       color: $green-cl;
     }
@@ -28,6 +30,5 @@
     width: 8px;
     height: 5px;
     margin-left: 4px;
-  
   }
 }
