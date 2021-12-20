@@ -4,7 +4,7 @@ import BarTitle from '../BarTitle'
 import "./style.scss"
 import { GreenRight } from '../ArrowIcon'
 import "../../assets/css/style.scss"
-import Flickity from "react-flickity-component";
+// import Flickity from "react-flickity-component";
 export default function Slider() {
     const flickityOptions = {
         // initialIndex: 3,
@@ -33,7 +33,7 @@ export default function Slider() {
 
             </div>
             <div className="slider__list">
-                <Flickity  // default ''
+                {/* <Flickity  // default ''
                     elementType={'div'} // default 'div'
                     options={flickityOptions} // takes flickity options {}
                     disableImagesLoaded={false} // default false
@@ -44,7 +44,7 @@ export default function Slider() {
                     <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
                     <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
                     <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
-                </Flickity>
+                </Flickity> */}
                 <div className="prev__btn">
                     {/* <div className="prev__btn-icon">
                         <svg width="6" height="13" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">

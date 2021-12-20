@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ImgBanner } from "../../../components/ArrowIcon/index";
+import { ImgBanner, WhiteLeft } from "../../../components/ArrowIcon/index";
+import Button from "../../../components/Button";
 
 const Banner = (props) => {
   return (
@@ -8,11 +8,12 @@ const Banner = (props) => {
       <div className="banner">
         <ImgBanner />
         <div className="bannerWrap">
-          <p className="subFocus">Banner subfocus</p>
+        <p className="subFocus">Banner subfocus</p>
           <h3>Space for heading</h3>
         </div>
         <div className="btnBanner">
-          
+         <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"
+          color="white" size="large" /> 
         </div>
         
       </div>
