@@ -9,31 +9,16 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <HomePage />
-      <Footer />
-      {/* <BrowserRouter> */}
-      {/* <ul className="">
-        <li className="">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="">
-          <Link to="/About">About</Link>
-        </li>
-        <li className="">
-          <Link to="/Contact">Contact</Link>
-        </li>
-      </ul> */}
-      {/* <main id="main-content"> */}
-      {/* <Routes>
+      {/* <Header />
       <Nav />
       <Slider />
       <BlogPost />
-      <Footer />
+      <Footer /> */}
 
-      {/* <BrowserRouter>
-        <Header />
-        <ul className="">
+
+      <BrowserRouter>
+
+        {/* <ul className="">
           <li className="">
             <Link to="/">Home</Link>
           </li>
@@ -44,20 +29,24 @@ function App() {
             <Link to="/Contact">Contact</Link>
           </li>
 
-        </ul>
-        <main id="main-content">
+        </ul> */}
+        <div id="main-content">
           <Routes>
             <Route path="/" element={<MainLayout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/About" element={<About />} />
-              <Route path="/Contact" element={<Contact />} />
+              <Route path="/CategoryList" element={<CategoryList />} />
+              <Route path="/CategoryGrid" element={<CategoryGrid />} />
+              <Route path="/Blog" element={<Blog />} />
+              <Route path="/BlogDetail" element={<BlogDetail />} />
+              <Route path="/CheckOut" element={<CheckOut />} />
+              <Route path="/Detail" element={<Detail />} />
 
             </Route>
             <Route path="*" element={<NotFound />} />
-          </Routes> */}
-      {/* </main> */}
+          </Routes>
+        </div>
 
-      {/* </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }

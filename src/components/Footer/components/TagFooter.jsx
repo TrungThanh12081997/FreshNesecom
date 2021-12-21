@@ -5,7 +5,7 @@ export default function TagFooter({ nameTag }) {
   return (
     <>
       <div className="tags">
-        <p>{nameTag}</p>
+        <a>{nameTag}</a>
       </div>
     </>
   );

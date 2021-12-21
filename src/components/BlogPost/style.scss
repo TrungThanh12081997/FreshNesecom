@@ -1,38 +1,24 @@
 @import "../../assets/css/style.scss";
 .blog__post {
     padding: 65px 0;
+    height: 730px;
     .container {
-    }
-}
-.blog__item-list {
-    display: flex;
-}
-.blog__img-tag {
-    position: absolute;
-    left: 3%;
-    top: 0;
-}
-.blog__large-bottom {
-    width: 100%;
-    position: absolute;
-    padding-left: 24px;
-    padding-top: 76px;
-    bottom: 0;
-    height: 50%;
-    background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-    .bottom__large {
-        display: flex;
-        margin: 8px 0;
-        align-items: center;
-    }
-}
-.blog__box {
-    display: flex;
-    margin-bottom: 50px;
-    &-content {
-        max-width: 225px;
+        .blog__post-list {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
     }
 }
 .white {
     color: $white-cl;
+}
+.blog__post-large {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+}
+.blog__post-small {
+    width: 24%;
 }

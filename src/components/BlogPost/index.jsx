@@ -2,13 +2,14 @@ import React from 'react'
 import classnames from 'classnames'
 import BlogItem from './components/BlogItem'
 import BarTitle from '../BarTitle'
-import BlogImg from './components/BlogImg'
-import BlogTag from "./components/BlogTag"
+// import BlogImg from './components/BlogImg'
+// import BlogTag from "./components/BlogTag"
 import BlogTitle from "./components/BlogTitle"
 import BlogDate from "./components/BlogDate"
 import "./style.scss"
 import meo from "../../assets/img/meo.jpg"
 import Avatar from '../Avatar'
+import classNames from 'classnames'
 export default function BlogPost({ size }) {
     return (
         <section className="blog__post">
@@ -16,22 +17,29 @@ export default function BlogPost({ size }) {
 
 
                 <BarTitle title="Read our Blog posts" />
-                <div className="blog__item-list">
+                <div className="blog__post-list">
+                    <div className="blog__post-large">
 
+                        <BlogItem size="large" href={meo} para="Our chef tips for a great and tasty dinner ready in 20 minutes"
+                            tag="Dinner tips" name="Author" date="17.6.2020" color="white" />
+                    </div>
+                    <div className="blog__post-small">
+                        <BlogItem size="middle" href={meo} para="Which vegetable your family will love and wants eat each day"
+                            tag="Vegetables" name="Author" date="17.6.2020" color="black" />
+                    </div>
+                    <div className="blog__post-large">
+                        <BlogItem size="small" href={meo} para=" Salat is kinda good start to your morning routines"
+                            tag="" name="Author" date="17.6.2020" color="black" />
+                        <BlogItem size="small" href={meo} para="Our chef tips for a great and healthy breakfast"
+                            tag="" name="Author" date="17.6.2020" color="black" />
+                        <BlogItem size="small" href={meo} para="Prepare a simple and delicious breads"
+                            tag="" name="Author" date="17.6.2020" color="black" />
+
+                    </div>
+
+                    {/* 
                     <BlogItem size="large" >
-                        <BlogImg size="large" href={meo} >
-                        </BlogImg>
-                        <div className="blog__img-tag">
-                            <BlogTag tag="Dinner tips" />
-                        </div>
-                        <div className="blog__large-bottom">
-                            <BlogTitle size="large"
-                                title="Our chef tips for a great and tasty dinner ready in 20 minutes" />
-                            <div className="bottom__large">
-                                <Avatar size="small" href={meo} />
-                                <BlogDate color="white" name="Author" date="17. 6. 2020" />
-                            </div>
-                        </div>
+                        
 
 
                     </BlogItem>
@@ -73,7 +81,7 @@ export default function BlogPost({ size }) {
                         </div>
 
 
-                    </BlogItem>
+                    </BlogItem> */}
                 </div>
             </div>
 
