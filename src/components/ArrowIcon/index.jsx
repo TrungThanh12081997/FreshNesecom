@@ -2,6 +2,7 @@ import React from "react";
 import "./style.scss";
 import btnCategory from "../../assets/img/icon/ic-category-right.svg";
 import imgBanner from "../../assets/img/Banner.jpg";
+import icRightGreen from "../../assets/img/icon/ic-right-green.svg";
 
 export function WhiteRight() {
   return (
@@ -131,4 +132,7 @@ export function IconCategory() {
 }
 export function ImgBanner() {
   return <img src={imgBanner} alt="" />;
+}
+export function IcRightGreen() {
+  return <img src={icRightGreen} alt="" />;
 }
