@@ -133,6 +133,10 @@ export function IconCategory() {
 export function ImgBanner() {
   return <img src={imgBanner} alt="" />;
 }
+<<<<<<< HEAD
 export function IcRightGreen() {
   return <img src={icRightGreen} alt="" />;
 }
+=======
+
+>>>>>>> 311e8f2c15ef7043a419b0383129efbdc252a37b

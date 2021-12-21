@@ -1,7 +1,6 @@
-import react from "react";
-import "./style.scss";
-import CategoryMenu from "./components/CategoryMenu";
 import CategoryItem from "./components/CategoryItem";
+import CategoryMenu from "./components/CategoryMenu";
+import "./style.scss";
 export default function () {
   return (
     <section className="Category">

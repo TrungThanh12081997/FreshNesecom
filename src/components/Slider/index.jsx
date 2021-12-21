@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import React from "react";
 import SliderItem from "./components/SliderItem";
 import BarTitle from "../BarTitle";
 import "./style.scss";
 import { GreenRight } from "../ArrowIcon";
 import "../../assets/css/style.scss";
+=======
+import React from 'react'
+import SliderItem from './components/SliderItem'
+import BarTitle from '../BarTitle'
+import "./style.scss"
+import { GreenRight } from '../ArrowIcon'
+import "../../assets/css/style.scss"
+>>>>>>> 311e8f2c15ef7043a419b0383129efbdc252a37b
 // import Flickity from "react-flickity-component";
 export default function Slider() {
     const flickityOptions = {
@@ -32,13 +41,14 @@ export default function Slider() {
 
             </div>
             <div className="slider__list">
-                <Flickity  // default ''
+                {/* <Flickity  // default ''
                     elementType={'div'} // default 'div'
                     options={flickityOptions} // takes flickity options {}
                     disableImagesLoaded={false} // default false
                     reloadOnUpdate // default false
                     static // default false
                 >
+<<<<<<< HEAD
                     <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
 
                     <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
@@ -54,6 +64,13 @@ export default function Slider() {
                     <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
                     <SliderItem under="Name and Surname" para=" This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
                 </Flickity>
+=======
+                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                    <SliderItem under="Name and Surname" para="“ This is an super space for your customers qoute. Don’t worry it works smooth as pie. You will get all what you need by writiing a text here " />
+                </Flickity> */}
+>>>>>>> 311e8f2c15ef7043a419b0383129efbdc252a37b
                 <div className="prev__btn">
                     {/* <div className="prev__btn-icon">
                         <svg width="6" height="13" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">

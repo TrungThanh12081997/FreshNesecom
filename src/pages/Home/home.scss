@@ -1,4 +1,5 @@
 @import "../../assets/css/style.scss";
+<<<<<<< HEAD
 
 .homePage {
   .categoryWrap {
@@ -109,6 +110,53 @@
           }
         }
       }
+    }
+=======
+.homePage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.category {
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  .titleFooter{
+    text-decoration: none;
+  }
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 13px 26px;
+  background-color: $clBtnFooter;
+  border-radius: 12px;
+  margin-top: 32px;
+  a {
+    font-family: "PoppinsSemiBold";
+    color: $clTextBlack;
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 6px;
+>>>>>>> 311e8f2c15ef7043a419b0383129efbdc252a37b
+  }
+}
+.banner {
+  position: relative;
+  max-width: fit-content;
+  .bannerWrap {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    p {
+      font-family: "PoppinsSemiBold";
+      font-size: 12px;
+      color: $green-cl;
+    }
+    h3 {
+      margin-top: 8px;
+      font-family: "PoppinsSemiBold";
+      font-size: 22px;
     }
   }
 }
