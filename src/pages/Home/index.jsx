@@ -1,7 +1,9 @@
 import React from "react";
-import { IconCategory } from "../../components";
+import { IconCategory, IcRightGreen } from "../../components";
+import Button from "../../components/Button";
 import ItemFooter from "../../components/Footer/components/ItemFooter";
 import "../../components/Footer/footer.scss";
+import Slider from "../../components/Slider";
 import "../Home/home.scss";
 import Banner from "./components/Banner";
 import Itemproduct from "./components/ItemProduct";
@@ -129,6 +131,32 @@ export default function HomePage() {
           <Itemproduct />
           <Itemproduct />
           <Itemproduct />
+        </section>
+      </div>
+      <section className="silder">
+        <Slider />
+      </section>
+      <div className="container">
+        {" "}
+        <section className="headline">
+          <div className="titleHeadline">
+            <h3>Section Headline</h3>
+            <Button
+              children="Button"
+              icon={<IcRightGreen />}
+              type="icon-right"
+              background=""
+              border="none"
+              color="black"
+              size="small"
+            />
+          </div>
+          <div className="itemHeadline">
+            <Itemproduct />
+            <Itemproduct />
+            <Itemproduct />
+            <Itemproduct />
+          </div>
         </section>
       </div>
     </div>

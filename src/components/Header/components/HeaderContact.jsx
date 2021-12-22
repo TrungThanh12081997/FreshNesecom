@@ -1,5 +1,4 @@
 import React from "react";
-import HeaderSearch from "./HeaderSearch";
 import "../../Header/header.scss";
 export default function HeaderContact() {
   return (

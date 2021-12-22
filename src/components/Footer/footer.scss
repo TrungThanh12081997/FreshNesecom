@@ -19,11 +19,10 @@
 .footerBottom {
   .tagTop {
     display: flex;
-    display: flex;
     flex-wrap: wrap;
     .tags {
       margin-bottom: 10px;
-      p {
+      a {
         padding: 4px 10px;
         border-radius: 12px;
         font-family: PoppinsSemiBold;

@@ -1,6 +1,3 @@
-@import "../../assets/css/style.scss";
-<<<<<<< HEAD
-
 .homePage {
   .categoryWrap {
     width: 20%;
@@ -14,12 +11,12 @@
       display: inline-flex;
       align-items: center;
       padding: 13px 26px;
-      background-color: $clBtnFooter;
+      background-color: #f5f5f5;
       border-radius: 12px;
       margin-top: 32px;
       a {
         font-family: "PoppinsSemiBold";
-        color: $clTextBlack;
+        color: black;
         text-decoration: none;
         font-size: 15px;
         margin-right: 6px;
@@ -111,52 +108,24 @@
         }
       }
     }
-=======
-.homePage {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.category {
-  text-decoration: underline;
-  cursor: pointer;
-  display: inline-block;
-  .titleFooter{
-    text-decoration: none;
   }
-}
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 13px 26px;
-  background-color: $clBtnFooter;
-  border-radius: 12px;
-  margin-top: 32px;
-  a {
-    font-family: "PoppinsSemiBold";
-    color: $clTextBlack;
-    text-decoration: none;
-    font-size: 15px;
-    margin-right: 6px;
->>>>>>> 311e8f2c15ef7043a419b0383129efbdc252a37b
-  }
-}
-.banner {
-  position: relative;
-  max-width: fit-content;
-  .bannerWrap {
-    position: absolute;
-    top: 15%;
-    left: 8%;
-    p {
-      font-family: "PoppinsSemiBold";
-      font-size: 12px;
-      color: $green-cl;
+  .headline {
+    margin: 64px auto;
+
+    .titleHeadline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        font-size: 18px;
+        font-family: "PoppinsSemiBold";
+      }
     }
-    h3 {
-      margin-top: 8px;
-      font-family: "PoppinsSemiBold";
-      font-size: 22px;
+    .itemHeadline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 32px;
     }
   }
 }

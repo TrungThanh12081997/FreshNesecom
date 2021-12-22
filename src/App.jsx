@@ -1,6 +1,11 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./assets/css/style.scss";
-import { Footer, Header } from "./components";
+import { Footer, Header, Nav } from "./components";
+import BlogPost from "./components/BlogPost";
+import Slider from "./components/Slider";
+import MainLayout from "./layout/MainLayout";
 import HomePage from "./pages/Home/index";
+import NotFound from "./pages/NotFound";
 
 function App() {
   // const icon = <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,46 +13,35 @@ function App() {
   // </svg>
 
   return (
-    <div className="App">
-      {/* <Header />
+    <>
+      <div className="App">
+        {/* <Header />
       <Nav />
       <Slider />
       <BlogPost />
       <Footer /> */}
 
-
-      <BrowserRouter>
-
-        {/* <ul className="">
-          <li className="">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="">
-            <Link to="/About">About</Link>
-          </li>
-          <li className="">
-            <Link to="/Contact">Contact</Link>
-          </li>
-
-        </ul> */}
-        <div id="main-content">
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route path="/" element={<Home />} />
-              <Route path="/CategoryList" element={<CategoryList />} />
+        <BrowserRouter>
+          {/* <Link to="/">Home</Link>
+        <Link to="/About">About</Link>
+        <Link to="/Contact">Contact</Link> */}
+          <div id="main-content">
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route path="/" element={<HomePage />} />
+                {/* <Route path="/CategoryList" element={<CategoryList />} />
               <Route path="/CategoryGrid" element={<CategoryGrid />} />
               <Route path="/Blog" element={<Blog />} />
               <Route path="/BlogDetail" element={<BlogDetail />} />
               <Route path="/CheckOut" element={<CheckOut />} />
-              <Route path="/Detail" element={<Detail />} />
-
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </div>
-
-      </BrowserRouter>
-    </div>
+              <Route path="/Detail" element={<Detail />} /> */}
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 
