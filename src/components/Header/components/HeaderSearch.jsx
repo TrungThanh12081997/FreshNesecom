@@ -3,13 +3,12 @@ import "../../Header/header.scss";
 // import "../../assets/img";
 export default function HeaderSearch() {
   const handleHistory = () => {
-    const his = document.querySelector(".header__select-option")
+    const his = document.querySelector(".header__select-option");
 
     // const cur = document.querySelector(".header__select-content p")
 
     his.classList.toggle("active");
-
-  }
+  };
   const changeCur = function (e) {
     document.querySelector(".header__select-option").classList.remove("active");
 
@@ -17,9 +16,7 @@ export default function HeaderSearch() {
     const his = e.currentTarget.textContent;
     e.currentTarget.innerHTML = cur.textContent;
     document.querySelector(".header__select-content p").innerHTML = his;
-
-
-  }
+  };
 
   return (
     <div className="header__search">
@@ -45,11 +42,15 @@ export default function HeaderSearch() {
         </div>
         <div className="header__select-option">
           <div className="select__option">
-            <p onClick={changeCur} className="">Most popular</p>
+            <p onClick={changeCur} className="">
+              Most popular
+            </p>
           </div>
 
           <div className="select__option">
-            <p onClick={changeCur} className="">Everything</p>
+            <p onClick={changeCur} className="">
+              Everything
+            </p>
           </div>
         </div>
       </div>

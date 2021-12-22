@@ -1,0 +1,131 @@
+.homePage {
+  .categoryWrap {
+    width: 20%;
+    .category {
+      text-decoration: underline;
+      cursor: pointer;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 13px 26px;
+      background-color: #f5f5f5;
+      border-radius: 12px;
+      margin-top: 32px;
+      a {
+        font-family: "PoppinsSemiBold";
+        color: black;
+        text-decoration: none;
+        font-size: 15px;
+        margin-right: 6px;
+        white-space: nowrap;
+      }
+    }
+  }
+  .cateMenu {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .bannerWrap {
+      position: relative;
+      display: inline-block;
+      width: 38%;
+      height: max-content;
+      img {
+        width: 100%;
+      }
+      .banner {
+        top: 10%;
+        left: 12%;
+        position: absolute;
+        .subFocus {
+          font-size: 12px;
+          font-family: "PoppinsSemiBold";
+          color: #6a983c;
+          line-height: 18px;
+        }
+        h3 {
+          font-size: 22px;
+          font-family: "PoppinsSemiBold";
+          line-height: 33px;
+        }
+      }
+      .button {
+        position: absolute;
+        bottom: 10%;
+        left: 12%;
+      }
+    }
+  }
+  .bestFarmers {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 128px;
+    margin-bottom: 128px;
+  }
+  .bestSelling {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 128px;
+    margin-bottom: 128px;
+  }
+  .itemProductWrap {
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    .itemProduct {
+      margin: 16px;
+      .itemImg {
+        height: 180px;
+        border-radius: 12px;
+        background: #f9f9f9;
+        margin: auto;
+        margin-bottom: 16px;
+      }
+      .productText {
+        h4 {
+          font-size: 15px;
+          font-family: "PoppinsSemiBold";
+          line-height: 22px;
+        }
+        p {
+          font-size: 12px;
+          font-family: "OpenSansRegular";
+          color: #575757;
+        }
+        .price {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 16px;
+          h3 {
+            margin: auto 0;
+            font-size: 18px;
+            font-family: "PoppinsSemiBold";
+          }
+        }
+      }
+    }
+  }
+  .headline {
+    margin: 64px auto;
+
+    .titleHeadline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        font-size: 18px;
+        font-family: "PoppinsSemiBold";
+      }
+    }
+    .itemHeadline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 32px;
+    }
+  }
+}
