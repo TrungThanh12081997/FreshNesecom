@@ -30,9 +30,9 @@
             width: 370px;
             border-radius: 12px;
             // transition: $t $cubic;
-            background-color: $green-cl;
+            // background-color: $green-cl;
             position: relative;
-            height: 90%;
+            min-height: 250px;
             &:hover {
             }
             .slider__item-text {

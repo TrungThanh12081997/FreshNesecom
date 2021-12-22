@@ -54,7 +54,7 @@ export default function Slider() {
             />
           </Flickity>
           <div className="prev__btn">
-            <div className="prev__btn-icon">
+            {/* <div className="prev__btn-icon">
               <svg
                 width="6"
                 height="13"
@@ -70,10 +70,10 @@ export default function Slider() {
                   stroke-linejoin="bevel"
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
           <div className="next__btn">
-            <div className="next__btn-icon">
+            {/* <div className="next__btn-icon">
               <svg
                 width="6"
                 height="13"
@@ -89,7 +89,7 @@ export default function Slider() {
                   stroke-linejoin="bevel"
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
