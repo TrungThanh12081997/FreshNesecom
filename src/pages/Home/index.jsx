@@ -7,6 +7,7 @@ import Slider from "../../components/Slider";
 import "../Home/home.scss";
 import Banner from "./components/Banner";
 import Itemproduct from "./components/ItemProduct";
+import BlogPost from "../../components/BlogPost";
 
 export default function HomePage() {
   var itemCategory = [
@@ -137,7 +138,6 @@ export default function HomePage() {
         <Slider />
       </section>
       <div className="container">
-        {" "}
         <section className="headline">
           <div className="titleHeadline">
             <h3>Section Headline</h3>
@@ -157,6 +157,9 @@ export default function HomePage() {
             <Itemproduct />
             <Itemproduct />
           </div>
+        </section>
+        <section className="Blog">
+        <BlogPost/>
         </section>
       </div>
     </div>
