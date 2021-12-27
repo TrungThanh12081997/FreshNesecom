@@ -8,30 +8,31 @@ h4 {
 .checkoutWrap {
   display: flex;
   justify-content: space-between;
-  .checkoutLeft {
-    width: 60%;
-    .titleBill {
-      display: flex;
-      justify-content: space-between;
-      .title {
-        h2 {
-          font-size: 22px;
-          font-family: "PoppinsSemiBold";
-          margin-bottom: 4px;
-        }
-        p {
-          font-size: 12px;
-          font-family: "OpenSansRegular";
-          color: $gray-cl;
-        }
+  .titleBill {
+    display: flex;
+    justify-content: space-between;
+    .title {
+      h2 {
+        font-size: 22px;
+        font-family: "PoppinsSemiBold";
+        margin-bottom: 4px;
       }
-      .step {
-        margin: auto 0;
+      p {
         font-size: 12px;
-        color: $gray-cl;
         font-family: "OpenSansRegular";
+        color: $gray-cl;
       }
     }
+    .step {
+      margin: auto 0;
+      font-size: 12px;
+      color: $gray-cl;
+      font-family: "OpenSansRegular";
+    }
+  }
+  .checkoutLeft {
+    width: 55%;
+
     .fieldDetail {
       margin-top: 32px;
       .label {
@@ -143,5 +144,8 @@ h4 {
     .btnCheckout {
       margin: 32px 0;
     }
+  }
+  .checkoutRight {
+    width: 40%;
   }
 }
