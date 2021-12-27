@@ -4,6 +4,7 @@ import { Footer, Header, Nav } from "./components";
 import BlogPost from "./components/BlogPost";
 import Slider from "./components/Slider";
 import MainLayout from "./layout/MainLayout";
+import CheckOut from "./pages/Checkout";
 import HomePage from "./pages/Home/index";
 import NotFound from "./pages/NotFound";
 
@@ -29,11 +30,12 @@ function App() {
             <Routes>
               <Route path="/" element={<MainLayout />}>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/CheckOut" element={<CheckOut />} />
                 {/* <Route path="/CategoryList" element={<CategoryList />} />
               <Route path="/CategoryGrid" element={<CategoryGrid />} />
               <Route path="/Blog" element={<Blog />} />
               <Route path="/BlogDetail" element={<BlogDetail />} />
-              <Route path="/CheckOut" element={<CheckOut />} />
+              <Route path="/CheckOut" element={<CheckOut />} />/
               <Route path="/Detail" element={<Detail />} /> */}
               </Route>
               <Route path="*" element={<NotFound />} />
