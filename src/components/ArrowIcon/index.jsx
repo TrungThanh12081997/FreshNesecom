@@ -3,6 +3,11 @@ import "./style.scss";
 import btnCategory from "../../assets/img/icon/ic-category-right.svg";
 import imgBanner from "../../assets/img/Banner.jpg";
 import icRightGreen from "../../assets/img/icon/ic-right-green.svg";
+import lgFed from "../../assets/img/lg-fed.png";
+import lgDhl from "../../assets/img/lgdhl.png";
+import lgVisa from "../../assets/img/lg-visa.png";
+import lgPaypal from "../../assets/img/lg-paypal.png";
+import lgBitcoin from "../../assets/img/lg-bitcoin.png";
 
 export function WhiteRight() {
   return (
@@ -135,4 +140,19 @@ export function ImgBanner() {
 }
 export function IcRightGreen() {
   return <img src={icRightGreen} alt="" />;
+}
+export function LgFed() {
+  return <img src={lgFed} alt="" />;
+}
+export function LgDhl() {
+  return <img src={lgDhl} alt="" />;
+}
+export function LgVisa() {
+  return <img src={lgVisa} alt="" />;
+}
+export function LgPaypal() {
+  return <img src={lgPaypal} alt="" />;
+}
+export function LgBitcoin() {
+  return <img src={lgBitcoin} alt="" />;
 }
