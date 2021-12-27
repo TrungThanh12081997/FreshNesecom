@@ -261,7 +261,14 @@ export default function CheckOut() {
             />
           </div>
         </div>
-        <div className="checkoutRight"></div>
+        <div className="checkoutRight">
+          <TitleBilling
+            title="Order Summary"
+            des="Price can change depending on shipping method and taxes of your state."
+            step=""
+          />
+          <div className="itemCheckout"></div>
+        </div>
       </div>
     </div>
   );
