@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
 import Button from "../../components/Button";
 import "../Checkout/checkout.scss";
+import BillingMethod from "./components/BillingMethod";
 import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
@@ -72,7 +73,7 @@ export default function CheckOut() {
                     helperText={error.country}
                   />
                   <label className="checkbox">
-                    <input type="checkbox" checked="checked" />
+                    <input type="checkbox" />
                     Ship to a different address?
                   </label>
                 </div>
@@ -119,11 +120,12 @@ export default function CheckOut() {
               step="Step 2 of 5"
             />
             <div className="field">
-              <form>
+              <BillingMethod />
+              {/* <form>
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       FedEx
                     </label>
                   </div>
@@ -135,7 +137,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       DHL
                     </label>
                   </div>
@@ -144,7 +146,7 @@ export default function CheckOut() {
                   </div>
                   <LgDhl />
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
           <div className="paymentMethod">
