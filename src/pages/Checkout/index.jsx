@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
 import Button from "../../components/Button";
 import "../Checkout/checkout.scss";
+import BillingMethod from "./components/BillingMethod";
 import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
@@ -119,7 +120,8 @@ export default function CheckOut() {
               step="Step 2 of 5"
             />
             <div className="field">
-              <form>
+              <BillingMethod />
+              {/* <form>
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
@@ -144,7 +146,7 @@ export default function CheckOut() {
                   </div>
                   <LgDhl />
                 </div>
-              </form>
+              </form> */}
             </div>
           </div>
           <div className="paymentMethod">

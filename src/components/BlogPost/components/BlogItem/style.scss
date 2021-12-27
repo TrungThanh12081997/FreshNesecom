@@ -54,9 +54,7 @@
                     margin-bottom: 16px;
                     height: max-content;
                     text-decoration: none;
-                    @include text(15px, $p, 23px, $black-cl, none);
-                }
-                .blog__para-title {
+                    @include text(15px, $pb, 23px, $black-cl, none);
                     display: flex;
                     align-items: center;
                 }
@@ -102,9 +100,7 @@
                     margin-bottom: 16px;
                     height: max-content;
                     text-decoration: none;
-                    @include text(15px, $p, 23px, $black-cl, none);
-                }
-                .blog__para-title {
+                    @include text(18px, $pb, 27px, $black-cl, none);
                     display: flex;
                     align-items: center;
                 }
