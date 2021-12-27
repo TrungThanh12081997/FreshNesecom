@@ -72,7 +72,7 @@ export default function CheckOut() {
                     helperText={error.country}
                   />
                   <label className="checkbox">
-                    <input type="checkbox" checked="checked" />
+                    <input type="checkbox" />
                     Ship to a different address?
                   </label>
                 </div>
@@ -123,7 +123,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       FedEx
                     </label>
                   </div>
@@ -135,7 +135,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       DHL
                     </label>
                   </div>
@@ -159,7 +159,7 @@ export default function CheckOut() {
                   <div className="methodWrap">
                     <div className="title">
                       <label className="checkRadio">
-                        <input type="radio" checked="checked" />
+                        <input type="radio" />
                         Credit card
                       </label>
                     </div>
@@ -199,7 +199,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       PayPal
                     </label>
                   </div>
@@ -208,7 +208,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       Bitcoin
                     </label>
                   </div>
@@ -241,12 +241,12 @@ export default function CheckOut() {
             />
             <div className="conf">
               <label className="checkbox">
-                <input type="checkbox" checked="checked" />I agree with sending
-                an Marketing and newsletter emails. No spam, promissed!
+                <input type="checkbox" />I agree with sending an Marketing and
+                newsletter emails. No spam, promissed!
               </label>
               <label className="checkbox">
-                <input type="checkbox" checked="checked" />I agree with our
-                terms and conditions and privacy policy.
+                <input type="checkbox" />I agree with our terms and conditions
+                and privacy policy.
               </label>
             </div>
           </div>
