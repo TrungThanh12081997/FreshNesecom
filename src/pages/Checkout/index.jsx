@@ -161,7 +161,7 @@ export default function CheckOut() {
                   <div className="methodWrap">
                     <div className="title">
                       <label className="checkRadio">
-                        <input type="radio" checked="checked" />
+                        <input type="radio" />
                         Credit card
                       </label>
                     </div>
@@ -201,7 +201,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       PayPal
                     </label>
                   </div>
@@ -210,7 +210,7 @@ export default function CheckOut() {
                 <div className="methodWrap">
                   <div className="title">
                     <label className="checkRadio">
-                      <input type="radio" checked="checked" />
+                      <input type="radio" />
                       Bitcoin
                     </label>
                   </div>
@@ -243,12 +243,12 @@ export default function CheckOut() {
             />
             <div className="conf">
               <label className="checkbox">
-                <input type="checkbox" checked="checked" />I agree with sending
-                an Marketing and newsletter emails. No spam, promissed!
+                <input type="checkbox" />I agree with sending an Marketing and
+                newsletter emails. No spam, promissed!
               </label>
               <label className="checkbox">
-                <input type="checkbox" checked="checked" />I agree with our
-                terms and conditions and privacy policy.
+                <input type="checkbox" />I agree with our terms and conditions
+                and privacy policy.
               </label>
             </div>
           </div>
@@ -263,7 +263,14 @@ export default function CheckOut() {
             />
           </div>
         </div>
-        <div className="checkoutRight"></div>
+        <div className="checkoutRight">
+          <TitleBilling
+            title="Order Summary"
+            des="Price can change depending on shipping method and taxes of your state."
+            step=""
+          />
+          <div className="itemCheckout"></div>
+        </div>
       </div>
     </div>
   );
