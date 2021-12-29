@@ -32,10 +32,13 @@ export default function BillingMethod() {
                         price={price}
                         text={text}
                         logo={logo}
-                        onChange={() =>
-                            setSelectedOption(name)}
+                        // onChange={() =>
+                        //     setSelectedOption(name)}
+                        // isChecked={name === selectedOption}
+                        onChange={() => {
+                            setSelectedOption(name)
+                        }}
                         isChecked={name === selectedOption}
-
                     />
                 )
             })}

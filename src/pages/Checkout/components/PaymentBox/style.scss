@@ -1,0 +1,14 @@
+@import "../../../../assets/css/style.scss";
+.payment__box {
+    .cardHolder {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+.payment__box.open {
+    display: block;
+}
+.payment__box.hide {
+    display: none;
+}

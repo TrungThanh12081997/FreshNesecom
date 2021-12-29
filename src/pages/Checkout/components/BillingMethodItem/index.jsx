@@ -5,23 +5,24 @@ export default function BillingMethodItem({ price, text, name, logo, onChange, i
         <>
             <div className="field">
                 <form action="" className="">
-                    <div className="title">
-                        <label className="checkRadio">
-                            <input type="checkbox"
-                                onChange={onChange}
-                                checked={isChecked}
+                    <div className="methodWrap">
+                        <div className="title">
+                            <label className="checkRadio">
+                                <input type="checkbox"
+                                    onChange={onChange}
+                                    checked={isChecked}
 
-                            />
-                            {name}
-                        </label>
+                                />
+                                {name}
+                            </label>
+                        </div>
+                        <div className="des">
+                            <span>{price}</span> <span>{text}</span>
+                        </div>
+                        <div className="">
+                            {logo}
+                        </div>
                     </div>
-                    <div className="des">
-                        <span>{price}</span> <span>{text}</span>
-                    </div>
-                    <div className="">
-                        {logo}
-                    </div>
-
                 </form>
 
             </div>
