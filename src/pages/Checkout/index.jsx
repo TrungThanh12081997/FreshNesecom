@@ -1,34 +1,25 @@
 import React, { useState } from "react";
 import { LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
 import Button from "../../components/Button";
+import { useForm } from "../../hooks/useForm";
 import "../Checkout/checkout.scss";
 import BillingMethod from "./components/BillingMethod";
+
+import PaymentWrap from "./components/PaymentWrap";
 import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
 export default function CheckOut() {
-  const [form, setForm] = useState({
+  const { error, form, onChange, check, handelClick, submit, register } = useForm({
     firstName: "",
+    lastName: "",
+    emailAddress: "",
+    address: "",
+    country: "",
+    phone: "",
+    city: "",
+    code: "",
   });
-  const [error, setError] = useState({});
-  const submit = (ev) => {
-    // ev.preventDefault();
-    console.log("abc");
-    let errorObject = {};
-    if (!form.firstName) {
-      errorObject.firstName = "Không được để trống";
-    }
-    setError(errorObject);
-    if (Object.keys(errorObject).length === 0) {
-      alert("Thành công");
-    }
-  };
-  const _onChange = (name) => (ev) => {
-    setForm({
-      ...form,
-      [name]: ev.currentTarget.value,
-    });
-  };
 
   return (
     <div className="container">
@@ -46,29 +37,29 @@ export default function CheckOut() {
                 <div className="formWrap">
                   <TextField
                     label="First name"
-                    value={form.firstName}
-                    onChange={_onChange("firstName")}
+                    firstNameRegister
+                    {...register("firstName")}
                     placeHolder="First name"
                     helperText={error.firstName}
                   />
                   <TextField
                     label="Email address"
-                    value={form.emailAddress}
-                    onChange={_onChange("emailAddress")}
+                    {...register("emailAddress")}
+                    emailRegister
                     placeHolder="Email addess"
                     helperText={error.emailAddress}
                   />
                   <TextField
                     label="Address"
-                    value={form.address}
-                    onChange={_onChange("address")}
+                    {...register("address")}
+                    addressRegister
                     placeHolder="Addess"
                     helperText={error.address}
                   />
                   <TextField
                     label="State / Country"
-                    value={form.country}
-                    onChange={_onChange("country")}
+                    {...register("country")}
+                    countryRegister
                     placeHolder="Choose a state or Country"
                     helperText={error.country}
                   />
@@ -80,29 +71,29 @@ export default function CheckOut() {
                 <div className="formWrap">
                   <TextField
                     label="Last name"
-                    value={form.lastName}
-                    onChange={_onChange("lastName")}
+                    {...register("lastname")}
+                    lastNameRegister
                     placeHolder="Last name"
                     helperText={error.lastName}
                   />
                   <TextField
                     label="Phone number"
-                    value={form.phone}
-                    onChange={_onChange("phone")}
+                    {...register("phone")}
+                    phoneRegister
                     placeHolder="Phone number"
                     helperText={error.phone}
                   />
                   <TextField
                     label="Town / City"
-                    value={form.city}
-                    onChange={_onChange("city")}
-                    placeHolder="Town or city"
+                    // value={form.city}
+                    {...register("city")}
+                    cityRegister
                     helperText={error.city}
                   />
                   <TextField
                     label="ZIP/Postal code"
-                    value={form.code}
-                    onChange={_onChange("code")}
+                    {...register("code")}
+                    codeRegister
                     placeHolder="Postal code or ZIP"
                     helperText={error.code}
                   />
@@ -121,32 +112,7 @@ export default function CheckOut() {
             />
             <div className="field">
               <BillingMethod />
-              {/* <form>
-                <div className="methodWrap">
-                  <div className="title">
-                    <label className="checkRadio">
-                      <input type="radio" />
-                      FedEx
-                    </label>
-                  </div>
-                  <div className="des">
-                    <span>+32 USD</span> <span>Additional price</span>
-                  </div>
-                  <LgFed />
-                </div>
-                <div className="methodWrap">
-                  <div className="title">
-                    <label className="checkRadio">
-                      <input type="radio" />
-                      DHL
-                    </label>
-                  </div>
-                  <div className="des">
-                    <span>+15 USD</span> <span>Additional price</span>
-                  </div>
-                  <LgDhl />
-                </div>
-              </form> */}
+
             </div>
           </div>
           <div className="paymentMethod">
@@ -157,65 +123,58 @@ export default function CheckOut() {
             />
             <div className="field">
               <form>
-                <div className="paymentWrap">
+                <PaymentWrap
+                  onChange={onChange}
+                  form={form}
+                  error={error}
+
+                />
+                {/* <div className="paymentWrap">
                   <div className="methodWrap">
                     <div className="title">
                       <label className="checkRadio">
-                        <input type="radio" />
+                        <input type="checkbox" />
                         Credit card
                       </label>
                     </div>
                     <LgVisa />
                   </div>
-                  <TextField
-                    label="Card number"
-                    value={form.card}
-                    onChange={_onChange("card")}
-                    placeHolder="Card number"
-                    helperText={error.card}
+                  <PaymmentBox form={form}
+                    error={error}
+                    onChange={onChange}
                   />
-                  <div className="cardHolder">
-                    <TextField
-                      label="Card holder"
-                      value={form.cardHolder}
-                      onChange={_onChange("cardHolder")}
-                      placeHolder="Card holder"
-                      helperText={error.cardHolder}
-                    />
-                    <TextField
-                      label="Expiration date"
-                      value={form.expiration}
-                      onChange={_onChange("expiration")}
-                      placeHolder="DD/MM/YY"
-                      helperText={error.expiration}
-                    />
-                    <TextField
-                      label="CVC"
-                      value={form.cvc}
-                      onChange={_onChange("cvc")}
-                      placeHolder="cvc"
-                      helperText={error.cvc}
-                    />
+
+                </div> */}
+                {/* <div className="paymentWrap">
+                  <div className="methodWrap">
+                    <div className="title">
+                      <label className="checkRadio">
+                        <input type="checkbox" />
+                        PayPal
+                      </label>
+                    </div>
+                    <LgPaypal />
                   </div>
-                </div>
-                <div className="methodWrap">
-                  <div className="title">
-                    <label className="checkRadio">
-                      <input type="radio" />
-                      PayPal
-                    </label>
+                  <PaymmentBox form={form}
+                    error={error}
+                    onChange={onChange}
+                  />
+                </div> */}
+                {/* <div className="paymentWrap">
+                  <div className="methodWrap">
+                    <div className="title">
+                      <label className="checkRadio">
+                        <input type="checkbox" />
+                        Bitcoin
+                      </label>
+                    </div>
+                    <LgBitcoin />
                   </div>
-                  <LgPaypal />
-                </div>
-                <div className="methodWrap">
-                  <div className="title">
-                    <label className="checkRadio">
-                      <input type="radio" />
-                      Bitcoin
-                    </label>
-                  </div>
-                  <LgBitcoin />
-                </div>
+                  <PaymmentBox form={form}
+                    error={error}
+                    onChange={onChange}
+                  />
+                </div> */}
               </form>
             </div>
           </div>
@@ -228,8 +187,8 @@ export default function CheckOut() {
             <div className="notes">
               <TextField
                 label="Order notes"
-                value={form.card}
-                onChange={_onChange("notes")}
+                {...register("notes")}
+                notesRegister
                 placeHolder="Need a specific delivery day? Sending a gitf? Let’s say ..."
                 helperText={error.notes}
               />
