@@ -142,6 +142,7 @@ export function Footer() {
   return (
     <footer>
       <div className="container">
+
         <div className="footerTop">
           <ItemFooter titleFooter="Get in touch" nameItem={itemGetInTouch} />
           <ItemFooter titleFooter="Connections" nameItem={itemConnections} />

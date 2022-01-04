@@ -1,9 +1,15 @@
-import React, { useState } from "react";
-import { LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
+import React, { useRef, useState } from "react";
+import { IconCompare, IconRemove, IconStar, IconWish, LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
 import Button from "../../components/Button";
 import { useForm } from "../../hooks/useForm";
 import "../Checkout/checkout.scss";
+import BillingInfoMain from "./components/BillingInfoMain";
 import BillingMethod from "./components/BillingMethod";
+import BillingMethodMain from "./components/BillingMethodMain";
+import ConfirmationMain from "./components/ConfirmationMain";
+import Confirmation from "./components/ConfirmationMain";
+
+import PaymentMethodMain from "./components/PaymentMethodMain";
 
 import PaymentWrap from "./components/PaymentWrap";
 import TextField from "./components/TextField";
@@ -20,164 +26,37 @@ export default function CheckOut() {
     city: "",
     code: "",
   });
+  // const billingInfoRef = useRef()
+  // const billingMethodRef = useRef()
+  // const PaymentMethodRef = useRef()
+  // const AddInfoRef = useRef()
+  // // const useRef = use
+  // const handleSubmit = () => {
+  //   const errorObject = {
+  //     ...billingInfoRef.current?.submit(),
+  //     ...billingMethodRef.current?.submit(),
+  //     ...PaymentMethodRef.current?.submit(),
+  //     ...AddInfoRef.current?.submit(),
+
+  //   }
+  //   if (Object.keys(errorObject).length === 0) {
+  //     alert("api");/// submit api
+  //   }
+  // }
 
   return (
     <div className="container">
       <h4>Homepage/Checkout page</h4>
       <div className="checkoutWrap">
         <div className="checkoutLeft">
-          <div className="billingInfo">
-            <TitleBilling
-              title="Billing Info"
-              des="Please enter your billing info"
-              step="Step 1 of 5"
-            />
-            <div className="field">
-              <form>
-                <div className="formWrap">
-                  <TextField
-                    label="First name"
-                    firstNameRegister
-                    {...register("firstName")}
-                    placeHolder="First name"
-                    helperText={error.firstName}
-                  />
-                  <TextField
-                    label="Email address"
-                    {...register("emailAddress")}
-                    emailRegister
-                    placeHolder="Email addess"
-                    helperText={error.emailAddress}
-                  />
-                  <TextField
-                    label="Address"
-                    {...register("address")}
-                    addressRegister
-                    placeHolder="Addess"
-                    helperText={error.address}
-                  />
-                  <TextField
-                    label="State / Country"
-                    {...register("country")}
-                    countryRegister
-                    placeHolder="Choose a state or Country"
-                    helperText={error.country}
-                  />
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    Ship to a different address?
-                  </label>
-                </div>
-                <div className="formWrap">
-                  <TextField
-                    label="Last name"
-                    {...register("lastname")}
-                    lastNameRegister
-                    placeHolder="Last name"
-                    helperText={error.lastName}
-                  />
-                  <TextField
-                    label="Phone number"
-                    {...register("phone")}
-                    phoneRegister
-                    placeHolder="Phone number"
-                    helperText={error.phone}
-                  />
-                  <TextField
-                    label="Town / City"
-                    // value={form.city}
-                    {...register("city")}
-                    cityRegister
-                    helperText={error.city}
-                  />
-                  <TextField
-                    label="ZIP/Postal code"
-                    {...register("code")}
-                    codeRegister
-                    placeHolder="Postal code or ZIP"
-                    helperText={error.code}
-                  />
-                </div>
-              </form>
-              <div style={{ display: "none" }} onClick={submit}>
-                <button>Submit</button>
-              </div>
-            </div>
-          </div>
-          <div className="billingMethod">
-            <TitleBilling
-              title="Billing method"
-              des="Please enter your payment method"
-              step="Step 2 of 5"
-            />
-            <div className="field">
-              <BillingMethod />
 
-            </div>
-          </div>
-          <div className="paymentMethod">
-            <TitleBilling
-              title="Payment method"
-              des="Please enter your payment method"
-              step="Step 3 of 5"
-            />
-            <div className="field">
-              <form>
-                <PaymentWrap
-                  onChange={onChange}
-                  form={form}
-                  error={error}
+          <BillingInfoMain
+          // ref={billingInfoRef} 
+          />
 
-                />
-                {/* <div className="paymentWrap">
-                  <div className="methodWrap">
-                    <div className="title">
-                      <label className="checkRadio">
-                        <input type="checkbox" />
-                        Credit card
-                      </label>
-                    </div>
-                    <LgVisa />
-                  </div>
-                  <PaymmentBox form={form}
-                    error={error}
-                    onChange={onChange}
-                  />
+          <BillingMethodMain />
 
-                </div> */}
-                {/* <div className="paymentWrap">
-                  <div className="methodWrap">
-                    <div className="title">
-                      <label className="checkRadio">
-                        <input type="checkbox" />
-                        PayPal
-                      </label>
-                    </div>
-                    <LgPaypal />
-                  </div>
-                  <PaymmentBox form={form}
-                    error={error}
-                    onChange={onChange}
-                  />
-                </div> */}
-                {/* <div className="paymentWrap">
-                  <div className="methodWrap">
-                    <div className="title">
-                      <label className="checkRadio">
-                        <input type="checkbox" />
-                        Bitcoin
-                      </label>
-                    </div>
-                    <LgBitcoin />
-                  </div>
-                  <PaymmentBox form={form}
-                    error={error}
-                    onChange={onChange}
-                  />
-                </div> */}
-              </form>
-            </div>
-          </div>
+          <PaymentMethodMain />
           <div className="additional">
             <TitleBilling
               title="Additional informations"
@@ -194,7 +73,9 @@ export default function CheckOut() {
               />
             </div>
           </div>
-          <div className="confirmation">
+          {/* <div className="confirmation"
+         
+          >
             <TitleBilling
               title="Confirmation"
               des="We are getting to the end. Just few clicks and your order si ready!"
@@ -210,7 +91,8 @@ export default function CheckOut() {
                 and privacy policy.
               </label>
             </div>
-          </div>
+          </div> */}
+          <ConfirmationMain />
           <div className="btnCheckout">
             <Button
               children="Complete order"
@@ -219,6 +101,9 @@ export default function CheckOut() {
               border="bold"
               color="white"
               size="large"
+            // onClick={
+            //   handleSubmit
+            // }
             />
           </div>
         </div>
@@ -228,7 +113,50 @@ export default function CheckOut() {
             des="Price can change depending on shipping method and taxes of your state."
             step=""
           />
-          <div className="itemCheckout"></div>
+          <div className="itemCart">
+            <div className="cartImage">
+              <div className="image"></div>
+              <div className="choose">
+                <div className="wishlist">
+                  <IconWish />
+                  <p className="titleSmall">Wishlist</p>
+                </div>
+                <div className="compare">
+                  <IconCompare />
+                  <p className="titleSmall">Compare</p>
+                </div>
+                <div className="remove">
+                  <IconRemove />
+                  <p className="titleSmall">Remove</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="cartInfItem">
+              <p className="title">Product title</p>
+              <div className="info">
+                <div className="infoLeft">
+                  <p className="titleSmall">Farm:</p>
+                  <p className="titleSmall">Fressheness:</p>
+                </div>
+                <div className="infoRight">
+                  <p>Tharam farm</p>
+                  <p>1 years ago</p>
+                </div>
+              </div>
+              <div className="wrapStar">
+                <IconStar />
+                <IconStar />
+                <IconStar />
+                <IconStar />
+                <IconStar />
+              </div>
+              <h3>349USD</h3>
+              <p className="discount">23.44USD</p>
+            </div>
+          </div>
+          <div className="itemCheckout">
+          </div>
         </div>
       </div>
     </div>

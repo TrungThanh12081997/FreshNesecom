@@ -1,29 +1,33 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../Header/header.scss";
 export default function HeaderContact() {
   return (
     <div className="header__contact">
       <div className="header__contact-list">
-        <a href="#" className="header__contact-item active">
+        <Link to="#" className="header__contact-item active">
           Chat with us
-        </a>
-        <a href="tel:+420336775664" className="header__contact-item">
+        </Link>
+        <Link to="tel:+420336775664" className="header__contact-item">
           +420 336 775 664
-        </a>
-        <a href="mailto:info@freshnesecom.com" className="header__contact-item">
+        </Link>
+        <Link to="mailto:info@freshnesecom.com" className="header__contact-item">
           info@freshnesecom.com
-        </a>
+        </Link>
       </div>
       <div className="header__contact-list">
-        <a href="#" className="header__contact-item active m-right">
+        <Link to="#" className="header__contact-item active m-right">
           Blog
-        </a>
-        <a href="#" className="header__contact-item active  m-right">
+        </Link>
+        <Link to="#" className="header__contact-item active  m-right">
           About Us
-        </a>
-        <a href="#" className="header__contact-item active  m-right">
+        </Link>
+        <Link to="#" className="header__contact-item active  m-right">
           Careers
-        </a>
+        </Link>
+        <Link to="/Checkout" className="header__contact-item active  m-right">
+          checkout
+        </Link>
       </div>
     </div>
   );
