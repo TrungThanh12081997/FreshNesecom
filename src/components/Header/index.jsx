@@ -2,6 +2,7 @@ import React from "react";
 import HeaderContact from "./components/HeaderContact";
 import HeaderBottom from "./components/HeaderBottom";
 import "../Header/header.scss";
+import { Link } from "react-router-dom";
 // import Button from ".././Button";
 // import { GreenLeft, WhiteLeft } from "../ArrowIcon/index";
 
@@ -12,6 +13,7 @@ export function Header() {
     <div className="header">
       <div className="container">
         <img src="./img/demo.jpg" alt="" />
+
         <HeaderContact />
         <HeaderBottom />
         {/* <Button children="Button" icon={<WhiteLeft />} type="icon-left" background="green" border="bold"

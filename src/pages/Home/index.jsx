@@ -8,8 +8,24 @@ import "../Home/home.scss";
 import Banner from "./components/Banner";
 import Itemproduct from "./components/ItemProduct";
 import BlogPost from "../../components/BlogPost";
-
+import { Link } from "react-router-dom";
+import AuthReducer from "../../store/authenReducer";
+import { useDispatch, useSelector } from "react-redux"
+import store from "../../store";
 export default function HomePage() {
+  // const callApi = async function (data) {
+  //   const res = await AuthReducer.login();
+  //   console.log(res);
+  // }
+  // callApi();
+  const dispatch = useDispatch()
+  const { user } = useSelector(store => store.auth)
+  const login = () => {
+    dispatch({
+      type: "LOGIN"
+    })
+  }
+  console.log(user);
   var itemCategory = [
     {
       id: 1,
@@ -80,7 +96,10 @@ export default function HomePage() {
   return (
     <div className="homePage">
       <div className="container">
+
         <section className="cateMenu">
+          {/* <button onClick={login}
+          >click </button> */}
           <div className="categoryWrap">
             <ItemFooter
               titleFooter="Category menu"
@@ -90,6 +109,7 @@ export default function HomePage() {
             <div className="btn">
               <a href="#" className="btnCategory">
                 More categories
+
               </a>
               <IconCategory />
             </div>
@@ -159,7 +179,8 @@ export default function HomePage() {
           </div>
         </section>
         <section className="Blog">
-        <BlogPost/>
+          <BlogPost />
+
         </section>
       </div>
     </div>

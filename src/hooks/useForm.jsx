@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import { useDispatch } from "react-redux"
 export const useForm = (initialForm) => {
     const [form, setForm] = useState({ initialForm });
-
+    const dispatch = useDispatch()
     const [error, setError] = useState({});
     const [check, setCheck] = useState(false);
 
@@ -68,9 +68,13 @@ export const useForm = (initialForm) => {
     };
     const submit = async (ev) => {
         ev.preventDefault();
-        const vaidateResule = validate();
-        if (Object.keys(vaidateResule).length === 0) {
+        const validateResule = validate();
+        if (Object.keys(validateResule).length === 0) {
             alert("Thành công");
+            dispatch({
+                type: "LOGIN",
+                payload: form
+            })
             console.log(form);
         }
     };
