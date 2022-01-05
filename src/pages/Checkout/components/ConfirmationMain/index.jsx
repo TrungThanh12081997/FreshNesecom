@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { UseAuth } from '../../../../context/AuthContext';
 import TitleBilling from '../TitleBilling'
 
-export default function ConfirmationMain() {
+const ConfirmationMain = React.forwardRef((ref) => {
+    const { isConfirm, setIsconfirmisOk, setIsOk, setConfirm,
+        setOk, isOk,
+        contractSubmit } = UseAuth();
+
+
     return (<>
         <div className="confirmation"
         //  ref={AddInfoRef}
@@ -13,15 +19,26 @@ export default function ConfirmationMain() {
             />
             <div className="conf">
                 <label className="checkbox">
-                    <input type="checkbox" />I agree with sending an Marketing and
+                    <input type="checkbox"
+                        onChange={setIsOk}
+                        checked={
+                            isOk
+                        }
+                    />I agree with sending an Marketing and
                     newsletter emails. No spam, promissed!
                 </label>
                 <label className="checkbox">
-                    <input type="checkbox" />I agree with our terms and conditions
+                    <input type="checkbox"
+                        onChange={setConfirm}
+                        checked={isConfirm ? "Checked" : ""
+
+                        } />I agree with our terms and conditions
                     and privacy policy.
                 </label>
+                {/* <button onClick={contractSubmit}>submit</button> */}
             </div>
         </div>
     </>)
 
-}
+})
+export default ConfirmationMain

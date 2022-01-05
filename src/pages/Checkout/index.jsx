@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { IconCompare, IconRemove, IconStar, IconWish, LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
 import Button from "../../components/Button";
+import { UseAuth } from "../../context/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import "../Checkout/checkout.scss";
 import BillingInfoMain from "./components/BillingInfoMain";
@@ -16,7 +17,7 @@ import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
 export default function CheckOut() {
-  const { error, form, onChange, check, handelClick, submit, register } = useForm({
+  const { form, onChange, check, handelClick, submit, register } = useForm({
     firstName: "",
     lastName: "",
     emailAddress: "",
@@ -26,10 +27,11 @@ export default function CheckOut() {
     city: "",
     code: "",
   });
-  // const billingInfoRef = useRef()
-  // const billingMethodRef = useRef()
-  // const PaymentMethodRef = useRef()
-  // const AddInfoRef = useRef()
+
+  const billingInfoRef = useRef()
+  const billingMethodRef = useRef()
+  const PaymentMethodRef = useRef()
+  const AddInfoRef = useRef()
   // // const useRef = use
   // const handleSubmit = () => {
   //   const errorObject = {
@@ -43,20 +45,53 @@ export default function CheckOut() {
   //     alert("api");/// submit api
   //   }
   // }
+  const {
+    selectedOption, setSelectedOption, DHL,
+    setDHL, setConfirm,
+    setOk,
+    contractSubmit,
+    FEX,
+    setFEX, payment, setPayment,
+    isConfirm,
+    setIsconfirm,
+    isOk,
+    setIsOk, clear, setClear, error, setError
+  } = UseAuth()
 
+
+  function handleSubmitCheckout(e) {
+    e.preventDefault()
+    console.log(error);
+    console.log(payment);
+    console.log(isOk);
+    console.log(isConfirm);
+    console.log(selectedOption);
+
+    if (
+      // !error &&
+      selectedOption && payment && isOk && isConfirm) {
+      alert("thành cong")
+    } else {
+      alert("bạn đã miss gì đó")
+    }
+  }
   return (
     <div className="container">
       <h4>Homepage/Checkout page</h4>
-      <div className="checkoutWrap">
+      <form className="checkoutWrap" onSubmit={handleSubmitCheckout}>
         <div className="checkoutLeft">
 
           <BillingInfoMain
-          // ref={billingInfoRef} 
+            ref={billingInfoRef}
           />
 
-          <BillingMethodMain />
+          <BillingMethodMain
+            ref={billingMethodRef}
+          />
 
-          <PaymentMethodMain />
+          <PaymentMethodMain
+            ref={PaymentMethodRef}
+          />
           <div className="additional">
             <TitleBilling
               title="Additional informations"
@@ -73,26 +108,10 @@ export default function CheckOut() {
               />
             </div>
           </div>
-          {/* <div className="confirmation"
-         
-          >
-            <TitleBilling
-              title="Confirmation"
-              des="We are getting to the end. Just few clicks and your order si ready!"
-              step="Step 5 of 5"
-            />
-            <div className="conf">
-              <label className="checkbox">
-                <input type="checkbox" />I agree with sending an Marketing and
-                newsletter emails. No spam, promissed!
-              </label>
-              <label className="checkbox">
-                <input type="checkbox" />I agree with our terms and conditions
-                and privacy policy.
-              </label>
-            </div>
-          </div> */}
-          <ConfirmationMain />
+
+          <ConfirmationMain
+            ref={AddInfoRef}
+          />
           <div className="btnCheckout">
             <Button
               children="Complete order"
@@ -158,7 +177,7 @@ export default function CheckOut() {
           <div className="itemCheckout">
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }

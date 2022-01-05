@@ -4,17 +4,11 @@ import PaymentBox from '../PaymentBox'
 import TextField from '../TextField'
 import classnames from 'classnames'
 import { useForm } from '../../../../hooks/useForm'
+import { UseAuth } from '../../../../context/AuthContext'
 export default function PaymentWrap({ }) {
-    const [selector, setSelector] = useState("");
+    const { payment, setPayment } = UseAuth();
     const { error, form, onChange, check, handelClick, submit, register } = useForm({
-        firstName: "",
-        lastName: "",
-        emailAddress: "",
-        address: "",
-        country: "",
-        phone: "",
-        city: "",
-        code: "",
+
     });
     const PaymentWraps = [
         {
@@ -49,14 +43,14 @@ export default function PaymentWrap({ }) {
                                 <div className="title">
                                     <label className="checkRadio">
                                         <input type="checkbox"
-                                            onChange={(e) => {
-                                                setSelector(name);
+                                            onChange={
+                                                () => { setPayment(name) }
 
 
 
-                                            }}
+                                            }
 
-                                            checked={name === selector}
+                                            checked={name === payment}
                                         />
                                         {name}
                                     </label>
@@ -66,7 +60,7 @@ export default function PaymentWrap({ }) {
                             </div>
                             <div
                                 // className='payment__box'
-                                className={classnames("payment__box", `${name === selector ? "open" : "hide"}`)}
+                                className={classnames("payment__box", `${name === payment ? "open" : "hide"}`)}
                             >
                                 <form className="">
 

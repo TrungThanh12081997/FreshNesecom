@@ -26,6 +26,7 @@ export default function BillingInfoMain(ref) {
                 />
                 <div className="field" >
                     <form onSubmit={submit}>
+
                         <div className="formWrap">
                             <TextField
                                 label="First name"
@@ -63,7 +64,7 @@ export default function BillingInfoMain(ref) {
                         <div className="formWrap">
                             <TextField
                                 label="Last name"
-                                {...register("lastname")}
+                                {...register("lastName")}
                                 lastNameRegister
                                 placeHolder="Last name"
                                 helperText={error.lastName}
@@ -91,10 +92,10 @@ export default function BillingInfoMain(ref) {
                             />
                         </div>
 
+                        {/* <button>Submit</button> */}
+
+
                     </form>
-                    <div style={{ display: "none" }} onClick={submit}>
-                        <button>Submit</button>
-                    </div>
                 </div>
             </div>
         </>

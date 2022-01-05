@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux"
+import { UseAuth } from "../context/AuthContext";
 export const useForm = (initialForm) => {
     const [form, setForm] = useState({ initialForm });
     const dispatch = useDispatch()
     const [error, setError] = useState({});
     const [check, setCheck] = useState(false);
-
+    const { clear, setClear } = UseAuth()
     const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     const addressRegex = /^\d+\s[A-z]+\s[A-z]+/g;
     const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
@@ -27,7 +28,7 @@ export const useForm = (initialForm) => {
             value: form[name],
         };
     };
-    const validate = (params) => {
+    const validate = () => {
         let errorObject = {};
 
         if (!form.firstName) {
@@ -43,9 +44,10 @@ export const useForm = (initialForm) => {
         }
         if (!form.address) {
             errorObject.address = "Không được để trống";
-        } else if (!addressRegex.test(form.address)) {
-            errorObject.address = "Vui lòng điền đúng định dạng";
         }
+        // else if (!addressRegex.test(form.address)) {
+        //     errorObject.address = "Vui lòng điền đúng định dạng";
+        // }
         if (!form.country) {
             errorObject.country = "Không được để trống";
         }
@@ -60,23 +62,30 @@ export const useForm = (initialForm) => {
         if (!form.code) {
             errorObject.code = "Không được để trống";
         }
-        if (!check) {
-            errorObject.check = " Vui lòng check";
-        }
+        // if (!check) {
+        //     errorObject.check = " Vui lòng check";
+        // }
         setError(errorObject);
         return errorObject;
     };
     const submit = async (ev) => {
         ev.preventDefault();
+
+
+        ev.stopPropagation();
         const validateResule = validate();
+        console.log(Object.keys(validateResule).length);
+        console.log(validateResule)
         if (Object.keys(validateResule).length === 0) {
             alert("Thành công");
             dispatch({
                 type: "LOGIN",
                 payload: form
             })
-            console.log(form);
+            setClear(true);
+            console.log(clear)
         }
+
     };
     return {
         error,

@@ -4,7 +4,8 @@ const user = JSON.parse(localStorage.getItem('login'))
 
 const initialState = {
     login: !!user,
-    user
+    user,
+    //update Info
 }
 const AuthReducer = (state = initialState, action) => {
 
