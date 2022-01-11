@@ -5,39 +5,42 @@ import TextField from '../TextField'
 import classnames from 'classnames'
 import { useForm } from '../../../../hooks/useForm'
 import { UseAuth } from '../../../../context/AuthContext'
+import Content from './components/content'
 export default function PaymentWrap({ }) {
     const { payment, setPayment } = UseAuth();
-    const { error, form, onChange, check, handelClick, register } = useForm();
+    const { error, form, onChange, check, handelClick, register } = useForm({
+
+    });
     const PaymentWraps = [
         {
             name: "Credit card",
-            //content:<CreditCardForm/>,
+            content: <Content />,
             logo: <LgVisa />
         },
         {
             name: "Paypal",
-            // paypalform
+            content: <Content />,
             logo: <LgPaypal />
 
         },
         {
             name: "Bitcoin",
-            //bitcoinform 
+            content: <Content />,
             logo: <LgBitcoin />
         },
     ];
-    // const { validata } = useForm({
 
-
-    // })
     return (
         <>
             {
                 PaymentWraps.map(PaymentWrap => {
-                    const { name, logo } = PaymentWrap
+                    const { name, logo, content } = PaymentWrap
                     return (
                         <div
-                            className="paymentWrap"
+                            className=
+                            {classnames("paymentWrap", `${name === payment ? "open" : "hide"}`
+                            )}
+                        // "paymentWrap"
 
                         >
                             <div className="methodWrap">
@@ -46,11 +49,7 @@ export default function PaymentWrap({ }) {
                                         <input type="checkbox"
                                             onChange={
                                                 () => { setPayment(name) }
-
-
-
                                             }
-
                                             checked={name === payment}
                                         />
                                         {name}
@@ -59,7 +58,8 @@ export default function PaymentWrap({ }) {
 
                                 {logo}
                             </div>
-                            <div
+                            {content}
+                            {/* <div
                                 // className='payment__box'
                                 className={classnames("payment__box", `${name === payment ? "open" : "hide"}`)}
                             >
@@ -96,9 +96,8 @@ export default function PaymentWrap({ }) {
                                         />
 
                                     </div>
-                                    <button>test</button>
                                 </form>
-                            </div>
+                            </div> */}
 
                         </div>)
                 })

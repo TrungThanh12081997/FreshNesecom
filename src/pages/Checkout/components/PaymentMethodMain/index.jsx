@@ -44,7 +44,7 @@ export default function PaymentMethodMain() {
                             error={error}
 
                         />
-                        <button>submit</button>
+
                     </form>
                 </div>
             </div>
