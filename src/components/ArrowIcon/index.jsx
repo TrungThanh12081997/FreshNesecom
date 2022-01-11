@@ -25,7 +25,7 @@ export function WhiteRight() {
           stroke="white"
           strokeWidth="2.5"
           strokeLinecap="round"
-          strokeLineJoin="bevel"
+          strokeLinejoin="bevel"
         />
       </svg>
     </div>
@@ -45,8 +45,8 @@ export function WhiteLeft() {
         d="M4.46658 1.81339L1.72658 4.55339C1.60241 4.6783 1.53271 4.84727 1.53271 5.02339C1.53271 5.19952 1.60241 5.36848 1.72658 5.49339L4.39324 8.16006"
         stroke="white"
         strokewidth="2.5"
-        strokelinecap="round"
-        strokelinejoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
     </svg>
   );
@@ -65,7 +65,7 @@ export function GreenRight() {
         d="M1.5332 8.1866L4.2732 5.4466C4.39737 5.32169 4.46706 5.15273 4.46706 4.9766C4.46706 4.80048 4.39737 4.63151 4.2732 4.5066L1.60654 1.83994"
         stroke="#6A983C"
         strokewidth="2.5"
-        strokeLineCap="round"
+        strokeLinecap="round"
         strokeLineJoin="bevel"
       />
     </svg>
@@ -85,8 +85,8 @@ export function GreenLeft() {
         d="M9.46658 4.81332L6.72658 7.55332C6.60241 7.67823 6.53271 7.8472 6.53271 8.02332C6.53271 8.19945 6.60241 8.36842 6.72658 8.49332L9.39324 11.16"
         stroke="#6A983C"
         strokeWidth="2.5"
-        strokeLineCap="round"
-        strokeLineJoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
     </svg>
   );
@@ -104,9 +104,9 @@ export function BlackLeft() {
       <path
         d="M4.46658 1.81339L1.72658 4.55338C1.60241 4.67829 1.53271 4.84726 1.53271 5.02338C1.53271 5.19951 1.60241 5.36848 1.72658 5.49338L4.39324 8.16005"
         stroke="#151515"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="bevel"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
     </svg>
   );
@@ -125,8 +125,8 @@ export function BlackRight() {
         d="M1.5332 8.1866L4.2732 5.4466C4.39737 5.32169 4.46706 5.15273 4.46706 4.9766C4.46706 4.80048 4.39737 4.63151 4.2732 4.5066L1.60654 1.83994"
         stroke="#151515"
         strokeWidth="2.5"
-        strokeLineCap="round"
-        strokeLineJoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
     </svg>
   );
@@ -167,10 +167,10 @@ export function IconCompare() {
   return <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4.75 0.999969H2.75C2.19772 0.999969 1.75 1.44768 1.75 1.99997V3.99997C1.75 4.55225 2.19772 4.99997 2.75 4.99997H4.75C5.30228 4.99997 5.75 4.55225 5.75 3.99997V1.99997C5.75 1.44768 5.30228 0.999969 4.75 0.999969Z" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" />
     <path d="M4.75 6.99997H2.75C2.19772 6.99997 1.75 7.44768 1.75 7.99997V9.99997C1.75 10.5523 2.19772 11 2.75 11H4.75C5.30228 11 5.75 10.5523 5.75 9.99997V7.99997C5.75 7.44768 5.30228 6.99997 4.75 6.99997Z" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" />
-    <path d="M10.25 7.99994H7.25" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" />
-    <path d="M9.25 9.99997H7.25" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" />
-    <path d="M9.25 3.99997H7.25" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" />
-    <path d="M10.25 1.99994H7.25" stroke="#E6704B" stroke-linecap="round" stroke-linejoin="bevel" />
+    <path d="M10.25 7.99994H7.25" stroke="#E6704B" strokeLinecap="round" strokelinejoin="bevel" />
+    <path d="M9.25 9.99997H7.25" stroke="#E6704B" strokelinecap="round" strokelinejoin="bevel" />
+    <path d="M9.25 3.99997H7.25" stroke="#E6704B" strokelinecap="round" strokelinejoin="bevel" />
+    <path d="M10.25 1.99994H7.25" stroke="#E6704B" strokelinecap="round" strokelinejoin="bevel" />
   </svg>;
 }
 export function IconRemove() {

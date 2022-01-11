@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useForm } from '../../../../hooks/useForm';
 import TextField from '../TextField'
 import TitleBilling from '../TitleBilling'
 
-export default function BillingInfoMain(ref) {
-    const { error, form, onChange, check, handelClick, submit, register } = useForm({
+export default function BillingInfoMain() {
+    const { error, validate, submit, register } = useForm({
         firstName: "",
         lastName: "",
         emailAddress: "",
@@ -14,6 +14,14 @@ export default function BillingInfoMain(ref) {
         city: "",
         code: "",
     });
+    const handle = (e) => {
+        e.preventDefault();
+        const vali = validate();
+        console.log(vali)
+        if (Object.keys(vali).length === 0) {
+            alert("thanh cong")
+        }
+    }
     return (
         <>
             <div className="billingInfo"
@@ -25,7 +33,10 @@ export default function BillingInfoMain(ref) {
                     step="Step 1 of 5"
                 />
                 <div className="field" >
-                    <form onSubmit={submit}>
+                    <form
+                    // onSubmit={submit}
+                    >
+
                         <div className="formWrap">
                             <TextField
                                 label="First name"
@@ -63,7 +74,7 @@ export default function BillingInfoMain(ref) {
                         <div className="formWrap">
                             <TextField
                                 label="Last name"
-                                {...register("lastname")}
+                                {...register("lastName")}
                                 lastNameRegister
                                 placeHolder="Last name"
                                 helperText={error.lastName}
@@ -91,10 +102,12 @@ export default function BillingInfoMain(ref) {
                             />
                         </div>
 
+                        <button
+                            onClick={submit}
+                        >Submit</button>
+
+
                     </form>
-                    <div style={{ display: "none" }} onClick={submit}>
-                        <button>Submit</button>
-                    </div>
                 </div>
             </div>
         </>

@@ -1,14 +1,19 @@
 
 import React, { useState } from 'react'
 import { LgDhl, LgFed } from "../../../../components"
+import { UseAuth } from '../../../../context/AuthContext';
 import BillingMethodItem from "../BillingMethodItem";
 
 export default function BillingMethod() {
-    const [selectedOption, setSelectedOption] = useState("");
-
+    // const [selectedOption, setSelectedOption] = useState("");
+    const { selectedOption, setSelectedOption } = UseAuth()
+    const { DHL,
+        setDHL,
+        FEX,
+        setFEX, } = UseAuth()
     const methods = [
         {
-            name: " Fex",
+            name: "Fex",
             price: "+15 USD",
             text: "Additional price",
             logo: <LgDhl />
@@ -38,7 +43,9 @@ export default function BillingMethod() {
                         onChange={() => {
                             setSelectedOption(name)
                         }}
-                        isChecked={name === selectedOption}
+                        isChecked={
+                            name === selectedOption
+                        }
                     />
                 )
             })}

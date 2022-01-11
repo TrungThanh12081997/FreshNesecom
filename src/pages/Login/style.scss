@@ -1,0 +1,117 @@
+@import "../../assets/css/style.scss";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    overflow: hidden;
+    height: 100vh;
+    .h1 {
+        color: $green-cl;
+        text-transform: uppercase;
+        padding: 20px 60px;
+
+        font-size: 50px;
+        letter-spacing: 4px;
+        width: 100%;
+    }
+    .register__form {
+        align-items: center;
+        border-radius: 30px;
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        border-style: solid;
+        border-width: 2px;
+        border-color: $green-cl;
+        padding: 40px 10px;
+        .fieldDetail {
+            width: 60%;
+
+            .label {
+                color: $green-cl;
+                font-family: $o;
+                font-size: 25px;
+                width: 100%;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+            input {
+                padding: 20px 20px;
+                outline: none;
+                width: 100%;
+                border-radius: 30px;
+                border: 0.5px solid $green-cl;
+            }
+            .error-text {
+                color: red;
+                padding: 20px 0;
+                font-size: 20px;
+            }
+        }
+        .form {
+            display: flex;
+            justify-content: center;
+            margin: 15px auto;
+            align-items: center;
+            flex-wrap: wrap;
+
+            h1 {
+                color: $green-cl;
+                font-weight: 1200;
+                width: 200px;
+                font-size: 30px;
+                display: flex;
+                text-transform: none;
+            }
+            input {
+                padding: 40px;
+                outline: none;
+                width: 50%;
+                border-radius: 30px;
+                border: 5px solid $green-cl;
+            }
+            p {
+                color: red;
+                font-size: 15px;
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+                font-family: $o;
+            }
+        }
+        .button {
+            // left: 50%;
+            margin: 30px;
+            // transform: translateX(-50%);
+            padding: 20px 30px;
+            border-radius: 40px;
+            margin: 0 auto;
+            background-color: rgb(34, 230, 34);
+            cursor: pointer;
+            outline: none;
+            border: none;
+            width: fit-content;
+            color: white;
+            border: 10px solid rgb(6, 94, 6);
+            margin: 10px 0;
+            letter-spacing: 1px;
+            font-size: 21px;
+            text-transform: uppercase;
+        }
+        .error-text {
+            color: red;
+            font-family: $o;
+            font-size: 20px;
+        }
+    }
+}

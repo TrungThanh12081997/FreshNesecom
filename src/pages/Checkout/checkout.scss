@@ -149,90 +149,21 @@ h4 {
     width: 40%;
   }
 }
-
-.itemCart {
-  display: flex;
-  .cartImage {
-    .image {
-      background: gray;
-      width: 100px;
-      height: 66px;
-      border-radius: 12px;
-    }
-    .choose {
-      .wishlist,
-      .compare,
-      .remove {
-        display: flex;
-        display: flex;
-        align-items: baseline;
-      }
-    }
+.fieldDetail {
+  margin-top: 32px;
+  .label {
+    font-family: "PoppinsSemiBold";
+    font-size: 12px;
+    line-height: 1.5;
   }
-  .cartInfItem {
-    .title {
-      margin-top: 0px;
-    }
-    .info {
-      display: flex;
-      align-items: center;
-      .infoRight {
-        p {
-          font-family: $o;
-          font-size: 12px;
-          line-height: 16px;
-        }
-      }
-    }
-    .wrapStar {
-      display: flex;
-      margin-top: 10px;
-    }
-    h3 {
-      color: $green-cl;
-    }
-  }
-}
-.itemCart {
-  display: flex;
-  .cartImage {
-    .image {
-      background: gray;
-      width: 100px;
-      height: 66px;
-      border-radius: 12px;
-    }
-    .choose {
-      .wishlist,
-      .compare,
-      .remove {
-        display: flex;
-        display: flex;
-        align-items: baseline;
-      }
-    }
-  }
-  .cartInfItem {
-    .title {
-      margin-top: 0px;
-    }
-    .info {
-      display: flex;
-      align-items: center;
-      .infoRight {
-        p {
-          font-family: Open Sans Regular;
-          font-size: 12px;
-          line-height: 16px;
-        }
-      }
-    }
-    .wrapStar {
-      display: flex;
-      margin-top: 10px;
-    }
-    h3 {
-      color: $green-cl;
-    }
+  input {
+    width: 100%;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: "OpenSansRegular";
+    border: 1px solid #d1d1d1;
+    background-color: #f9f9f9;
+    outline: none;
   }
 }

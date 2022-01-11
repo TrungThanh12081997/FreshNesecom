@@ -1,20 +1,27 @@
 import { API } from "../constant/API"
 const authService = {
+
+
     login(data) {
         return fetch(`${API}/login`, {
-            method: "POST",/// thêm data
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            },// thể loại ra json
+            },
             body: JSON.stringify(data)
-            /// chuyển json để push lên
-
-        })
-            /// dừng promise 
-            .then(res => res.json())
-        // .then(res=>console.log(res))
+        }).then(res => res.json())
     },
-    register() { },
+
+
+    register(data) {
+        return fetch(`${API}//register`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+    },
     refreshToken() {
         const token = JSON.parse(localStorage.getItem("token"))
         return fetch(`${API}/refesh-token`, {
@@ -25,7 +32,7 @@ const authService = {
             body: JSON.stringify({
                 refreshToken: token.refreshToken
             }).then(res => res.json())
-            /// chuyển json để push lên
+
         })
     }
 }

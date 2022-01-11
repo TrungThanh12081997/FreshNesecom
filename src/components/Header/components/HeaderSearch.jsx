@@ -68,7 +68,7 @@ export default function HeaderSearch() {
             stroke="#151515"
             stroke-width="1.5"
             stroke-linecap="round"
-            stroke-linejoin="bevel"
+            strokeLinejoin="bevel"
           />
           <path
             d="M4.81319 9.24002L1.68652 12.3667"

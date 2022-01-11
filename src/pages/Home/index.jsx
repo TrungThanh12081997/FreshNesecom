@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState, useEffect } from 'react';
 import { IconCategory, IcRightGreen } from "../../components";
 import Button from "../../components/Button";
 import ItemFooter from "../../components/Footer/components/ItemFooter";
@@ -12,6 +13,8 @@ import { Link } from "react-router-dom";
 import AuthReducer from "../../store/authenReducer";
 import { useDispatch, useSelector } from "react-redux"
 import store from "../../store";
+import userService from "../../services/userService"
+
 export default function HomePage() {
   // const callApi = async function (data) {
   //   const res = await AuthReducer.login();
@@ -19,13 +22,9 @@ export default function HomePage() {
   // }
   // callApi();
   const dispatch = useDispatch()
-  const { user } = useSelector(store => store.auth)
-  const login = () => {
-    dispatch({
-      type: "LOGIN"
-    })
-  }
-  console.log(user);
+  const { login, stateLogin } = useSelector(store => store.auth)
+
+
   var itemCategory = [
     {
       id: 1,
@@ -92,6 +91,29 @@ export default function HomePage() {
       item: "Baby",
     },
   ];
+  useEffect(() => {
+    if (stateLogin) {
+      getUser()
+    }
+
+
+  }, [stateLogin])
+
+
+
+  const getUser = async () => {
+
+    const res = await userService.getInfo();
+    if (res) {
+      dispatch({
+        type: "GET_INFO",
+        payload: res.data
+
+      })
+    }
+
+  }
+
 
   return (
     <div className="homePage">
@@ -100,6 +122,7 @@ export default function HomePage() {
         <section className="cateMenu">
           {/* <button onClick={login}
           >click </button> */}
+
           <div className="categoryWrap">
             <ItemFooter
               titleFooter="Category menu"
@@ -131,9 +154,8 @@ export default function HomePage() {
               <IconCategory />
             </div>
           </div>
-          <Itemproduct />
-          <Itemproduct />
-          <Itemproduct />
+          {/* <Itemproduct /> */}
+
         </section>
         <section className="bestSelling">
           <div className="categoryWrap">
@@ -155,7 +177,7 @@ export default function HomePage() {
         </section>
       </div>
       <section className="silder">
-        <Slider />
+        {/* <Slider /> */}
       </section>
       <div className="container">
         <section className="headline">
