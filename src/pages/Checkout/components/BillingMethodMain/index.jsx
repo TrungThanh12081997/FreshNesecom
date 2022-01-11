@@ -17,7 +17,7 @@ export default function BillingMethodMain(ref) {
     //             }
     //         }
     //     }, [])
-    const { error, form, onChange, check, handelClick, submit, register } = useForm({
+    const { error, form, onChange, check, handelClick, register } = useForm({
         firstName: "",
         lastName: "",
         emailAddress: "",
@@ -36,7 +36,7 @@ export default function BillingMethodMain(ref) {
             setSelectedOption(true);
 
         } else {
-            alert("vui long chon")
+            alert("vui lòng chọn phương thức thanh toán")
         }
     }
     return (
@@ -51,7 +51,9 @@ export default function BillingMethodMain(ref) {
                 />
                 <form onSubmit={checkBM} className="field">
                     <BillingMethod />
-                    <button>ok</button>
+                    <button
+                    // onCLick={ }
+                    >submit</button>
                 </form>
             </div>
         </>

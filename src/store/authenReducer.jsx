@@ -1,33 +1,30 @@
-
-
-const user = JSON.parse(localStorage.getItem('login'))
-
+const user = JSON.parse(localStorage.getItem("user"))
+const token = JSON.parse(localStorage.getItem("token"))
 const initialState = {
-    login: !!user,
-    user,
-    //update Info
+    login: !!token,
+    stateLogin: false,
+
+
 }
 const AuthReducer = (state = initialState, action) => {
-
-    //// setState đặt trong đây phải k An
     switch (action.type) {
         case "LOGIN":
+
+            localStorage.setItem("token", JSON.stringify(action.payload))
             return {
-                login: true,
-                user: {
-                    name: "quantrung thanh",
-                    ...action.payload
-                }
+                login: !!token,
+                stateLogin: true
             }
         case "LOGOUT":
             localStorage.removeItem("login")
             return {
-                login: false,
-                user: null
+                login: !token,
+                stateLogin: false
             }
     }
     return state;
 }
 
+
 export default AuthReducer;
-// // // /cách lấy là const {user,llogin} = useSelector(store=>store.auth)
+

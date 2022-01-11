@@ -2,16 +2,49 @@ import React from "react";
 // import "../../assets/img";
 import HeaderSearch from "./HeaderSearch";
 import "../../Header/header.scss";
-
+import { useSelector } from "react-redux"
+import { Link, Navigate } from "react-router-dom"
+import productService from "../../../services/productService";
+import { useDispatch } from "react-redux";
+import authService from "../../../services/authService";
 export default function HeaderBottom() {
-  // document.querySelector(".header__select-content").addEventListener("click", () => {
-  //     document.querySelector(".header__select-option").classList.toggle("active");
-  // })
 
+
+  // const { userInfo } = useSelector(store => store.user);
+  // const { stateLogin } = useSelector(store => store.auth);
+  // const { productInfo } = useSelector(store => store.product);
+
+
+  // const handle = async (e) => {
+  //   e.preventDefault();
+  //   if (stateLogin) {
+  //     const res = await productService.getProduct();
+  //     dispatch({
+  //       type: "PRODUCT",
+  //       payload: res.data
+  //     })
+  // if(!login) return <Navigate to="/Login"/>
+
+  const { login } = useSelector(store => store.auth);
+
+  //   }
+  // }
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+
+
+    dispatch({
+      type: "LOGOUT",
+    })
+
+  }
   return (
     <div className="header__bottom">
+      {/* {userInfo && <p className="">{userInfo.email}</p>} */}
+      {/* <button onClick={handle}>click</button> */}
+      {login && <button onClick={handleLogout}>logout</button>}
       <div className="header__logo">
-        <a href="" className="">
+        <Link to="/" href="" className="">
           <svg
             width="100%"
             height="18"
@@ -68,35 +101,38 @@ export default function HeaderBottom() {
               fill="#151515"
             />
           </svg>
-        </a>
+        </Link >
       </div>
       <HeaderSearch />
       <div className="header__right">
-        <a href="#" className="header__right-item">
-          <svg
-            width="22"
-            height="24"
-            viewBox="0 0 22 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M2 21.9999L2.79 19.1199C5.4 9.6199 16.6 9.6199 19.21 19.1199L20 21.9999"
-              stroke="#151515"
-              strokeWidth="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11 11.98C13.7614 11.98 16 9.74141 16 6.97998C16 4.21856 13.7614 1.97998 11 1.97998C8.23858 1.97998 6 4.21856 6 6.97998C6 9.74141 8.23858 11.98 11 11.98Z"
-              stroke="#151515"
-              strokeWidth="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="bevel"
-            />
-          </svg>
-        </a>
-        <a href="#" className="header__right-item cart">
+        <div className="header__right-item">
+          <Link to="/Login">
+
+            <svg
+              width="22"
+              height="24"
+              viewBox="0 0 22 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2 21.9999L2.79 19.1199C5.4 9.6199 16.6 9.6199 19.21 19.1199L20 21.9999"
+                stroke="#151515"
+                strokeWidth="2.5"
+                stroke-linecap="round"
+                stroke-strokeLinejoin="round"
+              />
+              <path
+                d="M11 11.98C13.7614 11.98 16 9.74141 16 6.97998C16 4.21856 13.7614 1.97998 11 1.97998C8.23858 1.97998 6 4.21856 6 6.97998C6 9.74141 8.23858 11.98 11 11.98Z"
+                stroke="#151515"
+                strokeWidth="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="bevel"
+              />
+            </svg>
+          </Link>
+        </div>
+        <Link to="/" href="#" className="header__right-item cart">
           <svg
             width="24"
             height="22"
@@ -109,7 +145,7 @@ export default function HeaderBottom() {
               stroke="#151515"
               stroke-width="2.5"
               stroke-linecap="round"
-              stroke-linejoin="round"
+              stroke-strokeLinejoin="round"
             />
             <path
               d="M9.79941 2.14993L6.89941 7.28993"
@@ -127,7 +163,7 @@ export default function HeaderBottom() {
             />
           </svg>
           <div className="cart__noti">4</div>
-        </a>
+        </Link >
       </div>
     </div>
   );

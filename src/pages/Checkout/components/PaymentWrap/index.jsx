@@ -7,9 +7,7 @@ import { useForm } from '../../../../hooks/useForm'
 import { UseAuth } from '../../../../context/AuthContext'
 export default function PaymentWrap({ }) {
     const { payment, setPayment } = UseAuth();
-    const { error, form, onChange, check, handelClick, submit, register } = useForm({
-
-    });
+    const { error, form, onChange, check, handelClick, register } = useForm();
     const PaymentWraps = [
         {
             name: "Credit card",
@@ -28,7 +26,10 @@ export default function PaymentWrap({ }) {
             logo: <LgBitcoin />
         },
     ];
+    // const { validata } = useForm({
 
+
+    // })
     return (
         <>
             {
@@ -95,6 +96,7 @@ export default function PaymentWrap({ }) {
                                         />
 
                                     </div>
+                                    <button>test</button>
                                 </form>
                             </div>
 

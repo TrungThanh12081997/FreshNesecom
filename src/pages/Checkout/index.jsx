@@ -17,22 +17,12 @@ import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
 export default function CheckOut() {
-  const { form, onChange, check, handelClick, submit, register } = useForm({
-    firstName: "",
-    lastName: "",
-    emailAddress: "",
-    address: "",
-    country: "",
-    phone: "",
-    city: "",
-    code: "",
-  });
-
+  const { error, register } = useForm();
   const billingInfoRef = useRef()
   const billingMethodRef = useRef()
   const PaymentMethodRef = useRef()
   const AddInfoRef = useRef()
-  // // const useRef = use
+
   // const handleSubmit = () => {
   //   const errorObject = {
   //     ...billingInfoRef.current?.submit(),
@@ -45,44 +35,42 @@ export default function CheckOut() {
   //     alert("api");/// submit api
   //   }
   // }
-  const {
-    selectedOption, setSelectedOption, DHL,
-    setDHL, setConfirm,
-    setOk,
-    contractSubmit,
-    FEX,
-    setFEX, payment, setPayment,
-    isConfirm,
-    setIsconfirm,
-    isOk,
-    setIsOk, clear, setClear, error, setError
-  } = UseAuth()
+  // const {
+  //   selectedOption, payment,
+  //   isConfirm,
+
+  //   isOk,
+  //   error
+  // } = UseAuth()
 
 
-  function handleSubmitCheckout(e) {
-    e.preventDefault()
-    console.log(error);
-    console.log(payment);
-    console.log(isOk);
-    console.log(isConfirm);
-    console.log(selectedOption);
+  // function handleSubmitCheckout(e) {
+  //   e.preventDefault()
+  //   console.log(error);
+  //   console.log(payment);
+  //   console.log(isOk);
+  //   console.log(isConfirm);
+  //   console.log(selectedOption);
 
-    if (
-      // !error &&
-      selectedOption && payment && isOk && isConfirm) {
-      alert("thành cong")
-    } else {
-      alert("bạn đã miss gì đó")
-    }
-  }
+  //   if (
+  //     Object.keys(error).length === 0 &&
+  //     selectedOption && payment && isOk && isConfirm) {
+  //     alert("thành cong")
+  //   } else {
+  //     alert("bạn đã miss gì đó")
+  //   }
+  // }
+
   return (
     <div className="container">
-      <h4>Homepage/Checkout page</h4>
-      <form className="checkoutWrap" onSubmit={handleSubmitCheckout}>
+      <h4 >Homepage/Checkout page</h4>
+      <div className="checkoutWrap"
+      // onSubmit={submit}
+      >
         <div className="checkoutLeft">
 
           <BillingInfoMain
-            ref={billingInfoRef}
+
           />
 
           <BillingMethodMain
@@ -121,7 +109,7 @@ export default function CheckOut() {
               color="white"
               size="large"
             // onClick={
-            //   handleSubmit
+            //   handleSubmitCheckout
             // }
             />
           </div>
@@ -177,7 +165,7 @@ export default function CheckOut() {
           <div className="itemCheckout">
           </div>
         </div>
-      </form>
-    </div>
+      </div>
+    </div >
   );
 }

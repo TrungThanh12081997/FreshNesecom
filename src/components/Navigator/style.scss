@@ -1,0 +1,12 @@
+@import "../../assets/css/style.scss";
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    a {
+        font-size: 16px;
+        font-family: $o;
+        color: $green-cl;
+        text-decoration: none;
+    }
+}

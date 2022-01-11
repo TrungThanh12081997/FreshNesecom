@@ -5,7 +5,7 @@ import PaymentWrap from '../PaymentWrap'
 import TitleBilling from '../TitleBilling'
 
 export default function PaymentMethodMain() {
-    const { error, form, onChange, check, handelClick, submit, register } = useForm({
+    const { error, form, onChange, check, handelClick, register } = useForm({
         firstName: "",
         lastName: "",
         emailAddress: "",
@@ -44,7 +44,7 @@ export default function PaymentMethodMain() {
                             error={error}
 
                         />
-                        {/* <button >submit</button> */}
+                        <button>submit</button>
                     </form>
                 </div>
             </div>

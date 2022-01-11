@@ -4,7 +4,7 @@ import TitleBilling from '../TitleBilling'
 
 const ConfirmationMain = React.forwardRef((ref) => {
     const { isConfirm, setIsconfirmisOk, setIsOk, setConfirm,
-        setOk, isOk,
+        isOk,
         contractSubmit } = UseAuth();
 
 
@@ -35,7 +35,7 @@ const ConfirmationMain = React.forwardRef((ref) => {
                         } />I agree with our terms and conditions
                     and privacy policy.
                 </label>
-                {/* <button onClick={contractSubmit}>submit</button> */}
+
             </div>
         </div>
     </>)

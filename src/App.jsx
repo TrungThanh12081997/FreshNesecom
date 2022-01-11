@@ -11,6 +11,8 @@ import { Provider } from "react-redux"
 import store from "./store";
 import { AuthProvider } from "./context/AuthContext";
 import { createContext } from "react";
+import Login from "./pages/Login";
+// import Product from "./pages/Product";
 function App() {
 
   const AuthContext = createContext()
@@ -22,14 +24,14 @@ function App() {
         >
           <AuthProvider >
             <BrowserRouter>
-              {/* <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
-        <Link to="/Contact">Contact</Link> */}
+
               <div id="main-content">
                 <Routes>
                   <Route path="/" element={<MainLayout />}>
-                    <Route path="/" element={<HomePage />} />
+                    <Route index path="/" element={<HomePage />} />
                     <Route path="/CheckOut" element={<CheckOut />} />
+                    <Route path="/Login" element={<Login />} />
+                    {/* <Route path="/Product" element={<Product />} /> */}
                     {/* <Route path="/CategoryList" element={<CategoryList />} />
               <Route path="/CategoryGrid" element={<CategoryGrid />} />
               <Route path="/Blog" element={<Blog />} />
