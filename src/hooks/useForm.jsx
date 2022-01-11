@@ -57,31 +57,19 @@ export const useForm = (initialForm) => {
         setError(errorLogin);
         return errorLogin;
     }
-    const validateCard = () => {
-        const errObj = {};
-        if (!form.address) {
-            errObj.address = "Không được để trống";
-        }
-        if (!form.cardHolder) {
-            errObj.cardHolder = "Không được để trống";
-        }
-        if (!form.card) {
-            errObj.card = "Không được để trống";
-        }
-        if (!form.expiration) {
-            errObj.expiration = "Không được để trống";
-        }
-        if (!form.cvc) {
-            errObj.cvc = "Không được để trống";
-        }
-        setError(errObj);
-        return error;
-    }
+    // const validateCard = () => {
+
+    // }
     const validate = () => {
         let errorObject = {};
 
         if (!form.firstName) {
             errorObject.firstName = "Không được để trống";
+
+
+            // else if (!passwordRegex.test(form.password)) {
+            //     errorObject.password = "password khonh dung"
+            // }
 
             if (!form.lastName) {
                 errorObject.lastName = "Không được để trống";
@@ -95,7 +83,9 @@ export const useForm = (initialForm) => {
             if (!form.address) {
                 errorObject.address = "Không được để trống";
             }
-
+            // else if (!addressRegex.test(form.address)) {
+            //     errorObject.address = "Vui lòng điền đúng định dạng";
+            // }
             if (!form.country) {
                 errorObject.country = "Không được để trống";
             }
@@ -121,6 +111,9 @@ export const useForm = (initialForm) => {
             const validateResule = validate();
             if (Object.keys(validateResule).length === 0) {
                 alert("thanh cong")
+
+
+
             }
 
 
@@ -128,12 +121,13 @@ export const useForm = (initialForm) => {
         return {
             error,
             check,
+            handelClick,
             submit,
             register,
             validate,
             validateLogin,
-            form,
-            validateCard
+            form
+
         }
     }
 }
