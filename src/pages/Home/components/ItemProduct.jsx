@@ -19,11 +19,11 @@ const Itemproduct = () => {
   return <>
 
     {
-      product?.map((productItem) => {
+      product?.map((productItem, index) => {
         const { thumbnail_url, name, short_description, price } = productItem
         return (
 
-          <div className="itemProductWrap">
+          <div key={index} className="itemProductWrap">
             <div className="itemProduct">
               <div className="itemImg">
                 <img src={thumbnail_url} alt="" className="" />

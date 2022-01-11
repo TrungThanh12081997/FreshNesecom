@@ -2,13 +2,20 @@ import React from 'react'
 import TextField from '../TextField'
 import "./style.scss"
 import classnames from "classnames";
+import { useForm } from '../../../../hooks/useForm';
 
-export default function PaymentBox({ form, error, onChange, isChecked }) {
+export default function PaymentBox() {
+    const { validateCard, form, onChange, error } = useForm()
+    function handlePayment(e) {
+        e.preventDefault();
+        const get = validateCard();
+        if (Object.keys(get).length === 0) {
+            alert("thanh cong")
+        }
+    }
     return (
-        <div
-            className='payment__box'
-        // className={classnames("payment__box", `${isChecked ? "open" : "hide"}`)}
-
+        <form className='payment__box'
+        // onSubmit={handlePayment}
         >
             <TextField
                 label="Card number"
@@ -40,7 +47,8 @@ export default function PaymentBox({ form, error, onChange, isChecked }) {
                     helperText={error.cvc}
                 />
             </div>
-        </div>
+
+        </form >
     )
 }
 

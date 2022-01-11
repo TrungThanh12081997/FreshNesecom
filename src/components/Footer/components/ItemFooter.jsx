@@ -3,7 +3,7 @@ import "../../Footer/footer.scss";
 
 const ItemFooter = ({ titleFooter, nameItem, activeItem }) => {
   let elements = nameItem.map((info, index) => {
-    return <div className="nameItem">{info.item}</div>;
+    return <div key={index} className="nameItem">{info.item}</div>;
   });
 
   return (

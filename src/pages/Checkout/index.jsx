@@ -13,11 +13,16 @@ import Confirmation from "./components/ConfirmationMain";
 import PaymentMethodMain from "./components/PaymentMethodMain";
 
 import PaymentWrap from "./components/PaymentWrap";
+import TextArea from "./components/TextArea/Textarea";
 import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
 export default function CheckOut() {
-  const { form, onChange, check, handelClick, submit, register } = useForm({
+  const billingInfoRef = useRef()
+  const billingMethodRef = useRef()
+  const PaymentMethodRef = useRef()
+  const AddInfoRef = useRef()
+  const { billingInfo, form, onChange, check, handelClick, submit, register } = useForm({
     firstName: "",
     lastName: "",
     emailAddress: "",
@@ -28,23 +33,7 @@ export default function CheckOut() {
     code: "",
   });
 
-  const billingInfoRef = useRef()
-  const billingMethodRef = useRef()
-  const PaymentMethodRef = useRef()
-  const AddInfoRef = useRef()
-  // // const useRef = use
-  // const handleSubmit = () => {
-  //   const errorObject = {
-  //     ...billingInfoRef.current?.submit(),
-  //     ...billingMethodRef.current?.submit(),
-  //     ...PaymentMethodRef.current?.submit(),
-  //     ...AddInfoRef.current?.submit(),
 
-  //   }
-  //   if (Object.keys(errorObject).length === 0) {
-  //     alert("api");/// submit api
-  //   }
-  // }
   const {
     selectedOption, setSelectedOption, DHL,
     setDHL, setConfirm,
@@ -55,31 +44,34 @@ export default function CheckOut() {
     isConfirm,
     setIsconfirm,
     isOk,
-    setIsOk, clear, setClear, error, setError
+    setIsOk, clear, setClear, error, setError, setPM
   } = UseAuth()
 
 
-  function handleSubmitCheckout(e) {
-    e.preventDefault()
-    console.log(error);
-    console.log(payment);
-    console.log(isOk);
-    console.log(isConfirm);
-    console.log(selectedOption);
-
-    if (
-      Object.keys(error).length === 0 &&
-      selectedOption && payment && isOk && isConfirm) {
-      alert("thành cong")
-    } else {
-      alert("bạn đã miss gì đó")
-    }
-  }
+  // function handleSubmitCheckout(e) {
+  //   e.preventDefault()
+  //   console.log(billingInfo);
+  //   console.log(selectedOption);
+  //   console.log(isOk);
+  //   console.log(isConfirm);
+  //   console.log(selectedOption);
+  //   console.log(setPM);
+  //   if (
+  //     billingInfo &&
+  //     selectedOption === "Fex" || setSelectedOption === "DHL"
+  //     && setPM && isOk && isConfirm) {
+  //     alert("thành cong")
+  //   } else {
+  //     alert("bạn đã miss gì đó")
+  //   }
+  // }
 
   return (
     <div className="container">
       <h4>Homepage/Checkout page</h4>
-      <form className="checkoutWrap" onSubmit={submit}>
+      <form className="checkoutWrap"
+      // onSubmit={submit}
+      >
         <div className="checkoutLeft">
 
           <BillingInfoMain
@@ -100,12 +92,13 @@ export default function CheckOut() {
               step="Step 4 of 5"
             />
             <div className="notes">
-              <TextField
+              <TextArea
                 label="Order notes"
                 {...register("notes")}
                 notesRegister
                 placeHolder="Need a specific delivery day? Sending a gitf? Let’s say ..."
                 helperText={error.notes}
+                required
               />
             </div>
           </div>
@@ -122,7 +115,7 @@ export default function CheckOut() {
               color="white"
               size="large"
             // onClick={
-            //   handleSubmit
+            //   handleSubmitCheckout
             // }
             />
           </div>

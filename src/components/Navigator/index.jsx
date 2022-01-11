@@ -2,16 +2,34 @@ import { Link } from "react-router-dom"
 import "./style.scss"
 const Navigator = () => {
     const navArr = [
-        "Home", "CheckOut", "Product", "Login", "Register"
+        {
+            url: "/",
+            text: "Home"
+        },
+        {
+            url: "/CheckOut",
+            text: "Check Out"
+        },
+        {
+            url: "/Product",
+            text: "Product"
+        },
+        {
+            url: "/Login",
+            text: "Login"
+        },
+
+
     ]
     return (<div className="container">
         <div className="nav__list">
 
             {
                 navArr.map((nav, index) => {
+                    const { url, text } = nav
                     return (
 
-                        <Link key={index} to={`/${nav}`} >{nav}</Link>
+                        <Link key={index} to={url} >{text}</Link>
 
                     )
                 })

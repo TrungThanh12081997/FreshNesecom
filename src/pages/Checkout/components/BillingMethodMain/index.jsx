@@ -1,60 +1,89 @@
 import React, { useImperativeHandle } from 'react'
+import { LgDhl, LgFed } from '../../../../components';
 import { UseAuth } from '../../../../context/AuthContext';
 import { useForm } from '../../../../hooks/useForm';
 import BillingMethod from '../BillingMethod'
+import BillingMethodItem from '../BillingMethodItem';
 import TitleBilling from '../TitleBilling'
 
 export default function BillingMethodMain(ref) {
-    // useImperativeHandle(
-    //     ref,
-    //     () => {
-    //         return {
-    //             submit: () => {
+    const {
+        error, setError, billingInfo, setBillingInfo, selectedOption,
+        setSelectedOption
+    } = UseAuth()
 
-    //             },
-    //             reset: () => {
+    const methods = [
+        {
+            name: "Fex",
+            price: "+15 USD",
+            text: "Additional price",
+            logo: <LgDhl />
+        },
+        {
+            name: "DHL",
+            price: "+32 USD",
+            text: "Additional price",
+            logo: <LgFed />
+        },
 
-    //             }
-    //         }
-    //     }, [])
-    const { error, form, onChange, check, handelClick, register } = useForm({
-        firstName: "",
-        lastName: "",
-        emailAddress: "",
-        address: "",
-        country: "",
-        phone: "",
-        city: "",
-        code: "",
-    });
-    const { selectedOption, setSelectedOption } = UseAuth();
-    function checkBM(e) {
-        console.log(selectedOption);
-        e.preventDefault()
-        if (selectedOption == "DHL" || selectedOption == "Fex") {
-            alert("thanh cong");
-            setSelectedOption(true);
+    ]
+    const submitBM = (event) => {
 
-        } else {
-            alert("vui lòng chọn phương thức thanh toán")
+        console.log(selectedOption)
+        event.preventDefault();
+        if (selectedOption === "Fex" || selectedOption === "DHL") {
+            alert("thanh cong")
         }
     }
+
+
     return (
         <>
-            <div className="billingMethod"
-            //  ref={billingMethodRef}
-            >
+            <div className="billingMethod">
                 <TitleBilling
                     title="Billing method"
                     des="Please enter your payment method"
                     step="Step 2 of 5"
                 />
-                <form onSubmit={checkBM} className="field">
-                    <BillingMethod />
-                    <button
-                    // onCLick={ }
-                    >submit</button>
-                </form>
+                <div className="field">
+                    <form className="">
+                        <BillingMethodItem
+                            name="Fex"
+                            price="+15 USD"
+                            text="Additional price"
+                            logo={<LgDhl />}
+                            // onChange={() =>
+                            //     setSelectedOption(name)}
+                            // isChecked={name === selectedOption}
+                            onChange={() => {
+                                setSelectedOption("Fex")
+                            }}
+                            isChecked={
+                                "Fex" === selectedOption
+                            }
+                        />
+                        <BillingMethodItem
+                            name="DHL"
+                            price="+32 USD"
+                            text="Additional price"
+                            logo={<LgDhl />}
+                            // onChange={() =>
+                            //     setSelectedOption(name)}
+                            // isChecked={name === selectedOption}
+                            onChange={() => {
+                                setSelectedOption("DHL")
+                            }}
+                            isChecked={
+                                "DHL" === selectedOption
+                            }
+                        />
+
+                        <button
+                            onClick={submitBM}
+                        >submit</button>
+
+                    </form>
+                </div>
             </div>
         </>
     )

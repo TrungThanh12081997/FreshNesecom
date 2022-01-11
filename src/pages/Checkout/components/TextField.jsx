@@ -5,7 +5,7 @@ const TextField = ({ label, value, helperText, ...ref }) => {
   return (
     <div className="fieldDetail">
       <div className="label">{label}</div>
-      <input type="text" value={value} {...ref} />
+      <input type="text" value={value} {...ref} required />
       <p className="error-text">{helperText}</p>
     </div>
   );

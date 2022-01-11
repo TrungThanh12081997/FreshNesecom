@@ -5,7 +5,7 @@ import PaymentWrap from '../PaymentWrap'
 import TitleBilling from '../TitleBilling'
 
 export default function PaymentMethodMain() {
-    const { error, form, onChange, check, handelClick, register } = useForm({
+    const { error, form, setPM, onChange, check, handelClick, register } = useForm({
         firstName: "",
         lastName: "",
         emailAddress: "",
@@ -19,32 +19,35 @@ export default function PaymentMethodMain() {
     function handlePMM(ev) {
         ev.preventDefault()
         ev.stopPropagation();
-        if (payment === "Credit card" || payment === "Paypal" || payment === "Bitcoin") {
+        if (payment === "Credit card" || payment === "Paypal" || payment === "Bitcoin"
+        ) {
             alert("thanh cong ");
-            setPayment(true);
+            // setPayment(true);
+            console.log(setPM)
+        } else {
+            alert("khong thanh cong ");
         }
-        console.log(payment)
     }
 
     return (
         <>
-            <div className="paymentMethod"
-            //  ref={PaymentMethodRef}
-            >
+            <div className="paymentMethod">
                 <TitleBilling
                     title="Payment method"
                     des="Please enter your payment method"
                     step="Step 3 of 5"
                 />
                 <div className="field">
-                    <form onSubmit={handlePMM}>
+                    <form>
                         <PaymentWrap
                             onChange={onChange}
                             form={form}
                             error={error}
 
                         />
-
+                        <button
+                            onClick={handlePMM}
+                        >submit</button>
                     </form>
                 </div>
             </div>
