@@ -11,7 +11,7 @@ import productService from '../../services/productService'
 import Button from '../../components/Button'
 import { BlackRight } from '../../components'
 export default function Login() {
-    const { register, form, error, validateLogin } = useForm({
+    const { register, form, error, validateLogin, setError } = useForm({
         username: "",
         password: ""
     })
@@ -23,11 +23,21 @@ export default function Login() {
         e.preventDefault();
         const error = validateLogin()
         if (Object.keys(error).length === 0) {
-            const backend = await authService.login(form);;
-            dispatch({
-                type: "LOGIN",
-                payload: backend
-            })
+            try {
+                const backend = await authService.login(form);
+                if (backend?.message) {
+                    throw backend?.message;
+
+                } else {
+                    dispatch({
+                        type: "LOGIN",
+                        payload: backend
+                    })
+
+                }
+            } catch (err) {
+                alert(err)
+            }
         }
     }
     if (stateLogin) return <Navigate to="/" />
@@ -62,15 +72,17 @@ export default function Login() {
                         <input type="text" value={form.password} className="" />
                         <p className="error">{error.password}</p>
                     </label> */}
+                    {/* {error && <p className='error-text'>username hoặc password không đúng</p>} */}
                     <Button
                         children="LOGIN"
                         type="icon-right"
                         icon={<BlackRight />}
-                        size="large"
+                        size="small"
                         background='green'
                         color="black"
                         border="bold"
                     />
+                    {/* {error && <p>{error}</p>} */}
                 </div>
             </form>
         </div>

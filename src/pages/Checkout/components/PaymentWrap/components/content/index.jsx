@@ -1,16 +1,25 @@
-import { useForm } from "../../../../../../hooks/useForm";
+
+import { UseAuth } from "../../../../../../context/AuthContext";
+import { useForm } from "../../../../../../hooks/useForm"
 import TextField from "../../../TextField"
 
-const Content = (params) => {
-    const { error, form, onChange, check, handelClick, register } = useForm({
+export default function Content() {
+    const { payment, setPayment } = UseAuth();
+    const { submitForm, error, validateCard, form, onChange, check, handelClick, register } = useForm({
 
     });
+    // function handle(e) {
+    //     e.preventDefault();
+    //     const vali = validateCard();
+    //     console.log(vali)
+    // }
+    // handle();
+
     return (
-        <div
-            // className='payment__box'
-            className="payment__box"
-        >
-            <form className="">
+        <div className='payment__box'>
+            <form
+
+                className="">
 
                 <TextField
                     label="Card number"
@@ -41,10 +50,11 @@ const Content = (params) => {
                         placeHolder="cvc"
                         helperText={error.cvc}
                     />
-
+                    <button
+                        onClick={submitForm}
+                    >ok</button>
                 </div>
             </form>
         </div>
     )
 }
-export default Content

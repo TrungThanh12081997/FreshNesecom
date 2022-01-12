@@ -14,7 +14,7 @@ const authService = {
 
 
     register(data) {
-        return fetch(`${API}//register`, {
+        return fetch(`${API}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

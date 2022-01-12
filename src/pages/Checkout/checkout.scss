@@ -8,33 +8,35 @@ h4 {
 .checkoutWrap {
   display: flex;
   justify-content: space-between;
-  .titleBill {
-    display: flex;
-    justify-content: space-between;
-    .title {
-      h2 {
-        font-size: 22px;
-        font-family: "PoppinsSemiBold";
-        margin-bottom: 4px;
-      }
-      p {
-        font-size: 12px;
-        font-family: "OpenSansRegular";
-        color: $gray-cl;
-      }
-    }
-    .step {
-      margin: auto 0;
-      font-size: 12px;
-      color: $gray-cl;
-      font-family: "OpenSansRegular";
-    }
-  }
+  // .titleBill {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   width: 100%;
+  //   .title {
+  //     h2 {
+  //       font-size: 22px;
+  //       font-family: "PoppinsSemiBold";
+  //       margin-bottom: 4px;
+  //     }
+  //     p {
+  //       font-size: 12px;
+  //       font-family: "OpenSansRegular";
+  //       color: $gray-cl;
+  //     }
+  //   }
+  //   .step {
+  //     margin: auto 0;
+  //     font-size: 12px;
+  //     color: $gray-cl;
+  //     font-family: "OpenSansRegular";
+  //   }
+  // }
   .checkoutLeft {
-    width: 55%;
-
+    // width: 55%;
+    width: 100%;
     .fieldDetail {
       margin-top: 32px;
+      width: 100%;
       .label {
         font-family: "PoppinsSemiBold";
         font-size: 12px;
@@ -68,9 +70,17 @@ h4 {
         form {
           display: flex;
           justify-content: space-between;
-
+          @include sm {
+            flex-direction: column;
+          }
           .formWrap {
             width: 45%;
+            @include sm {
+              display: flex;
+              width: 100%;
+              align-items: center;
+              flex-direction: column;
+            }
           }
         }
       }
@@ -112,7 +122,7 @@ h4 {
         // background-color: #f9f9f9;
         border-radius: 12px;
         margin-top: 32px;
-        &.payment__box {
+        .payment__box {
           display: block;
         }
         .methodWrap {
@@ -124,6 +134,10 @@ h4 {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr;
           gap: 20px;
+          @include xs {
+            display: flex;
+            flex-direction: column;
+          }
         }
       }
       .paymentWrap.hide {
@@ -133,7 +147,7 @@ h4 {
         // background-color: #f9f9f9;
         border-radius: 12px;
         margin-top: 32px;
-        &.payment__box {
+        .payment__box {
           display: none;
         }
         .methodWrap {
@@ -162,6 +176,7 @@ h4 {
         margin-top: 32px;
         label {
           margin-top: 16px;
+          width: 100%;
         }
       }
     }
@@ -171,6 +186,7 @@ h4 {
   }
   .checkoutRight {
     width: 40%;
+    display: none;
   }
 }
 .fieldDetail {

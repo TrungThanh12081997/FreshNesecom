@@ -1,10 +1,14 @@
 import { createContext, useContext, useState } from "react";
 const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
+    // cho billing method
     const [selectedOption, setSelectedOption] = useState(false);
-    const [DHL, setDHL] = useState(false)
-    const [FEX, setFEX] = useState(false)
+    // billing info
+    const [billingInfo, setBillingInfo] = useState(false);
+    //payment method
     const [payment, setPayment] = useState(false);
+    const [setPM, setSetPM] = useState(false);
+    const [area, setArea] = useState(false);
     const [isConfirm, setIsconfirm] = useState(false);
     const [isOk, setIsOk] = useState(false);
     const [clear, setClear] = useState(false)
@@ -34,16 +38,16 @@ export const AuthProvider = ({ children }) => {
     }
     return (
         <AuthContext.Provider value={{
-            selectedOption, setSelectedOption, DHL,
-            setDHL, setConfirm,
+            selectedOption, setSelectedOption,
+            setConfirm,
             setOk,
             contractSubmit,
-            FEX,
-            setFEX, payment, setPayment,
+
+            payment, setPayment,
             isConfirm,
             setIsconfirm,
-            isOk,
-            setIsOk, clear, setClear, error, setError
+            isOk,area, setArea,
+            setIsOk, clear, setClear, setSetPM, setPM, error, setError, billingInfo, setBillingInfo
         }}>{children}
         </AuthContext.Provider>)
 }

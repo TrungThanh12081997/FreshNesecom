@@ -4,7 +4,7 @@ export default function BillingMethodItem({ price, text, name, logo, onChange, i
     return (
         <>
             <div className="field">
-                <form action="" className="">
+                <div action="" className="">
                     <div className="methodWrap">
                         <div className="title">
                             <label className="checkRadio">
@@ -23,7 +23,7 @@ export default function BillingMethodItem({ price, text, name, logo, onChange, i
                             {logo}
                         </div>
                     </div>
-                </form>
+                </div>
 
             </div>
         </>

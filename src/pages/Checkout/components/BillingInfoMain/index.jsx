@@ -14,12 +14,15 @@ export default function BillingInfoMain() {
         city: "",
         code: "",
     });
+    const [billForm, setBillForm] = useState(false)
     const handle = (e) => {
         e.preventDefault();
         const vali = validate();
-        console.log(vali)
+
         if (Object.keys(vali).length === 0) {
-            alert("thanh cong")
+            alert("thanh cong");
+            setBillForm(true);
+            console.log(billForm);
         }
     }
     return (
@@ -44,6 +47,7 @@ export default function BillingInfoMain() {
                                 {...register("firstName")}
                                 placeHolder="First name"
                                 helperText={error.firstName}
+
                             />
                             <TextField
                                 label="Email address"
@@ -51,6 +55,7 @@ export default function BillingInfoMain() {
                                 emailRegister
                                 placeHolder="Email addess"
                                 helperText={error.emailAddress}
+
                             />
                             <TextField
                                 label="Address"
@@ -66,10 +71,7 @@ export default function BillingInfoMain() {
                                 placeHolder="Choose a state or Country"
                                 helperText={error.country}
                             />
-                            <label className="checkbox">
-                                <input type="checkbox" />
-                                Ship to a different address?
-                            </label>
+
                         </div>
                         <div className="formWrap">
                             <TextField
@@ -101,6 +103,10 @@ export default function BillingInfoMain() {
                                 helperText={error.code}
                             />
                         </div>
+                        <label className="checkbox">
+                            <input type="checkbox" />
+                            Ship to a different address?
+                        </label>
 
                         <button
                             onClick={submit}

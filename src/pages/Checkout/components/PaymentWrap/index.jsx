@@ -8,7 +8,7 @@ import { UseAuth } from '../../../../context/AuthContext'
 import Content from './components/content'
 export default function PaymentWrap({ }) {
     const { payment, setPayment } = UseAuth();
-    const { error, form, onChange, check, handelClick, register } = useForm({
+    const { error, validateCard, form, onChange, check, handelClick, register } = useForm({
 
     });
     const PaymentWraps = [
@@ -40,7 +40,7 @@ export default function PaymentWrap({ }) {
                             className=
                             {classnames("paymentWrap", `${name === payment ? "open" : "hide"}`
                             )}
-                        // "paymentWrap"
+                       
 
                         >
                             <div className="methodWrap">
@@ -59,45 +59,7 @@ export default function PaymentWrap({ }) {
                                 {logo}
                             </div>
                             {content}
-                            {/* <div
-                                // className='payment__box'
-                                className={classnames("payment__box", `${name === payment ? "open" : "hide"}`)}
-                            >
-                                <form className="">
-
-                                    <TextField
-                                        label="Card number"
-                                        cardRegister
-                                        {...register("card")}
-                                        placeHolder="Card number"
-                                        helperText={error.card}
-                                    />
-                                    <div className="cardHolder">
-                                        <TextField
-                                            label="Card holder"
-                                            cardHolderRegister
-                                            {...register("cardHolder")}
-                                            placeHolder="Card holder"
-                                            helperText={error.cardHolder}
-                                        />
-                                        <TextField
-                                            label="Expiration date"
-                                            expirationRegister
-                                            {...register("expiration")}
-                                            placeHolder="DD/MM/YY"
-                                            helperText={error.expiration}
-                                        />
-                                        <TextField
-                                            label="CVC"
-                                            cvcRegister
-                                            {...register("cvc")}
-                                            placeHolder="cvc"
-                                            helperText={error.cvc}
-                                        />
-
-                                    </div>
-                                </form>
-                            </div> */}
+                         
 
                         </div>)
                 })

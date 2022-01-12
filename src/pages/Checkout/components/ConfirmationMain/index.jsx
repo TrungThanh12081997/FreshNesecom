@@ -6,10 +6,15 @@ const ConfirmationMain = React.forwardRef((ref) => {
     const { isConfirm, setIsconfirmisOk, setIsOk, setConfirm,
         isOk,
         contractSubmit } = UseAuth();
-
+    const handleConfirm = (e) => {
+        e.preventDefault();
+        if (isConfirm && isOk) {
+            alert("thanh cong")
+        }
+    }
 
     return (<>
-        <div className="confirmation"
+        <form className="confirmation"
         //  ref={AddInfoRef}
         >
             <TitleBilling
@@ -37,7 +42,10 @@ const ConfirmationMain = React.forwardRef((ref) => {
                 </label>
 
             </div>
-        </div>
+            <button
+                onClick={handleConfirm}
+            >test</button>
+        </form>
     </>)
 
 })
