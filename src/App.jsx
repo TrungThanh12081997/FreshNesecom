@@ -12,6 +12,8 @@ import store from "./store";
 import { AuthProvider } from "./context/AuthContext";
 import { createContext } from "react";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import RegisterForm from "./pages/Register";
 // import Product from "./pages/Product";
 function App() {
 
@@ -31,6 +33,7 @@ function App() {
                     <Route index path="/" element={<HomePage />} />
                     <Route path="/CheckOut" element={<CheckOut />} />
                     <Route path="/Login" element={<Login />} />
+                    <Route path="/Register" element={<RegisterForm />} />
                     {/* <Route path="/Product" element={<Product />} /> */}
                     {/* <Route path="/CategoryList" element={<CategoryList />} />
               <Route path="/CategoryGrid" element={<CategoryGrid />} />

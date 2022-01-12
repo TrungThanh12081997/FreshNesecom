@@ -6,10 +6,17 @@
       display: flex;
       padding: 16px 0;
       justify-content: space-between;
+      flex-wrap: wrap;
       &-list {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         .header__contact-item {
+          @include sm {
+            width: max-content;
+            margin: 10px;
+          }
+          display: flex;
           margin-right: 33px;
           font-family: $o;
           font-style: normal;
@@ -18,9 +25,9 @@
           line-height: 16px;
           text-decoration: none;
 
-          &.m-right{
-            margin-left:33px;
-            margin-right:0px;
+          &.m-right {
+            margin-left: 33px;
+            margin-right: 0px;
           }
           color: #151515;
           &.active {
@@ -35,9 +42,20 @@
       justify-content: space-between;
       padding: var(--pd-header-bottom) 0;
       height: 130px;
+      align-items: center;
+      flex-wrap: wrap;
+      @include sm {
+        padding: 0;
+        height: 80px;
+      }
+      @include xs {
+        @include mid(true);
+        height: fit-content;
+      }
       .header__logo {
-        max-width: 177px;
+        min-width: 177px;
         height: 50px;
+        @include mid(true);
         img {
           height: 100%;
           width: 100%;
@@ -54,7 +72,9 @@
         display: flex;
         // overflow: hidden;
         position: relative;
-
+        @include sm {
+          display: none;
+        }
         &::before {
           position: absolute;
           content: "";
@@ -133,6 +153,7 @@
         display: flex;
         float: right;
         align-items: center;
+        height: 100%;
         a {
           --number: 19px;
           height: var(--number);

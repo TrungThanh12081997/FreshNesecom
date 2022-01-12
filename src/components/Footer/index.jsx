@@ -153,7 +153,7 @@ export function Footer() {
           <div className="titleFooter">Product tags</div>
           <div className="tagTop">{elementsTag}</div>
         </div>
-        <div className="coppy">© 2016 WOODER, Demo by CFD</div>
+        <div className="coppy">© 2021 Freshnesecom, Demo by CFD training</div>
       </div>
     </footer>
   );

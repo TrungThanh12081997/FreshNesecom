@@ -16,30 +16,28 @@ $md-max: ($md-min - 1); // Desktop
 $lg-max: ($lg-min - 1); // Large Desktop
 //=====================================CÁC BIẾN KHÔNG THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE======================================
 // colors - tuỳ chỉnh
-$white-cl:#FFF;
-$gray-cl:#a9a9a9;
-$black-cl:black;
-$green-cl: #6A983C;
+$white-cl: #fff;
+$gray-cl: #a9a9a9;
+$black-cl: black;
+$green-cl: #6a983c;
+$bold-cl: #46760a;
 $black-cl: #151515;
-$yellow-cl: #D0A866;
-$blue-cl: #37D0D6;
-$orange-cl: #E5704B;
-
+$yellow-cl: #d0a866;
+$blue-cl: #37d0d6;
+$orange-cl: #e5704b;
 
 // ------ chỗ này tui khai báo r nè lấy xài đi + cái font
 
-
-
-$main-cl:#6A983C;
+$main-cl: #6a983c;
 $clBtnFooter: #f5f5f5;
 $clTextGreen: #6a983c;
 $clTextBlack: #151515;
 $gradient-cl: linear-gradient(180deg, #df1cff 0%, #814bf6 50.55%, #00bcff 100%);
 //font family
-$o:"o";
-$ob:"ob";
-$p:"pr";
-$pb:"pb";
+$o: "o";
+$ob: "ob";
+$p: "pr";
+$pb: "pb";
 $t: 0.4s;
 $cubic: cubic-bezier(0.84, 0.13, 0.33, 0.97);
 // ========================================CÁC BIẾN CÓ THAY ĐỔI GIÁ TRỊ KHI RESPONSIVE=====================================

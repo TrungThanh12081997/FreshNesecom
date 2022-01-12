@@ -21,6 +21,13 @@ const AuthReducer = (state = initialState, action) => {
                 login: !token,
                 stateLogin: false
             }
+        case "REGISTER":
+
+            return {
+              
+
+                err: action.payload
+            }
     }
     return state;
 }

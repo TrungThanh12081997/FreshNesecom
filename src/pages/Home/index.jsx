@@ -136,9 +136,11 @@ export default function HomePage() {
               </a>
               <IconCategory />
             </div>
+          </div><div className="bannerList">
+
+            <Banner />
+            <Banner />
           </div>
-          <Banner />
-          <Banner />
         </section>
         <section className="bestFarmers">
           <div className="categoryWrap">
@@ -172,8 +174,8 @@ export default function HomePage() {
             </div>
           </div>
           <Itemproduct />
-          <Itemproduct />
-          <Itemproduct />
+          {/* <Itemproduct />
+          <Itemproduct /> */}
         </section>
       </div>
       <section className="silder">
@@ -195,9 +197,7 @@ export default function HomePage() {
           </div>
           <div className="itemHeadline">
             <Itemproduct />
-            <Itemproduct />
-            <Itemproduct />
-            <Itemproduct />
+
           </div>
         </section>
         <section className="Blog">

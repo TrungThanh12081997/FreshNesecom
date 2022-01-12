@@ -31,7 +31,7 @@ export const useForm = (initialForm) => {
         };
     };
 
-    const validateLogin = () => {
+    const validateLogin = (e) => {
         const errorLogin = {}
         if (!form.username) {
             errorLogin.username = "dien username"
@@ -41,6 +41,25 @@ export const useForm = (initialForm) => {
         }
         if (!form.password) {
             errorLogin.password = "password không đuoc để trống"
+        }
+        setError(errorLogin);
+        return errorLogin;
+    }
+    const validateRegis = () => {
+        // e.preventDefault();
+        const errorLogin = {}
+        if (!emailRegex.test(form.username)) {
+            errorLogin.email = "username không phải email"
+        } else if (!form.username) {
+            errorLogin.username = "username không được để trống"
+        }
+        if (!form.name) {
+            errorLogin.name = "điền name"
+        }
+        if (!form.password) {
+            errorLogin.password = "password không đuoc để trống"
+        } if (form.password !== form.confirm) {
+            errorLogin.confirm = "password nhập lại không đúng"
         }
         setError(errorLogin);
         return errorLogin;
@@ -156,6 +175,7 @@ export const useForm = (initialForm) => {
 
     return {
         error,
+        setError,
         check,
         handelClick,
         submit,
@@ -165,7 +185,7 @@ export const useForm = (initialForm) => {
         form,
         validateCard, submitForm,
         setBillingInfo,
-        billingInfo, setPM,
+        billingInfo, setPM, validateRegis
         // valiTextArea, handleArea
 
     }

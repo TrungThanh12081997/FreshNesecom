@@ -12,15 +12,33 @@
     flex-direction: column;
 
     overflow: hidden;
-    height: 100vh;
+    height: max-content;
     .h1 {
         color: $green-cl;
         text-transform: uppercase;
-        padding: 20px 60px;
-
+        @include mid(true);
+        padding: 20px;
         font-size: 50px;
         letter-spacing: 4px;
         width: 100%;
+        @include sm {
+            color: $green-cl;
+            text-transform: uppercase;
+            padding: 15px;
+
+            font-size: 40px;
+            letter-spacing: 3px;
+            width: 100%;
+        }
+        @include xs {
+            color: $green-cl;
+            text-transform: uppercase;
+            padding: 10px;
+
+            font-size: 30px;
+            letter-spacing: 2px;
+            width: 100%;
+        }
     }
     .register__form {
         align-items: center;
@@ -34,6 +52,9 @@
         border-width: 2px;
         border-color: $green-cl;
         padding: 40px 10px;
+        @include sm {
+            padding: 10px 0;
+        }
         .fieldDetail {
             width: 60%;
 
@@ -44,18 +65,24 @@
                 width: 100%;
                 margin-bottom: 10px;
                 text-transform: uppercase;
+                @include sm {
+                    color: $green-cl;
+                    font-family: $o;
+                    font-size: 18px;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    text-transform: uppercase;
+                }
             }
             input {
                 padding: 20px 20px;
                 outline: none;
                 width: 100%;
-                border-radius: 30px;
+                border-radius: 10px;
                 border: 0.5px solid $green-cl;
-            }
-            .error-text {
-                color: red;
-                padding: 20px 0;
-                font-size: 20px;
+                @include sm {
+                    padding: 15px 15px;
+                }
             }
         }
         .form {
@@ -113,5 +140,13 @@
             font-family: $o;
             font-size: 20px;
         }
+    }
+}
+.error-text {
+    color: red;
+    padding: 10px 0;
+    font-size: 20px;
+    @include sm {
+        font-size: 15px;
     }
 }

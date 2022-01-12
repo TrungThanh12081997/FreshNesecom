@@ -98,7 +98,7 @@ export default function CheckOut() {
                 notesRegister
                 placeHolder="Need a specific delivery day? Sending a gitf? Let’s say ..."
                 helperText={error.notes}
-                required
+               
               />
             </div>
           </div>

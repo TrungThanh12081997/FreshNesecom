@@ -9,6 +9,10 @@
     height: 400px;
     &.size {
         &-small {
+            &:hover {
+                background-color: $green-cl;
+                transition: $t $cubic;
+            }
             flex-direction: row-reverse;
             border-bottom-left-radius: 12px;
             border-bottom-right-radius: 12px;
@@ -19,6 +23,10 @@
             border-radius: 0;
             justify-content: space-between;
             margin-bottom: 14px;
+            @include xs {
+                flex-direction: column;
+                align-items: center;
+            }
             .blog__img {
                 --num: 96px;
                 // margin-left: 48px;
@@ -46,6 +54,10 @@
                 // background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
                 display: flex;
                 flex-direction: column;
+                @include xs {
+                    flex-direction: column;
+                    align-items: center;
+                }
                 .avatar {
                     display: none;
                 }
@@ -68,11 +80,18 @@
             // align-items: center;
             height: max-content;
             justify-content: space-between;
+            &:hover {
+                background-color: $green-cl;
+                transition: $t $cubic;
+            }
             .blog__img {
                 width: 100%;
                 height: 180px;
                 border-radius: 8px;
                 overflow: hidden;
+                @include sm {
+                    padding: 15px 3% 0;
+                }
                 img {
                     height: 100%;
                     width: 100%;

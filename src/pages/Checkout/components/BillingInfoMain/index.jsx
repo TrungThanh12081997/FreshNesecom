@@ -47,7 +47,7 @@ export default function BillingInfoMain() {
                                 {...register("firstName")}
                                 placeHolder="First name"
                                 helperText={error.firstName}
-                                required="true"
+
                             />
                             <TextField
                                 label="Email address"
@@ -55,7 +55,7 @@ export default function BillingInfoMain() {
                                 emailRegister
                                 placeHolder="Email addess"
                                 helperText={error.emailAddress}
-                                required="true"
+
                             />
                             <TextField
                                 label="Address"
@@ -71,10 +71,7 @@ export default function BillingInfoMain() {
                                 placeHolder="Choose a state or Country"
                                 helperText={error.country}
                             />
-                            <label className="checkbox">
-                                <input type="checkbox" />
-                                Ship to a different address?
-                            </label>
+
                         </div>
                         <div className="formWrap">
                             <TextField
@@ -106,6 +103,10 @@ export default function BillingInfoMain() {
                                 helperText={error.code}
                             />
                         </div>
+                        <label className="checkbox">
+                            <input type="checkbox" />
+                            Ship to a different address?
+                        </label>
 
                         <button
                             onClick={submit}

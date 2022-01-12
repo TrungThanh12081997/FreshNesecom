@@ -1,4 +1,7 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom"
+import { GreenRight } from "..";
+import Button from "../Button";
 import "./style.scss"
 const Navigator = () => {
     const navArr = [
@@ -11,8 +14,8 @@ const Navigator = () => {
             text: "Check Out"
         },
         {
-            url: "/Product",
-            text: "Product"
+            url: "/Register",
+            text: "Register"
         },
         {
             url: "/Login",
@@ -21,6 +24,18 @@ const Navigator = () => {
 
 
     ]
+    const dispatch = useDispatch()
+    const { login } = useSelector(store => store.auth);
+
+    const handleLogout = () => {
+
+
+        dispatch({
+            type: "LOGOUT",
+        })
+
+    }
+    console.log(login)
     return (<div className="container">
         <div className="nav__list">
 
@@ -30,9 +45,13 @@ const Navigator = () => {
                     return (
 
                         <Link key={index} to={url} >{text}</Link>
-
                     )
                 })
+            }
+            {
+                login && <Button onClick={handleLogout}
+                    children="Log Out" icon={<GreenRight />} type="icon-right" background="white" border="bold"
+                    color="black" size="small" />
             }
         </div>
     </div>

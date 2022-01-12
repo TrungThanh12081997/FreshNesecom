@@ -40,9 +40,7 @@ export default function HeaderBottom() {
   }
   return (
     <div className="header__bottom">
-      {/* {userInfo && <p className="">{userInfo.email}</p>} */}
-      {/* <button onClick={handle}>click</button> */}
-      {login && <button onClick={handleLogout}>logout</button>}
+
       <div className="header__logo">
         <Link to="/" href="" className="">
           <svg
