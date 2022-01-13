@@ -141,14 +141,10 @@ export const useForm = (initialForm) => {
         const alo = validateCard();
         if (Object.keys(alo).length === 0) {
             alert("thanh cong");
-            setSetPM(true);
+            return setSetPM(true);
         }
 
-        //     // const alo = validateCard();
-        //     // if (Object.keys(alo).length === 0) {
-        //     //     alert("thanh cong");
-        //     //     setSetPM(true);
-        // }
+      
 
     }
 
@@ -185,7 +181,7 @@ export const useForm = (initialForm) => {
         form,
         validateCard, submitForm,
         setBillingInfo,
-        billingInfo, setPM, validateRegis
+        billingInfo, setPM, validateRegis, setSetPM, setPM
         // valiTextArea, handleArea
 
     }

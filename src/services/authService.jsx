@@ -17,7 +17,7 @@ const authService = {
         return fetch(`${API}/register`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json"// theo định dạng 
             },
             body: JSON.stringify(data)
         }).then(res => res.json())

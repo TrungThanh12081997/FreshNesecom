@@ -7,40 +7,103 @@ import { useForm } from '../../../../hooks/useForm'
 import { UseAuth } from '../../../../context/AuthContext'
 import Content from './components/content'
 export default function PaymentWrap({ }) {
-    const { payment, setPayment } = UseAuth();
-    const { error, validateCard, form, onChange, check, handelClick, register } = useForm({
-
-    });
+    const { payment, setPayment, setPM, setSetPM } = UseAuth();
+    const [payment1, setPayment1] = useState(false)
+    const [payment2, setPayment2] = useState(false)
     const PaymentWraps = [
         {
             name: "Credit card",
             content: <Content />,
-            logo: <LgVisa />
+            logo: <LgVisa />,
+            state: payment,
+            onChange: () => {
+
+                setPayment(!payment)
+            }
+
+
         },
         {
             name: "Paypal",
             content: <Content />,
-            logo: <LgPaypal />
+            logo: <LgPaypal />,
+            state: payment1,
+            onChange: () => {
+
+                setPayment1(!payment1)
+            }
 
         },
         {
             name: "Bitcoin",
             content: <Content />,
-            logo: <LgBitcoin />
+            logo: <LgBitcoin />,
+            state: payment2,
+            onChange: () => {
+
+                setPayment2(!payment2)
+            }
+
         },
     ];
+    const { error, setError, form, onChange, check, handelClick, register, submitForm } = useForm({
+        firstName: "",
+        lastName: "",
+        emailAddress: "",
+        address: "",
+        country: "",
+        phone: "",
+        city: "",
+        code: "",
+    });
 
+
+    const validateCard = () => {
+        const errorObject = {};
+        if (!form.card) {
+            errorObject.card = "Không được để trống";
+        }
+        if (!form.cardHolder) {
+            errorObject.cardHolder = "Không được để trống";
+        }
+        if (!form.expiration) {
+            errorObject.expiration = "Không được để trống";
+        }
+        if (!form.cvc) {
+            errorObject.cvc = "Không được để trống";
+        }
+        setError(errorObject);
+        return errorObject;
+    }
+    const handlePMM = async (ev) => {
+        ev.preventDefault()
+        ev.stopPropagation();
+        const alo = validateCard();
+        console.log("alo", alo);
+
+
+
+        if ((payment === "Credit card" || payment === "Paypal" || payment === "Bitcoin") && Object.keys(error).length === 0
+
+        ) {
+            alert("thanh cong");
+            // setPayment(true);
+
+        } else {
+            alert("khong thanh cong");
+        }
+    }
     return (
         <>
             {
                 PaymentWraps.map(PaymentWrap => {
-                    const { name, logo, content } = PaymentWrap
+                    const { name, logo, state, onChange, content } = PaymentWrap
                     return (
-                        <div
+                        <form
                             className=
-                            {classnames("paymentWrap", `${name === payment ? "open" : "hide"}`
+                            {classnames("paymentWrap", `${payment === name ? "open" : "hide"}`
                             )}
-                       
+
 
                         >
                             <div className="methodWrap">
@@ -48,7 +111,15 @@ export default function PaymentWrap({ }) {
                                     <label className="checkRadio">
                                         <input type="checkbox"
                                             onChange={
-                                                () => { setPayment(name) }
+                                                () => {
+                                                    if (payment === name) {
+
+                                                        setPayment("");
+                                                    } else {
+                                                        setPayment(name);
+                                                    }
+
+                                                }
                                             }
                                             checked={name === payment}
                                         />
@@ -59,9 +130,11 @@ export default function PaymentWrap({ }) {
                                 {logo}
                             </div>
                             {content}
-                         
 
-                        </div>)
+                            {/* <button
+                                onClick={handlePMM}
+                            >submit</button> */}
+                        </form>)
                 })
             }
 

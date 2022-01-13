@@ -4,20 +4,57 @@ import { useForm } from "../../../../../../hooks/useForm"
 import TextField from "../../../TextField"
 
 export default function Content() {
-    const { payment, setPayment } = UseAuth();
-    const { submitForm, error, validateCard, form, onChange, check, handelClick, register } = useForm({
-
+    const { error, setError, form, onChange, check, handelClick, register, submitForm } = useForm({
+        firstName: "",
+        lastName: "",
+        emailAddress: "",
+        address: "",
+        country: "",
+        phone: "",
+        city: "",
+        code: "",
     });
-    // function handle(e) {
-    //     e.preventDefault();
-    //     const vali = validateCard();
-    //     console.log(vali)
-    // }
-    // handle();
+
+    const { payment, setPayment, setPM, setSetPM } = UseAuth();
+    const validateCard = () => {
+        const errorObject = {};
+        if (!form.card) {
+            errorObject.card = "Không được để trống";
+        }
+        if (!form.cardHolder) {
+            errorObject.cardHolder = "Không được để trống";
+        }
+        if (!form.expiration) {
+            errorObject.expiration = "Không được để trống";
+        }
+        if (!form.cvc) {
+            errorObject.cvc = "Không được để trống";
+        }
+        setError(errorObject);
+        return errorObject;
+    }
+    const handlePMM = async (ev) => {
+        ev.preventDefault()
+        ev.stopPropagation();
+        const alo = validateCard();
+        console.log("alo", alo);
+
+
+
+        if ((payment === "Credit card" || payment === "Paypal" || payment === "Bitcoin") && Object.keys(alo).length === 0
+
+        ) {
+            alert("thanh cong");
+            // setPayment(true);
+
+        } else {
+            alert("khong thanh cong");
+        }
+    }
 
     return (
         <div className='payment__box'>
-            <form
+            <div
 
                 className="">
 
@@ -51,10 +88,10 @@ export default function Content() {
                         helperText={error.cvc}
                     />
                     <button
-                        onClick={submitForm}
+                        onClick={handlePMM}
                     >ok</button>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }

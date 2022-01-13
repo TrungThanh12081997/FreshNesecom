@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { BlackRight } from '../../components'
 import Button from '../../components/Button'
@@ -10,11 +10,12 @@ import TextField from '../Checkout/components/TextField'
 const RegisterForm = () => {
     const { register, error, validateRegis, form } = useForm({})
     const dispatch = useDispatch();
+    const { stateLogin } = useSelector(store => store.auth);
     const handleRegister = async (e) => {
         e.preventDefault();
         const err = validateRegis();
         const backend = await authService.register(form);
-        console.log(backend)
+        console.log(backend);
         if (Object.keys(err).length === 0) {
             try {
                 if (backend?.error) {
@@ -25,19 +26,24 @@ const RegisterForm = () => {
 
 
                     dispatch({
-                        type: "REGISTER",
-                        payload: backend?.data
+                        type: "LOGIN",
+                        payload: {
+                            accessToken: backend.data.token.accessToken,
+
+                        }
                     })
+                    /// gửi gì lên reducer,update state nào vô store,lưu data nào lên localstorage
                 }
             }
-            catch (loi) {
-                alert(loi)
+            catch (err) {
+                alert(err)
             }
 
             // return < Navigate to="/Login" />
 
         }
     }
+    if (stateLogin) return <Navigate to="/" />
     return (
 
         <div className='container'>
@@ -51,14 +57,14 @@ const RegisterForm = () => {
 
 
                         {...register("name")}
-                        placeHolder="name"
+                        placeHolder="Nhập tên..."
                         helperText={error.name}
                     />
                     <TextField
                         label="username"
 
                         {...register("username")}
-                        placeHolder="username"
+                        placeHolder="Nhập username..."
                         helperText={error.username}
                     />
                     <TextField
@@ -66,7 +72,7 @@ const RegisterForm = () => {
 
                         type="password"
                         {...register("password")}
-                        placeHolder="password"
+                        placeHolder="Nhập password..."
                         helperText={error.password}
                     />
                     <TextField
@@ -74,7 +80,7 @@ const RegisterForm = () => {
 
                         type="password"
                         {...register("confirm")}
-                        placeHolder="confirm password"
+                        placeHolder="Nhập lại password..."
                         helperText={error.confirm}
                     />
 

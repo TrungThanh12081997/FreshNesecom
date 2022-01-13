@@ -4,12 +4,13 @@ import { useDispatch } from 'react-redux'
 import authService from '../../services/authService'
 import TextField from '../Checkout/components/TextField'
 import "./style.scss"
-
+// import { message, Button, Space } from 'antd';
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import productService from '../../services/productService'
 import Button from '../../components/Button'
 import { BlackRight } from '../../components'
+// import 'antd/dist/antd.css';
 export default function Login() {
     const { register, form, error, validateLogin, setError } = useForm({
         username: "",
@@ -51,7 +52,7 @@ export default function Login() {
                         label="username"
                         firstNameRegister
                         {...register("username")}
-                        placeHolder="username"
+                        placeHolder="Nhập username..."
                         helperText={error.username}
                     />
                     <TextField
@@ -59,7 +60,7 @@ export default function Login() {
                         firstNameRegister
                         type="password"
                         {...register("password")}
-                        placeHolder="password"
+                        placeHolder="Nhập password..."
                         helperText={error.password}
                     />
                     {/* <label className="form">
