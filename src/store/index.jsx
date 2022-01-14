@@ -4,10 +4,10 @@ import productReducer from "./productReducer"
 import userReducer from "./userReducer"
 import userService from "../services/userService"
 import createSagaMiddleware from 'redux-saga'
-import rootSaga from "./rootSaga"
+// import rootSaga from "./rootSaga"
 
 const token = JSON.parse(localStorage.getItem("token"))
-const sagaMiddleware = createSagaMiddleware()
+// const sagaMiddleware = createSagaMiddleware()
 const reducer = combineReducers({
     auth: AuthReducer,
     user: userReducer,
@@ -17,9 +17,9 @@ const reducer = combineReducers({
 })
 const store = createStore(
     reducer,/// gắn reducer
-    applyMiddleware(sagaMiddleware)
+    // applyMiddleware(sagaMiddleware)
 ) //// tạo store
-sagaMiddleware.run(rootSaga)
+// sagaMiddleware.run(rootSaga)
 // gắn saga
 
 export default store
