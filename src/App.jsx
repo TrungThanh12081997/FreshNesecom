@@ -34,13 +34,7 @@ function App() {
                     <Route path="/CheckOut" element={<CheckOut />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Register" element={<RegisterForm />} />
-                    {/* <Route path="/Product" element={<Product />} /> */}
-                    {/* <Route path="/CategoryList" element={<CategoryList />} />
-              <Route path="/CategoryGrid" element={<CategoryGrid />} />
-              <Route path="/Blog" element={<Blog />} />
-              <Route path="/BlogDetail" element={<BlogDetail />} />
-            
-              <Route path="/Detail" element={<Detail />} /> */}
+                  
                   </Route>
                   <Route path="*" element={<NotFound />} />
                 </Routes>
