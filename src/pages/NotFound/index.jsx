@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import "../../assets/css/style.scss"
 export default function NotFound() {
     return (
