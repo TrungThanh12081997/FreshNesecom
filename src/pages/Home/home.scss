@@ -93,6 +93,9 @@
     // flex-wrap: wrap;
     margin-top: 128px;
     margin-bottom: 128px;
+    @include sm {
+      flex-wrap: wrap;
+    }
   }
   .itemProductList {
     display: flex;
@@ -130,6 +133,7 @@
           }
         }
         .productText {
+          overflow: hidden;
           h4 {
             font-size: 15px;
             font-family: "PoppinsSemiBold";

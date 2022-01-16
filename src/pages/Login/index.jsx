@@ -1,15 +1,17 @@
 import React from 'react'
+import 'antd/dist/antd.css';
+import { message } from 'antd';
 import { useForm } from '../../hooks/useForm'
 import { useDispatch } from 'react-redux'
 import authService from '../../services/authService'
 import TextField from '../Checkout/components/TextField'
 import "./style.scss"
-// import { message, Button, Space } from 'antd';
+import { Alert } from 'antd';
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import productService from '../../services/productService'
 import Button from '../../components/Button'
-import { BlackRight } from '../../components'
+import { BlackRight, WhiteRight } from '../../components'
 // import 'antd/dist/antd.css';
 export default function Login() {
     const { register, form, error, validateLogin, setError } = useForm({
@@ -28,16 +30,19 @@ export default function Login() {
                 const backend = await authService.login(form);
                 if (backend?.message) {
                     throw backend?.message;
+                    message.error(backend.message);
 
                 } else {
                     dispatch({
                         type: "LOGIN",
                         payload: backend
                     })
+                    message.success('Đăng nhập thành công');
 
                 }
             } catch (err) {
-                alert(err)
+                console.log('err :>> ', err);
+                message.error(err);
             }
         }
     }
@@ -46,6 +51,8 @@ export default function Login() {
     return (
         <div className='container'>
             <form onSubmit={handleSubmit} className="form">
+
+
                 <h1 className="h1">Login</h1>
                 <div className="register__form">
                     <TextField
@@ -74,7 +81,7 @@ export default function Login() {
                         <p className="error">{error.password}</p>
                     </label> */}
                     {/* {error && <p className='error-text'>username hoặc password không đúng</p>} */}
-                    <Button
+                    {/* <Button
                         children="LOGIN"
                         type="icon-right"
                         icon={<BlackRight />}
@@ -82,8 +89,10 @@ export default function Login() {
                         background='green'
                         color="black"
                         border="bold"
-                    />
-                    {/* {error && <p>{error}</p>} */}
+                    /> */}
+                    <button className='login-register'
+
+                    >Đăng Nhập <WhiteRight /> </button>
                 </div>
             </form>
         </div>

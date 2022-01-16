@@ -159,3 +159,17 @@
         font-size: 15px;
     }
 }
+.login-register {
+    width: 60%;
+    color: white;
+    background-color: black;
+    font-size: 15px;
+    font-family: $o;
+    @include mid(true);
+    padding: 20px;
+    margin: 30px 0;
+    transition: 0.1s $cubic;
+    &:hover {
+        background-color: $green-cl;
+    }
+}

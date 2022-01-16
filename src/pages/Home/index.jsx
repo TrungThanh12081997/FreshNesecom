@@ -14,6 +14,7 @@ import AuthReducer from "../../store/authenReducer";
 import { useDispatch, useSelector } from "react-redux"
 import store from "../../store";
 import userService from "../../services/userService"
+import { ProductItem } from './components/ProductItem';
 
 export default function HomePage() {
   // const callApi = async function (data) {
@@ -23,8 +24,8 @@ export default function HomePage() {
   // callApi();
   const dispatch = useDispatch()
   const { login, stateLogin } = useSelector(store => store.auth)
-
-
+  const { productInfo } = useSelector(store => store.product)
+  const { name, price, short_description, thumbnail_url, _id } = productInfo
   var itemCategory = [
     {
       id: 1,
@@ -115,6 +116,8 @@ export default function HomePage() {
   }
 
 
+  console.log('productInfo :>> ', productInfo);
+
   return (
     <div className="homePage">
       <div className="container">
@@ -156,7 +159,18 @@ export default function HomePage() {
               <IconCategory />
             </div>
           </div>
-          {/* <Itemproduct /> */}
+          <div className="itemProductList">
+            {productInfo.map(e => {
+              const { name, price, short_description, thumbnail_url } = e;
+              return <ProductItem
+                name={name}
+                price={price}
+                short_description={short_description}
+                thumbnail_url={thumbnail_url}
+
+              />
+            })}
+          </div>
 
         </section>
         <section className="bestSelling">
@@ -174,8 +188,7 @@ export default function HomePage() {
             </div>
           </div>
           <Itemproduct />
-          {/* <Itemproduct />
-          <Itemproduct /> */}
+
         </section>
       </div>
       <section className="silder">

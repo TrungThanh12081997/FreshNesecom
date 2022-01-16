@@ -6,6 +6,7 @@ import Button from '../../components/Button'
 import { useForm } from '../../hooks/useForm'
 import authService from '../../services/authService'
 import TextField from '../Checkout/components/TextField'
+import { message } from 'antd';
 
 const RegisterForm = () => {
     const { register, error, validateRegis, form } = useForm({})
@@ -19,10 +20,11 @@ const RegisterForm = () => {
         if (Object.keys(err).length === 0) {
             try {
                 if (backend?.error) {
-                    throw backend?.error
+                    throw backend?.error;
+
                 } else {
 
-                    alert("đắng ký thành cong");
+                    message.success('Đăng ký thành công');
 
 
                     dispatch({
@@ -36,7 +38,7 @@ const RegisterForm = () => {
                 }
             }
             catch (err) {
-                alert(err)
+                message.error(err);
             }
 
             // return < Navigate to="/Login" />

@@ -3,7 +3,7 @@
 /*! Flickity v2.2.0
 https://flickity.metafizzy.co
 ---------------------------------------------- */
-
+@import "../css/variables.scss";
 .flickity-enabled {
     position: relative;
     height: 100%;
@@ -151,4 +151,13 @@ https://flickity.metafizzy.co
 
 .flickity-page-dots .dot.is-selected {
     opacity: 1;
+}
+.ant-message-notice {
+    font-family: $o;
+    .ant-message-custom-content.ant-message-success {
+        @include mid(true);
+    }
+    .ant-message-custom-content .ant-message-error {
+        @include mid(true);
+    }
 }

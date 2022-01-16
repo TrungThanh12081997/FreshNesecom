@@ -13025,6 +13025,8 @@ button.bg-dark:hover {
 .pt-12,
 .py-12 {
     padding-top: 6rem !important;
+    max-width: 100%;
+    overflow: hidden;
 }
 .pr-12,
 .px-12 {

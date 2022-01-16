@@ -8,18 +8,14 @@ import { UseAuth } from '../../../../context/AuthContext'
 import Content from './components/content'
 export default function PaymentWrap({ }) {
     const { payment, setPayment, setPM, setSetPM } = UseAuth();
-    const [payment1, setPayment1] = useState(false)
-    const [payment2, setPayment2] = useState(false)
+    
     const PaymentWraps = [
         {
             name: "Credit card",
             content: <Content />,
             logo: <LgVisa />,
-            state: payment,
-            onChange: () => {
-
-                setPayment(!payment)
-            }
+          
+           
 
 
         },
@@ -27,22 +23,16 @@ export default function PaymentWrap({ }) {
             name: "Paypal",
             content: <Content />,
             logo: <LgPaypal />,
-            state: payment1,
-            onChange: () => {
-
-                setPayment1(!payment1)
-            }
+           
+           
 
         },
         {
             name: "Bitcoin",
             content: <Content />,
             logo: <LgBitcoin />,
-            state: payment2,
-            onChange: () => {
-
-                setPayment2(!payment2)
-            }
+          
+           
 
         },
     ];
@@ -131,9 +121,6 @@ export default function PaymentWrap({ }) {
                             </div>
                             {content}
 
-                            {/* <button
-                                onClick={handlePMM}
-                            >submit</button> */}
                         </form>)
                 })
             }

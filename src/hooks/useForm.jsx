@@ -125,15 +125,8 @@ export const useForm = (initialForm) => {
         if (Object.keys(validateResule).length === 0) {
             alert("thanh cong");
             setBillingInfo(true);
-            console.log(billingInfo)
+            console.log(billingInfo);
         }
-
-        //     // const alo = validateCard();
-        //     // if (Object.keys(alo).length === 0) {
-        //     //     alert("thanh cong");
-        //     //     setSetPM(true);
-        // }
-
     }
     const submitForm = (ev) => {
         ev.preventDefault();
@@ -144,7 +137,7 @@ export const useForm = (initialForm) => {
             return setSetPM(true);
         }
 
-      
+
 
     }
 
@@ -178,7 +171,7 @@ export const useForm = (initialForm) => {
         register,
         validate,
         validateLogin,
-        form,
+        form, setForm,
         validateCard, submitForm,
         setBillingInfo,
         billingInfo, setPM, validateRegis, setSetPM, setPM

@@ -19,8 +19,8 @@ const Itemproduct = () => {
   useEffect(async () => {
     let res = await productService.getProduct()
     const resData = res.data
-    console.log(resData)
-    setProduct(resData)
+    // console.log(resData)
+    setProduct(resData.slice(0, 3))
   }, [])
 
   return <>
