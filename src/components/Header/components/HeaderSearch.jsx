@@ -1,5 +1,12 @@
-import React from "react";
+import Search from "antd/lib/transfer/search";
+import React, { useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useForm } from "../../../hooks/useForm";
+import productService from "../../../services/productService";
 import "../../Header/header.scss";
+import { message } from 'antd';
+
 // import "../../assets/img";
 export default function HeaderSearch() {
   const handleHistory = () => {
@@ -17,9 +24,49 @@ export default function HeaderSearch() {
     e.currentTarget.innerHTML = cur.textContent;
     document.querySelector(".header__select-content p").innerHTML = his;
   };
+  const [search, setSearch] = useState("")
+  const { setForm, form } = useForm({})
+  const onChange = (name) => (e) => {
+    setForm({
+      ...form,
+      [name]: e.currentTarget.value
+    })
+
+
+  }
+  const dispatch = useDispatch();
+  const { productInfo } = useSelector(store => store.product)
+  const handleSearch = async (e, index) => {
+    e.preventDefault();
+    console.log(form.name);
+
+    const products = await productService.searchNameProduct(form.name);
+
+    if (products?.data.length === 0) {
+      message.error("Sản phẩm không được tìm thấy")
+    } else {
+      message.success("Sản phẩm đã được tìm thấy")
+      dispatch({
+        type: "PRODUCT",
+        payload: products.data,
+      })
+      // console.log('products.data :>> ', products.data);
+      // products.data.map(product => {
+      //   console.log('product.name :>> ', product.name);
+      // })
+    }
+
+    // productInfo.map((product) => {
+    //   const { name, price, short_description, thumbnail_url, _id } = product;
+    //   console.log('name :>> ', name);
+
+    // })
+
+
+  }
 
   return (
-    <div className="header__search">
+    <form className="header__search">
       <div className="header__select">
         <div onClick={handleHistory} className="header__select-content">
           <p className="">All categories</p>
@@ -54,8 +101,10 @@ export default function HeaderSearch() {
           </div>
         </div>
       </div>
-      <input className="header__input" />
-      <div className="header__find">
+      <input onChange={onChange("name")} className="header__input" />
+      <button
+        onClick={handleSearch}
+        className="header__find">
         <svg
           width="14"
           height="14"
@@ -78,7 +127,7 @@ export default function HeaderSearch() {
             strokeLinejoin="bevel"
           />
         </svg>
-      </div>
-    </div>
+      </button>
+    </form>
   );
 }

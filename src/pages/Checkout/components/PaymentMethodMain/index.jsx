@@ -5,7 +5,7 @@ import PaymentWrap from '../PaymentWrap'
 import TitleBilling from '../TitleBilling'
 
 export default function PaymentMethodMain() {
-    const { error, form, setPM, onChange, check, handelClick, register } = useForm({
+    const { validateCard, setError, error, form, onChange, check, handelClick, register, submitForm } = useForm({
         firstName: "",
         lastName: "",
         emailAddress: "",
@@ -15,17 +15,43 @@ export default function PaymentMethodMain() {
         city: "",
         code: "",
     });
-    const { payment, setPayment } = UseAuth();
-    function handlePMM(ev) {
+
+    const { payment, setPayment, setPM, setSetPM } = UseAuth();
+    const handlePMM = async (ev) => {
         ev.preventDefault()
         ev.stopPropagation();
-        if (payment === "Credit card" || payment === "Paypal" || payment === "Bitcoin"
-        ) {
-            alert("thanh cong ");
-            // setPayment(true);
-            console.log(setPM)
+        const errorObject = {};
+        if (!form.card) {
+            errorObject.card = "Không được để trống";
         } else {
-            alert("khong thanh cong ");
+            errorObject.card = ""
+        }
+        if (!form.cardHolder) {
+            errorObject.cardHolder = "Không được để trống";
+        } else {
+            errorObject.cardHolder = ""
+        }
+        if (!form.expiration) {
+            errorObject.expiration = "Không được để trống";
+        } else {
+            errorObject.expiration = ""
+        }
+        if (!form.cvc) {
+            errorObject.cvc = "Không được để trống";
+        } else {
+            errorObject.cvc = ""
+        }
+
+        const alo = validateCard();
+        // console.log(alo)
+        if ((payment === "Credit card" || payment === "Paypal" || payment === "Bitcoin") && Object.keys(error).length === 0
+
+        ) {
+            alert("thanh cong");
+            // setPayment(true);
+
+        } else {
+            alert("khong thanh cong");
         }
     }
 
@@ -38,17 +64,17 @@ export default function PaymentMethodMain() {
                     step="Step 3 of 5"
                 />
                 <div className="field">
-                    <form>
+                    <div>
                         <PaymentWrap
                             onChange={onChange}
                             form={form}
                             error={error}
 
                         />
-                        <button
+                        {/* <button
                             onClick={handlePMM}
-                        >submit</button>
-                    </form>
+                        >submit</button> */}
+                    </div>
                 </div>
             </div>
         </>

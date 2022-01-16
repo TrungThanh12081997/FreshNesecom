@@ -25,9 +25,9 @@ export default function HeaderContact() {
         <Link to="#" className="header__contact-item active  m-right">
           Careers
         </Link>
-        <Link to="/Checkout" className="header__contact-item active  m-right">
+        {/* <Link to="/Checkout" className="header__contact-item active  m-right">
           checkout
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

@@ -14,9 +14,15 @@ import { createContext } from "react";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import RegisterForm from "./pages/Register";
+import { message } from 'antd';
+import Product from "./pages/Product";
 // import Product from "./pages/Product";
 function App() {
-
+  message.config({
+    top: 100,
+    duration: 1.5,
+    rtl: false
+  });
   const AuthContext = createContext()
   return (
     <>
@@ -35,14 +41,9 @@ function App() {
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Register" element={<RegisterForm />} />
                     {/* <Route path="/Product" element={<Product />} /> */}
-                    {/* <Route path="/CategoryList" element={<CategoryList />} />
-              <Route path="/CategoryGrid" element={<CategoryGrid />} />
-              <Route path="/Blog" element={<Blog />} />
-              <Route path="/BlogDetail" element={<BlogDetail />} />
-            
-              <Route path="/Detail" element={<Detail />} /> */}
+
+                    <Route path="*" element={<NotFound />} />
                   </Route>
-                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
             </BrowserRouter>

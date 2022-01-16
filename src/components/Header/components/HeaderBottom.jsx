@@ -38,7 +38,8 @@ export default function HeaderBottom() {
     })
 
   }
-  return (
+  return (<>
+
     <div className="header__bottom">
 
       <div className="header__logo">
@@ -101,7 +102,10 @@ export default function HeaderBottom() {
           </svg>
         </Link >
       </div>
-      <HeaderSearch />
+      <div className="header__middle">
+
+        <HeaderSearch />
+      </div>
       <div className="header__right">
         <div className="header__right-item">
           <Link to="/Login">
@@ -160,9 +164,13 @@ export default function HeaderBottom() {
               strokeLinejoin="round"
             />
           </svg>
-          <div className="cart__noti">4</div>
+          {/* <div className="cart__noti">4</div> */}
         </Link >
       </div>
     </div>
+    <div className="header__bottom-more">
+      <HeaderSearch />
+    </div>
+  </>
   );
 }

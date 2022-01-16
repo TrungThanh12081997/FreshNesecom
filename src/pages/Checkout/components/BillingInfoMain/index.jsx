@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { UseAuth } from "../../../../context/AuthContext";
 import { useForm } from '../../../../hooks/useForm';
 import TextField from '../TextField'
 import TitleBilling from '../TitleBilling'
@@ -14,17 +15,19 @@ export default function BillingInfoMain() {
         city: "",
         code: "",
     });
-    const [billForm, setBillForm] = useState(false)
+    const { billingInfo, setBillingInfo } = UseAuth()
+
     const handle = (e) => {
         e.preventDefault();
         const vali = validate();
 
         if (Object.keys(vali).length === 0) {
             alert("thanh cong");
-            setBillForm(true);
-            console.log(billForm);
+            setBillingInfo(true);
+            console.log(billingInfo);
         }
     }
+
     return (
         <>
             <div className="billingInfo"
@@ -103,13 +106,13 @@ export default function BillingInfoMain() {
                                 helperText={error.code}
                             />
                         </div>
-                        <label className="checkbox">
+                        {/* <label className="checkbox">
                             <input type="checkbox" />
                             Ship to a different address?
-                        </label>
+                        </label> */}
 
                         <button
-                            onClick={submit}
+                            onClick={handle}
                         >Submit</button>
 
 

@@ -11,9 +11,9 @@ const TextArea = ({ label, value, helperText, ...ref }) => {
             <div className="label">{label}</div>
             <textarea type="text" value={value} {...ref} />
             <p className="error-text">{helperText}</p>
-            <button type="submit"
+            {/* <button type="submit"
                 // onClick={handleArea}
-                className="">submit</button>
+                className="">submit</button> */}
         </form>
     );
 };
