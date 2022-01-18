@@ -40,7 +40,7 @@ function App() {
                     <Route path="/CheckOut" element={<CheckOut />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/Register" element={<RegisterForm />} />
-                    {/* <Route path="/Product" element={<Product />} /> */}
+                    <Route path="/Product" element={<Product />} />
 
                     <Route path="*" element={<NotFound />} />
                   </Route>

@@ -135,7 +135,7 @@ export default function CheckOut() {
               <div className="formWrap">
                 <TextField
                   label="First name"
-                  firstNameRegister
+
                   {...register("firstName")}
                   placeHolder="First name"
                   helperText={error.firstName}

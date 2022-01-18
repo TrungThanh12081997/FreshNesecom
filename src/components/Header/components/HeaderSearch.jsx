@@ -24,7 +24,7 @@ export default function HeaderSearch() {
     e.currentTarget.innerHTML = cur.textContent;
     document.querySelector(".header__select-content p").innerHTML = his;
   };
-  const [search, setSearch] = useState("")
+
   const { setForm, form } = useForm({})
   const onChange = (name) => (e) => {
     setForm({
@@ -87,7 +87,7 @@ export default function HeaderSearch() {
             />
           </svg>
         </div>
-        <div className="header__select-option">
+        {/* <div className="header__select-option">
           <div className="select__option">
             <p onClick={changeCur} className="">
               Most popular
@@ -99,7 +99,7 @@ export default function HeaderSearch() {
               Everything
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       <input onChange={onChange("name")} className="header__input" />
       <button

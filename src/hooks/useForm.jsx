@@ -173,7 +173,7 @@ export const useForm = (initialForm) => {
         validateLogin,
         form, setForm,
         validateCard, submitForm,
-        setBillingInfo,
+        setBillingInfo, onChange,
         billingInfo, setPM, validateRegis, setSetPM, setPM
         // valiTextArea, handleArea
 

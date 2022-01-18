@@ -160,7 +160,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="itemProductList">
-            {productInfo.map(e => {
+            {productInfo && productInfo?.map(e => {
               const { name, price, short_description, thumbnail_url } = e;
               return <ProductItem
                 name={name}

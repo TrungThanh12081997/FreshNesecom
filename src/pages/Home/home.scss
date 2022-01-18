@@ -110,6 +110,9 @@
       border-radius: 12px;
       width: 30%;
       margin: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      height: fit-content;
       @include sm {
         width: 48%;
       }
@@ -118,6 +121,7 @@
       }
       .itemProduct {
         margin: 16px;
+        width: 32%;
         .itemImg {
           height: 180px;
           border-radius: 12px;
