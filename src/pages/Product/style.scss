@@ -4,6 +4,9 @@
     }
     &__middle {
         display: flex;
+        @include xs {
+            flex-direction: column;
+        }
         &-left {
             width: 35%;
             .form__introduce {

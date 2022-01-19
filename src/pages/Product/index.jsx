@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { IconStar, Nav } from '../../components'
 import Button from '../../components/Button'
 import { message } from "antd"
-import { useForm } from '../../hooks/useForm'
+import classnames from 'classnames'
 import productService from '../../services/productService'
 import TextField from '../Checkout/components/TextField'
 import { ProductItem } from '../Home/components/ProductItem'
@@ -12,25 +12,30 @@ import "./style.scss"
 import { useDispatch, useSelector } from 'react-redux'
 export default function Product() {
     const dispatch = useDispatch();
-    const { productInfo } = useSelector(store => store.product);
+    const { productDefault, productInfo, productPrice } = useSelector(store => store.product);
     const [fetching, setFetching] = useState(true)
-    const [products, setProducts] = useState()
+    const [product, setProduct] = useState()
     const [brand, setBrand] = useState(true)
     const [brand1, setBrand1] = useState(true)
     const [brand2, setBrand2] = useState(true)
     const [brand3, setBrand3] = useState(true)
     const [brand4, setBrand4] = useState(true)
     const [number, setNumber] = useState("")
-    useEffect(() => {
-        (async () => {
-            setFetching(true)
-            const res = await productService.getProduct()
-            setProducts(res.data)
-            setFetching(false)
-        })()
+    useEffect(async () => {
+
+        setFetching(true)
+        const res = await productService.getProduct();
+        setProduct(res.data)
+        setFetching(false)
+
+        dispatch({
+            type: "PRODUCT",
+            payload: res.data
+        })
 
     }, [])
-    if (fetching) return "..loading"
+
+    // if (fetching) return "..loading"
     var onChange = (name) => (ev) => {
 
 
@@ -46,19 +51,20 @@ export default function Product() {
     }
 
 
+
     const handleSearchPrice = async (e) => {
         e.preventDefault();
-        console.log(number);
+
         const products = await productService.getProductMinMax(number);
         console.log(products.data);
         if (products.data.length === 0) {
             message.error("Sản phẩm không được tìm thấy")
         } else {
             dispatch({
-                type: "PRODUCT",
+                type: "PRODUCT_PRICE",
                 payload: products.data,
             })
-            console.log(productInfo);
+
         }
     }
 
@@ -323,17 +329,47 @@ export default function Product() {
                         <div className="view__middle-right">
                             <div className="itemProductList">
 
-                                {productInfo && productInfo.map(
-                                    product => {
-                                        const { name, price, short_description, thumbnail_url } = product
-                                        return (<ProductItem
-                                            name={name} price={price} short_description={short_description} thumbnail_url={thumbnail_url}
+                                {productPrice?.length === 0 ?
+                                    productDefault?.map(
+                                        product => {
+                                            const { name, price, short_description, thumbnail_url } = product
+                                            return (<ProductItem
+                                                name={name} price={price} short_description={short_description} thumbnail_url={thumbnail_url}
 
 
 
-                                        />)
-                                    }
-                                )}
+                                            />)
+                                        }
+                                    ) :
+                                    productInfo?.map(
+                                        product => {
+                                            const { name, price, short_description, thumbnail_url } = product
+                                            return (<ProductItem
+                                                name={name} price={price} short_description={short_description} thumbnail_url={thumbnail_url}
+
+
+
+                                            />)
+                                        }
+                                    )
+                                }
+                                {/* {product && productPrice.length === 0 &&
+                                    product.map(
+                                        product => {
+                                            const { name, price, short_description, thumbnail_url } = product
+                                            return (<ProductItem
+                                                name={name} price={price} short_description={short_description} thumbnail_url={thumbnail_url}
+
+
+
+                                            />)
+                                        }
+                                    )} */}
+
+
+                                {/* } */}
+
+
                             </div>
 
                             {/* <ProductItem />

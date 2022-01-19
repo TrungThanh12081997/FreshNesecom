@@ -24,6 +24,12 @@ const productService = {
             method: "GET",
 
         }).then(res => res.json())
+    },
+    getProductDefault(data) {
+        return fetch(`${API}/product?maxPrice=10000000000000000000000000000000`, {
+            method: "GET",
+
+        }).then(res => res.json())
     }
 }
 export default productService

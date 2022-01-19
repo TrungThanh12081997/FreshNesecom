@@ -15,16 +15,13 @@ import { useDispatch, useSelector } from "react-redux"
 import store from "../../store";
 import userService from "../../services/userService"
 import { ProductItem } from './components/ProductItem';
+import Product from '../Product';
 
 export default function HomePage() {
-  // const callApi = async function (data) {
-  //   const res = await AuthReducer.login();
-  //   console.log(res);
-  // }
-  // callApi();
+  const { productInfo } = useSelector(store => store.product)
   const dispatch = useDispatch()
   const { login, stateLogin } = useSelector(store => store.auth)
-  const { productInfo } = useSelector(store => store.product)
+  // const { productInfo } = useSelector(store => store.product)
   const { name, price, short_description, thumbnail_url, _id } = productInfo
   var itemCategory = [
     {
@@ -100,7 +97,7 @@ export default function HomePage() {
 
   }, [stateLogin])
 
-
+  console.log(productInfo);
 
   const getUser = async () => {
 
@@ -116,10 +113,13 @@ export default function HomePage() {
   }
 
 
-  console.log('productInfo :>> ', productInfo);
 
-  return (
-    <div className="homePage">
+
+  return (<>
+
+
+    {productInfo.length !== "0" && <Product />}
+    <div div className="homePage" >
       <div className="container">
 
         <section className="cateMenu">
@@ -219,6 +219,7 @@ export default function HomePage() {
         </section>
       </div>
     </div>
+  </>
   );
 }
 

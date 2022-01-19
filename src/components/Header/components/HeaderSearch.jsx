@@ -50,17 +50,10 @@ export default function HeaderSearch() {
         type: "PRODUCT",
         payload: products.data,
       })
-      // console.log('products.data :>> ', products.data);
-      // products.data.map(product => {
-      //   console.log('product.name :>> ', product.name);
-      // })
+      console.log(productInfo);
     }
 
-    // productInfo.map((product) => {
-    //   const { name, price, short_description, thumbnail_url, _id } = product;
-    //   console.log('name :>> ', name);
 
-    // })
 
 
   }
