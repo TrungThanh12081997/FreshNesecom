@@ -14,7 +14,7 @@
     overflow: hidden;
     height: max-content;
     .h1 {
-        color: $green-cl;
+        color: #7aabee;
         text-transform: uppercase;
         @include mid(true);
         padding: 20px;
@@ -23,7 +23,7 @@
         width: 100%;
         font-family: $p;
         @include sm {
-            color: $green-cl;
+            color: #7aabee;
             text-transform: uppercase;
             padding: 15px;
 
@@ -32,7 +32,6 @@
             width: 100%;
         }
         @include xs {
-            color: $green-cl;
             text-transform: uppercase;
             padding: 10px;
 
@@ -41,120 +40,139 @@
             width: 100%;
         }
     }
-    .register__form {
-        align-items: center;
-        border-radius: 10px;
-
+    .flex {
         display: flex;
-        flex-direction: column;
         width: 100%;
-
-        border-style: solid;
-        border-width: 2px;
-        border-color: $green-cl;
-        padding: 40px 10px;
-        @include sm {
-            padding: 10px 0;
+        align-items: center;
+        @media (max-width: 989px) {
+            flex-direction: column;
         }
-        .fieldDetail {
+        .resgister__banner {
+            width: 30%;
+            overflow: hidden;
+            img {
+                width: 70%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .register__form {
+            align-items: center;
+            border-radius: 10px;
             width: 60%;
+            display: flex;
+            flex-direction: column;
 
-            .label {
-                color: $green-cl;
-                font-family: $o;
-                font-size: 25px;
+            // border-style: solid;
+            // border-width: 2px;
+            // // border-color: $green-cl;
+            // padding: 40px 10px;
+            @include sm {
+                padding: 10px 0;
+            }
+            @media (max-width: 989px) {
                 width: 100%;
-                margin-bottom: 10px;
-                text-transform: uppercase;
-                @include sm {
-                    color: $green-cl;
+            }
+            .fieldDetail {
+                width: 60%;
+
+                .label {
+                    color: #7aabee;
                     font-family: $o;
                     font-size: 18px;
                     width: 100%;
-                    margin-bottom: 10px;
+                    display: none;
                     text-transform: uppercase;
+                    @include sm {
+                        font-family: $o;
+                        font-size: 18px;
+                        width: 100%;
+                        margin-bottom: 10px;
+                        text-transform: uppercase;
+                    }
                 }
-            }
-            input {
-                padding: 20px 20px;
-                outline: none;
-                width: 100%;
-                border-radius: 0;
-                border-bottom: 0.2px solid rgb(177, 170, 170);
-                outline: none;
-                background: none;
-                border-left: none;
-                border-right: none;
-                border-top: none;
-                background-color: #eaf0f5;
-                font-family: $o;
-                @include sm {
-                    padding: 15px 15px;
-                }
-            }
-        }
-        .form {
-            display: flex;
-            justify-content: center;
-            margin: 15px auto;
-            align-items: center;
-            flex-wrap: wrap;
+                input {
+                    padding: 5% 3%;
 
-            h1 {
-                color: $green-cl;
-                font-weight: 1200;
-                width: 200px;
-                font-size: 30px;
+                    outline: none;
+                    width: 100%;
+                    border-radius: 0;
+                    border-bottom: 0.2px solid rgb(177, 170, 170);
+                    outline: none;
+                    background: none;
+                    border-left: none;
+                    border-right: none;
+                    border-top: none;
+                    background-color: transparent;
+                    font-family: $o;
+                    @include sm {
+                        padding: 15px 15px;
+                    }
+                }
+            }
+            .form {
                 display: flex;
-                text-transform: none;
+                justify-content: center;
+                margin: 15px auto;
+                align-items: center;
+                flex-wrap: wrap;
+
+                h1 {
+                    color: $green-cl;
+                    font-weight: 1200;
+                    width: 200px;
+                    font-size: 30px;
+                    display: flex;
+                    text-transform: none;
+                }
+                input {
+                    padding: 40px;
+                    outline: none;
+                    width: 50%;
+                    border-radius: 30px;
+                    border: 5px solid $green-cl;
+                    font-family: $o;
+                }
+                p {
+                    color: red;
+                    font-size: 15px;
+                    display: block;
+                    width: 100%;
+                    padding: 10px 0;
+                    font-family: $o;
+                }
             }
-            input {
-                padding: 40px;
+            .button {
+                // left: 50%;
+                margin: 30px;
+                // transform: translateX(-50%);
+                padding: 20px 30px;
+                border-radius: 40px;
+                margin: 0 auto;
+                background-color: rgb(34, 230, 34);
+                cursor: pointer;
                 outline: none;
-                width: 50%;
-                border-radius: 30px;
-                border: 5px solid $green-cl;
-                font-family: $o;
+                border: none;
+                width: fit-content;
+                color: white;
+                border: 10px solid rgb(6, 94, 6);
+                margin: 10px 0;
+                letter-spacing: 1px;
+                font-size: 21px;
+                text-transform: uppercase;
             }
-            p {
+            .error-text {
                 color: red;
-                font-size: 15px;
-                display: block;
-                width: 100%;
-                padding: 10px 0;
                 font-family: $o;
+                font-size: 20px;
             }
-        }
-        .button {
-            // left: 50%;
-            margin: 30px;
-            // transform: translateX(-50%);
-            padding: 20px 30px;
-            border-radius: 40px;
-            margin: 0 auto;
-            background-color: rgb(34, 230, 34);
-            cursor: pointer;
-            outline: none;
-            border: none;
-            width: fit-content;
-            color: white;
-            border: 10px solid rgb(6, 94, 6);
-            margin: 10px 0;
-            letter-spacing: 1px;
-            font-size: 21px;
-            text-transform: uppercase;
-        }
-        .error-text {
-            color: red;
-            font-family: $o;
-            font-size: 20px;
         }
     }
 }
 .error-text {
     color: red;
-    padding: 10px 0;
-    font-size: 20px;
+    padding: 20px 0;
+    font-size: 15px;
     @include sm {
         font-size: 15px;
     }
@@ -167,9 +185,10 @@
     font-family: $o;
     @include mid(true);
     padding: 20px;
-    margin: 30px 0;
+    // margin-right: 20%;
     transition: 0.1s $cubic;
+    border: none;
     &:hover {
-        background-color: $green-cl;
+        background-color: #7aabee;
     }
 }
