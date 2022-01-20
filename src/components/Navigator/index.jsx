@@ -21,6 +21,10 @@ const Navigator = () => {
             url: "/Login",
             text: "Login"
         },
+        {
+            url: "/Product",
+            text: "Product"
+        },
 
 
     ]

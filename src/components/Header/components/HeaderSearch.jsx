@@ -24,7 +24,7 @@ export default function HeaderSearch() {
     e.currentTarget.innerHTML = cur.textContent;
     document.querySelector(".header__select-content p").innerHTML = his;
   };
-  const [search, setSearch] = useState("")
+
   const { setForm, form } = useForm({})
   const onChange = (name) => (e) => {
     setForm({
@@ -35,10 +35,10 @@ export default function HeaderSearch() {
 
   }
   const dispatch = useDispatch();
-  const { productInfo } = useSelector(store => store.product)
+  const { productInfo, productSearch } = useSelector(store => store.product)
   const handleSearch = async (e, index) => {
     e.preventDefault();
-    console.log(form.name);
+
 
     const products = await productService.searchNameProduct(form.name);
 
@@ -47,20 +47,13 @@ export default function HeaderSearch() {
     } else {
       message.success("Sản phẩm đã được tìm thấy")
       dispatch({
-        type: "PRODUCT",
+        type: "PRODUCT_SEARCH",
         payload: products.data,
       })
-      // console.log('products.data :>> ', products.data);
-      // products.data.map(product => {
-      //   console.log('product.name :>> ', product.name);
-      // })
+      // console.log(productSearch);
     }
 
-    // productInfo.map((product) => {
-    //   const { name, price, short_description, thumbnail_url, _id } = product;
-    //   console.log('name :>> ', name);
 
-    // })
 
 
   }
@@ -87,7 +80,7 @@ export default function HeaderSearch() {
             />
           </svg>
         </div>
-        <div className="header__select-option">
+        {/* <div className="header__select-option">
           <div className="select__option">
             <p onClick={changeCur} className="">
               Most popular
@@ -99,7 +92,7 @@ export default function HeaderSearch() {
               Everything
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
       <input onChange={onChange("name")} className="header__input" />
       <button

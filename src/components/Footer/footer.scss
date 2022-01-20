@@ -27,10 +27,10 @@
       width: 50%;
     }
     @include xs {
-      width: 100%;
-      @include mid(true);
-      flex-direction: column;
-      margin: 0 auto;
+      // width: 100%;
+      // @include mid(true);
+      // flex-direction: column;
+      // margin: 0 auto;
       & div {
         .nameItem {
           width: 100%;

@@ -1,11 +1,13 @@
 import { message } from "antd";
 import classNames from "classnames";
 import React, { useRef, useState } from "react";
+import { useSelector } from "react-redux";
 import { IconCompare, IconRemove, IconStar, IconWish, LgBitcoin, LgDhl, LgFed, LgPaypal, LgVisa } from "../../components";
 import Button from "../../components/Button";
 import { UseAuth } from "../../context/AuthContext";
 import { useForm } from "../../hooks/useForm";
 import "../Checkout/checkout.scss";
+import Product from "../Product";
 import BillingInfoMain from "./components/BillingInfoMain";
 import BillingMethod from "./components/BillingMethod";
 import BillingMethodItem from "./components/BillingMethodItem";
@@ -21,6 +23,7 @@ import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
 export default function CheckOut() {
+  const { productInfo, productSearch } = useSelector(store => store.product);
   const addressRegex = /^\d+\s[A-z]+\s[A-z]+/g;
   const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
   const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -109,8 +112,9 @@ export default function CheckOut() {
       message.error("Bạn đã bỏ quên mục nào đó")
     }
   }
-
-  return (
+  console.log(productSearch);
+  return (<>
+    {/* {productSearch.length !== "0" && <Product />} */}
     <div className="container">
       <h4 className="homapage">Homepage/Checkout page</h4>
       <form className="checkoutWrap"
@@ -135,7 +139,7 @@ export default function CheckOut() {
               <div className="formWrap">
                 <TextField
                   label="First name"
-                  firstNameRegister
+
                   {...register("firstName")}
                   placeHolder="First name"
                   helperText={error.firstName}
@@ -606,5 +610,6 @@ export default function CheckOut() {
         </div>
       </form>
     </div>
+  </>
   );
 }

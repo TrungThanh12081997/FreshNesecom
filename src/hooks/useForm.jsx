@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { UseAuth } from "../context/AuthContext";
 import authService from "../services/authService";
 export const useForm = (initialForm) => {
+    
     const addressRegex = /^\d+\s[A-z]+\s[A-z]+/g;
     const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
     const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -173,7 +174,7 @@ export const useForm = (initialForm) => {
         validateLogin,
         form, setForm,
         validateCard, submitForm,
-        setBillingInfo,
+        setBillingInfo, onChange,
         billingInfo, setPM, validateRegis, setSetPM, setPM
         // valiTextArea, handleArea
 
