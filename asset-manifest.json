@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/TrungThanh12081997/FreshNesecomstatic/css/main.0f29e608.css",
+    "main.js": "/TrungThanh12081997/FreshNesecomstatic/js/main.fe547f4d.js",
+    "static/media/Banner.jpg": "/TrungThanh12081997/FreshNesecomstatic/media/Banner.51437b9189bef764203b.jpg",
+    "static/media/OpenSans-BoldItalic.woff": "/TrungThanh12081997/FreshNesecomstatic/media/OpenSans-BoldItalic.6ca1b8c7579329d49a74.woff",
+    "static/media/OpenSans-Regular.woff": "/TrungThanh12081997/FreshNesecomstatic/media/OpenSans-Regular.6c5acfa99c83633bb078.woff",
+    "static/media/Poppins-Regular.woff": "/TrungThanh12081997/FreshNesecomstatic/media/Poppins-Regular.387f9003f984ef1cec60.woff",
+    "static/media/Poppins-Bold.woff": "/TrungThanh12081997/FreshNesecomstatic/media/Poppins-Bold.a6b628bdef91e927b77c.woff",
+    "static/media/login.jpg": "/TrungThanh12081997/FreshNesecomstatic/media/login.294b070df1da4bd7cf18.jpg",
+    "static/media/OpenSans-BoldItalic.woff2": "/TrungThanh12081997/FreshNesecomstatic/media/OpenSans-BoldItalic.0a76d9b69712d05a6ab5.woff2",
+    "static/media/OpenSans-Regular.woff2": "/TrungThanh12081997/FreshNesecomstatic/media/OpenSans-Regular.3ef06ba3c7099e63c9ce.woff2",
+    "static/media/Poppins-Regular.woff2": "/TrungThanh12081997/FreshNesecomstatic/media/Poppins-Regular.ad19729d6a0511212493.woff2",
+    "static/media/Poppins-Bold.woff2": "/TrungThanh12081997/FreshNesecomstatic/media/Poppins-Bold.dd24d10e037690f2bdcd.woff2",
+    "static/media/banner1.jpg": "/TrungThanh12081997/FreshNesecomstatic/media/banner1.923eb5340443d714d7b7.jpg",
+    "static/media/meo.jpg": "/TrungThanh12081997/FreshNesecomstatic/media/meo.425dbc1436e29bb96476.jpg",
+    "index.html": "/TrungThanh12081997/FreshNesecomindex.html",
+    "static/media/ic-category-right.svg": "/TrungThanh12081997/FreshNesecomstatic/media/ic-category-right.673a696329d55d3b6a1cb32836b4f898.svg",
+    "static/media/ic-right-green.svg": "/TrungThanh12081997/FreshNesecomstatic/media/ic-right-green.29ecef48c6e52321f7432b8d9bfde78c.svg",
+    "main.0f29e608.css.map": "/TrungThanh12081997/FreshNesecomstatic/css/main.0f29e608.css.map",
+    "main.fe547f4d.js.map": "/TrungThanh12081997/FreshNesecomstatic/js/main.fe547f4d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f29e608.css",
+    "static/js/main.fe547f4d.js"
+  ]
+}
