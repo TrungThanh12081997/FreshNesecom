@@ -38,12 +38,13 @@ function App() {
                   <Route path="/" element={<MainLayout />}>
                     <Route index path="/" element={<HomePage />} />
                     <Route path="/CheckOut" element={<CheckOut />} />
-                    <Route path="/Login" element={<Login />} />
-                    <Route path="/Register" element={<RegisterForm />} />
+
                     <Route path="/Product" element={<Product />} />
 
                     <Route path="*" element={<NotFound />} />
                   </Route>
+                  <Route path="/Login" element={<Login />} />
+                  <Route path="/Register" element={<RegisterForm />} />
                 </Routes>
               </div>
             </BrowserRouter>

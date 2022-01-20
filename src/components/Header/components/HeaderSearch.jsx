@@ -50,7 +50,7 @@ export default function HeaderSearch() {
         type: "PRODUCT_SEARCH",
         payload: products.data,
       })
-      // console.log(productSearch);
+      console.log(productSearch);
     }
 
 

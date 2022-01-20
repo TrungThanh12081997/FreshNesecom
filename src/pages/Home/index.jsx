@@ -16,9 +16,10 @@ import store from "../../store";
 import userService from "../../services/userService"
 import { ProductItem } from './components/ProductItem';
 import Product from '../Product';
+import productService from '../../services/productService';
 
 export default function HomePage() {
-  const { productInfo, productSearch } = useSelector(store => store.product)
+  const { productInfo, productSearch, productDefault } = useSelector(store => store.product)
   const dispatch = useDispatch()
   const { login, stateLogin } = useSelector(store => store.auth)
 
@@ -89,13 +90,17 @@ export default function HomePage() {
       item: "Baby",
     },
   ];
-  useEffect(() => {
-    if (stateLogin) {
-      getUser()
-    }
+  useEffect(async () => {
 
 
-  }, [stateLogin])
+    const res = await productService.getProductDefault();
+
+
+    dispatch({
+      type: "PRODUCT_DEFAULT",
+      payload: res.data
+    })
+  }, [])
 
 
 
@@ -113,13 +118,13 @@ export default function HomePage() {
 
   }
   console.log(productSearch)
-
+  console.log(productDefault)
 
 
   return (<>
 
 
-    {productSearch ? <Product /> : ""}
+    {typeof productSearch === "Array" && <Product />}
     <div div className="homePage" >
       <div className="container">
 
@@ -161,16 +166,30 @@ export default function HomePage() {
             </div>
           </div>
           <div className="itemProductList">
-            {productInfo?.length !== "0" && productInfo?.map(e => {
-              const { name, price, short_description, thumbnail_url } = e;
-              return <ProductItem
-                name={name}
-                price={price}
-                short_description={short_description}
-                thumbnail_url={thumbnail_url}
+            {
+              typeof productSearch === "undefined" ?
+                productDefault?.map(e => {
+                  const { name, price, short_description, thumbnail_url } = e;
+                  return <ProductItem
+                    name={name}
+                    price={price}
+                    short_description={short_description}
+                    thumbnail_url={thumbnail_url}
 
-              />
-            })}
+                  />
+                }) :
+                productSearch?.map(e => {
+                  const { name, price, short_description, thumbnail_url } = e;
+                  return <ProductItem
+                    name={name}
+                    price={price}
+                    short_description={short_description}
+                    thumbnail_url={thumbnail_url}
+
+                  />
+
+
+                })}
           </div>
 
         </section>
@@ -196,7 +215,24 @@ export default function HomePage() {
         {/* <Slider /> */}
       </section>
       <div className="container">
-        <section className="headline">
+        <section className="bestSelling">
+          <div className="categoryWrap">
+            <ItemFooter
+              titleFooter="Best selling products"
+              nameItem={itemSelling}
+              activeItem="true"
+            />
+            <div className="btn">
+              <a href="#" className="btnCategory">
+                More categories
+              </a>
+              <IconCategory />
+            </div>
+          </div>
+          <Itemproduct />
+
+        </section>
+        {/* <section className="headline">
           <div className="titleHeadline">
             <h3>Section Headline</h3>
             <Button
@@ -213,7 +249,7 @@ export default function HomePage() {
             <Itemproduct />
 
           </div>
-        </section>
+        </section> */}
         <section className="Blog">
           <BlogPost />
 

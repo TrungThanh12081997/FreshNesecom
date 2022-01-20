@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
-import { BlackRight } from '../../components'
+import { BlackRight, WhiteRight } from '../../components'
 import Button from '../../components/Button'
 import { useForm } from '../../hooks/useForm'
 import authService from '../../services/authService'
 import TextField from '../Checkout/components/TextField'
 import { message } from 'antd';
-
+import banner1 from "../../assets/img/banner1.jpg"
+import Navigator from '../../components/Navigator'
 const RegisterForm = () => {
     const { register, error, validateRegis, form } = useForm({})
     const dispatch = useDispatch();
@@ -48,56 +49,57 @@ const RegisterForm = () => {
     if (stateLogin) return <Navigate to="/" />
     return (
 
-        <div className='container'>
+        <div className='container-fluid'>
+            <Navigator />
             <form
                 onSubmit={handleRegister}
                 className="form">
-                <h1 className="h1">Register</h1>
-                <div className="register__form">
-                    <TextField
-                        label="name"
+
+                <div className="flex">
+                    <div className="register__banner">
+                        <img src={banner1} alt="" className="" />
+                    </div>
+
+                    <div className="register__form">
+                        <h1 className="h1">Register</h1>
+                        <TextField
+                            label="name"
 
 
-                        {...register("name")}
-                        placeHolder="Nhập tên..."
-                        helperText={error.name}
-                    />
-                    <TextField
-                        label="username"
+                            {...register("name")}
+                            placeHolder="Nhập tên..."
+                            helperText={error.name}
+                        />
+                        <TextField
+                            label="username"
 
-                        {...register("username")}
-                        placeHolder="Nhập username..."
-                        helperText={error.username}
-                    />
-                    <TextField
-                        label="password"
+                            {...register("username")}
+                            placeHolder="Nhập username..."
+                            helperText={error.username}
+                        />
+                        <TextField
+                            label="password"
 
-                        type="password"
-                        {...register("password")}
-                        placeHolder="Nhập password..."
-                        helperText={error.password}
-                    />
-                    <TextField
-                        label="confirm password"
+                            type="password"
+                            {...register("password")}
+                            placeHolder="Nhập password..."
+                            helperText={error.password}
+                        />
+                        <TextField
+                            label="confirm password"
 
-                        type="password"
-                        {...register("confirm")}
-                        placeHolder="Nhập lại password..."
-                        helperText={error.confirm}
-                    />
+                            type="password"
+                            {...register("confirm")}
+                            placeHolder="Nhập lại password..."
+                            helperText={error.confirm}
+                        />
 
-                    <Button
-                        children="REGISTER"
-                        type="icon-right"
-                        icon={<BlackRight />}
-                        size="small"
-                        background='bold'
-                        color="white"
-                        border="bold"
-                    // onClick={handleRegister}
-                    // {err && <p className='error-text'>{err}</p>}
-                    />
+                        <button className='login-register'
+
+                        >Đăng Ký <WhiteRight /> </button>
+                    </div>
                 </div>
+
             </form>
         </div>
 

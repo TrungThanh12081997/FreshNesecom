@@ -33,8 +33,8 @@ export default function Product() {
             payload: res.data
         })
     }, [])
-    console.log(productDefault)
-    console.log(productPrice);
+    console.log(productSearch);
+
     // if (fetching) return "..loading"
     var onChange = (name) => (ev) => {
 
@@ -64,7 +64,7 @@ export default function Product() {
                 type: "PRODUCT_PRICE",
                 payload: products.data,
             })
-            console.log(productPrice);
+
 
         }
     }
@@ -330,7 +330,7 @@ export default function Product() {
                         <div className="view__middle-right">
                             <div className="itemProductList">
 
-                                {typeof productPrice === "undefined" ?
+                                {typeof productPrice === "undefined" && typeof productSearch === "undefined" ?
                                     productDefault?.map(
                                         product => {
                                             const { name, price, short_description, thumbnail_url } = product
@@ -354,8 +354,8 @@ export default function Product() {
                                         }
                                     )
                                 }
-                                {/* {product && productPrice.length === 0 &&
-                                    product.map(
+                                {productSearch &&
+                                    productSearch?.map(
                                         product => {
                                             const { name, price, short_description, thumbnail_url } = product
                                             return (<ProductItem
@@ -365,10 +365,10 @@ export default function Product() {
 
                                             />)
                                         }
-                                    )} */}
+                                    )
 
+                                }
 
-                                {/* } */}
 
 
                             </div>
