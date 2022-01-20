@@ -18,11 +18,11 @@ import { ProductItem } from './components/ProductItem';
 import Product from '../Product';
 
 export default function HomePage() {
-  const { productInfo } = useSelector(store => store.product)
+  const { productInfo, productSearch } = useSelector(store => store.product)
   const dispatch = useDispatch()
   const { login, stateLogin } = useSelector(store => store.auth)
-  // const { productInfo } = useSelector(store => store.product)
-  const { name, price, short_description, thumbnail_url, _id } = productInfo
+
+
   var itemCategory = [
     {
       id: 1,
@@ -97,7 +97,8 @@ export default function HomePage() {
 
   }, [stateLogin])
 
-  console.log(productInfo);
+
+
 
   const getUser = async () => {
 
@@ -111,14 +112,14 @@ export default function HomePage() {
     }
 
   }
-
+  console.log(productSearch)
 
 
 
   return (<>
 
 
-    {productInfo.length !== "0" && <Product />}
+    {productSearch ? <Product /> : ""}
     <div div className="homePage" >
       <div className="container">
 
@@ -160,7 +161,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="itemProductList">
-            {productInfo && productInfo?.map(e => {
+            {productInfo?.length !== "0" && productInfo?.map(e => {
               const { name, price, short_description, thumbnail_url } = e;
               return <ProductItem
                 name={name}

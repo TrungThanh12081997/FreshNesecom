@@ -12,7 +12,7 @@ import "./style.scss"
 import { useDispatch, useSelector } from 'react-redux'
 export default function Product() {
     const dispatch = useDispatch();
-    const { productDefault, productInfo, productPrice } = useSelector(store => store.product);
+    const { productDefault, productInfo, productPrice, productSearch } = useSelector(store => store.product);
     const [fetching, setFetching] = useState(true)
     const [product, setProduct] = useState()
     const [brand, setBrand] = useState(true)
@@ -24,17 +24,17 @@ export default function Product() {
     useEffect(async () => {
 
         setFetching(true)
-        const res = await productService.getProduct();
+        const res = await productService.getProductDefault();
         setProduct(res.data)
         setFetching(false)
 
         dispatch({
-            type: "PRODUCT",
+            type: "PRODUCT_DEFAULT",
             payload: res.data
         })
-
     }, [])
-
+    console.log(productDefault)
+    console.log(productPrice);
     // if (fetching) return "..loading"
     var onChange = (name) => (ev) => {
 
@@ -64,6 +64,7 @@ export default function Product() {
                 type: "PRODUCT_PRICE",
                 payload: products.data,
             })
+            console.log(productPrice);
 
         }
     }
@@ -268,7 +269,7 @@ export default function Product() {
                                         min={0}
                                         max={100000000}
                                         step={[10]}
-                                        defaultValue={[20000, 500000]}
+                                        defaultValue={[20000000, 85000000]}
                                     />
                                 </div>
                                 <div className="min__max">
@@ -329,7 +330,7 @@ export default function Product() {
                         <div className="view__middle-right">
                             <div className="itemProductList">
 
-                                {productPrice?.length === 0 ?
+                                {typeof productPrice === "undefined" ?
                                     productDefault?.map(
                                         product => {
                                             const { name, price, short_description, thumbnail_url } = product
@@ -341,7 +342,7 @@ export default function Product() {
                                             />)
                                         }
                                     ) :
-                                    productInfo?.map(
+                                    productPrice?.map(
                                         product => {
                                             const { name, price, short_description, thumbnail_url } = product
                                             return (<ProductItem

@@ -23,7 +23,7 @@ import TextField from "./components/TextField";
 import TitleBilling from "./components/TitleBilling";
 
 export default function CheckOut() {
-  const { productInfo } = useSelector(store => store.product);
+  const { productInfo, productSearch } = useSelector(store => store.product);
   const addressRegex = /^\d+\s[A-z]+\s[A-z]+/g;
   const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
   const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -112,9 +112,9 @@ export default function CheckOut() {
       message.error("Bạn đã bỏ quên mục nào đó")
     }
   }
-
+  console.log(productSearch);
   return (<>
-    {productInfo && <Product />}
+    {/* {productSearch.length !== "0" && <Product />} */}
     <div className="container">
       <h4 className="homapage">Homepage/Checkout page</h4>
       <form className="checkoutWrap"

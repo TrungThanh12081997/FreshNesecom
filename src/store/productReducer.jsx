@@ -2,7 +2,7 @@ const initialValue = {
     productInfo: [],
     productDetail: [],
     category: [],
-    productPrice: [], productDefault: []
+    productPrice: [], productDefault: [], productSearch: []
 }
 export default function productReducer(state = initialValue, action) {
     switch (action.type) {
@@ -25,6 +25,10 @@ export default function productReducer(state = initialValue, action) {
         case "PRODUCT_DEFAULT":
             return {
                 productDefault: action.payload
+            }
+        case "PRODUCT_SEARCH":
+            return {
+                productSearch: action.payload
             }
 
     }

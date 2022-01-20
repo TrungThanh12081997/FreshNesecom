@@ -35,10 +35,10 @@ export default function HeaderSearch() {
 
   }
   const dispatch = useDispatch();
-  const { productInfo } = useSelector(store => store.product)
+  const { productInfo, productSearch } = useSelector(store => store.product)
   const handleSearch = async (e, index) => {
     e.preventDefault();
-    console.log(form.name);
+
 
     const products = await productService.searchNameProduct(form.name);
 
@@ -47,10 +47,10 @@ export default function HeaderSearch() {
     } else {
       message.success("Sản phẩm đã được tìm thấy")
       dispatch({
-        type: "PRODUCT",
+        type: "PRODUCT_SEARCH",
         payload: products.data,
       })
-      console.log(productInfo);
+      // console.log(productSearch);
     }
 
 
