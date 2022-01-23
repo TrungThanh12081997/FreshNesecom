@@ -70,7 +70,15 @@ export default function Product() {
     }
 
 
-
+    const handleReset = (e) => {
+        e.preventDefault();
+        document.querySelector(".min__input").setAttribute("value", 0)
+        document.querySelector(".max__input").setAttribute("value", document.querySelector("ant-slider-handle.ant-slider-handle-2").getAttribute("aria-valuemax"))
+        setNumber({
+            minPrice: "0",
+            maxPrice: document.querySelector("ant-slider-handle.ant-slider-handle-2").getAttribute("aria-valuemax")
+        });
+    }
     // console.log(document.querySelector(".ant-slider-handle ant-slider-handle-2").innerText)
     return (
         <>
@@ -281,6 +289,7 @@ export default function Product() {
                                             placeholder='0'
                                             onChange={
                                                 onChange("minPrice")
+
                                             }
                                             className="min__max-input min__input" />
                                     </div>
@@ -319,6 +328,7 @@ export default function Product() {
                                     background='white'
                                     color='gray'
                                     border="white"
+                                    onClick={handleReset}
                                 ></Button>
 
 

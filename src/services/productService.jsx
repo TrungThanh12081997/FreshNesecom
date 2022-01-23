@@ -13,11 +13,17 @@ const productService = {
 
         }).then(res => res.json())
     },
+    // searchNameProduct(data) {
+    //     return fetch(`${API}/product?name=${data}`, {
+    //         method: "GET",
+
+    //     }).then(res => res.json())
+    // },
     searchNameProduct(data) {
         return fetch(`${API}/product?name=${data}`, {
             method: "GET",
 
-        }).then(res => res.json())
+        }).then(res => res.data);
     },
     getProductMinMax(data) {
         return fetch(`${API}/product?minPrice=${data.minPrice}&maxPrice=${data.maxPrice}`, {
@@ -25,6 +31,7 @@ const productService = {
 
         }).then(res => res.json())
     },
+
     getProductDefault(data) {
         return fetch(`${API}/product?maxPrice=10000000000000000000000000000000`, {
             method: "GET",

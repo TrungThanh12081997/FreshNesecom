@@ -26,18 +26,19 @@ export default function HeaderSearch() {
   };
 
   const { setForm, form } = useForm({})
-  const onChange = (name) => (e) => {
+  const onChange = name => ev => {
     setForm({
       ...form,
-      [name]: e.currentTarget.value
+      [name]: ev.target.value
     })
 
-
   }
+
   const dispatch = useDispatch();
   const { productInfo, productSearch } = useSelector(store => store.product)
   const handleSearch = async (e, index) => {
     e.preventDefault();
+
 
 
     const products = await productService.searchNameProduct(form.name);

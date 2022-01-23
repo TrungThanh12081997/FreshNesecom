@@ -5,7 +5,7 @@
     &__middle {
         display: flex;
         @include xs {
-            flex-direction: column;
+            // flex-direction: column;
         }
         &-left {
             width: 35%;
