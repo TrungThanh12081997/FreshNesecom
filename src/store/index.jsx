@@ -2,11 +2,11 @@ import { createStore, combineReducers, applyMiddleware } from "redux"
 import AuthReducer from "./authenReducer"
 import productReducer from "./productReducer"
 import userReducer from "./userReducer"
-import userService from "../services/userService"
-import createSagaMiddleware from 'redux-saga'
-// import rootSaga from "./rootSaga"
+// import userService from "../services/userService"
+// import createSagaMiddleware from 'redux-saga'
+// // import rootSaga from "./rootSaga"
 
-const token = JSON.parse(localStorage.getItem("token"))
+
 // const sagaMiddleware = createSagaMiddleware()
 const reducer = combineReducers({
     auth: AuthReducer,
