@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { IconCategory, IcRightGreen } from "../../components";
+import { GreenRight, IconCategory, IcRightGreen, WhiteRight } from "../../components";
 import Button from "../../components/Button";
 import ItemFooter from "../../components/Footer/components/ItemFooter";
 import "../../components/Footer/footer.scss";
@@ -23,7 +23,7 @@ export default function HomePage() {
   const dispatch = useDispatch()
   const { login, stateLogin } = useSelector(store => store.auth)
 
-
+const {count } = useSelector(store=>store.count)
   var itemCategory = [
     {
       id: 1,
@@ -117,13 +117,19 @@ export default function HomePage() {
     }
 
   }
-  console.log(productSearch)
-  console.log(productDefault)
+  
 
 
   return (<>
 
-
+<Button children="Count +" icon={<WhiteRight />} type="icon-right" background="green" border="none"
+                color="black" size="small" 
+                  onClick={()=>{
+                    dispatch({
+                      type:"COUNT"
+                    })
+                  }}
+                /> count : {count}
     {typeof productSearch === "Array" && <Product />}
     <div div className="homePage" >
       <div className="container">

@@ -4,9 +4,11 @@
     width: 20%;
     @media (max-width: 764px) {
       justify-content: center;
-      width: 100%;
+      // width: 100%;
       @include mid(true);
       flex-direction: column;
+      display: block;
+      width: 35%;
     }
     .category {
       text-decoration: underline;
@@ -34,9 +36,9 @@
   .cateMenu {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     @include sm {
-      flex-direction: column;
+      // flex-direction: column;
       justify-content: center;
     }
     @media (max-width: 764px) {
@@ -87,7 +89,7 @@
     margin-top: 128px;
     margin-bottom: 128px;
     @include sm {
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
     }
   }
   .bestSelling {
@@ -97,7 +99,7 @@
     margin-top: 128px;
     margin-bottom: 128px;
     @include sm {
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
     }
   }
   .itemProductList {

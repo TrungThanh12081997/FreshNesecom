@@ -23,7 +23,7 @@ const productService = {
         return fetch(`${API}/product?name=${data}`, {
             method: "GET",
 
-        }).then(res => res.data);
+        }).then(res => res.json());
     },
     getProductMinMax(data) {
         return fetch(`${API}/product?minPrice=${data.minPrice}&maxPrice=${data.maxPrice}`, {

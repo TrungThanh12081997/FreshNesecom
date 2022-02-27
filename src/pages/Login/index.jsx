@@ -31,24 +31,24 @@ export default function Login() {
                 const backend = await authService.login(form);
                 if (backend?.message) {
                     throw backend?.message;
-                    message.error(backend.message);
+                   
 
                 } else {
                     dispatch({
                         type: "LOGIN",
-                        payload: backend
+                        // payload: backend
                     })
                     message.success('Đăng nhập thành công');
 
                 }
             } catch (err) {
-                console.log('err :>> ', err);
+               
                 message.error(err);
             }
         }
     }
     if (stateLogin) return <Navigate to="/" />
-
+console.log(stateLogin)
     return (
         <div className='container-fluid'>
             <Navigator />
