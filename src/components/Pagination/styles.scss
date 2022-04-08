@@ -1,0 +1,31 @@
+@import "../../assets/css/style.scss";
+.Paginate {
+  display: flex;
+  gap: 15px;
+  font-family: $ob;
+  a {
+    text-decoration: none;
+    color: rgb(34, 41, 223);
+    display: block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      border: none;
+      font-size: 15px;
+      color: rgb(209, 46, 46);
+      transition: 0.2s;
+    }
+  }
+}
+.link-number {
+  background-color: rgb(223, 232, 232);
+  .active {
+    font-size: 15px;
+    border-bottom: 1px solid rgb(209, 46, 46);
+    color: rgb(209, 46, 46);
+    background: transparent;
+  }
+}

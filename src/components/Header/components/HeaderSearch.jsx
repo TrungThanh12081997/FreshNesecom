@@ -49,7 +49,7 @@ export default function HeaderSearch() {
       message.success("Sản phẩm đã được tìm thấy")
       dispatch({
         type: "PRODUCT_SEARCH",
-        payload: products.data,
+        payload: products?.data?.data,
       })
       console.log(productSearch);
     }

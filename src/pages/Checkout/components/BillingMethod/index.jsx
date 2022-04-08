@@ -33,7 +33,7 @@ export default function BillingMethod() {
 
     return (
         <>
-            {methods.map(function (method) {
+            {methods.map(function (method,index) {
                 const { name, price, text, logo } = method;
                 return (
                     < >
@@ -43,6 +43,7 @@ export default function BillingMethod() {
                             price={price}
                             text={text}
                             logo={logo}
+                            key={index}
                             // onChange={() =>
                             //     setSelectedOption(name)}
                             // isChecked={name === selectedOption}

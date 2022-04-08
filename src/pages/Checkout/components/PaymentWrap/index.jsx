@@ -86,10 +86,11 @@ export default function PaymentWrap({ }) {
     return (
         <>
             {
-                PaymentWraps.map(PaymentWrap => {
+                PaymentWraps.map(PaymentWrap,index => {
                     const { name, logo, state, onChange, content } = PaymentWrap
                     return (
                         <form
+                        key={index}
                             className=
                             {classnames("paymentWrap", `${payment === name ? "open" : "hide"}`
                             )}

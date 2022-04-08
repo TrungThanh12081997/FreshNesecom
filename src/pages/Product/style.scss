@@ -1,147 +1,168 @@
 @import "../../assets/css/style.scss";
+input {
+  width: fit-content;
+}
 .view {
-    &__top {
+  &__top {
+  }
+  &__middle {
+    display: flex;
+    @include xs {
+      // flex-direction: column;
     }
-    &__middle {
-        display: flex;
-        @include xs {
-            // flex-direction: column;
-        }
-        &-left {
-            width: 35%;
-            .form__introduce {
-                .min__max {
-                    display: flex;
-                    justify-content: space-between;
+    &-left {
+      width: 35%;
+      .form__introduce {
+        .min__max {
+          display: flex;
+          justify-content: space-between;
 
-                    width: 90%;
-                    margin-bottom: 31px;
-                    &-item {
-                        padding-right: 5%;
-                        width: 45%;
-                        p {
-                            @include text(12px, $pb, 18px, $black-cl, none);
-                        }
-                        .min__max-input {
-                            width: 100%;
-                            border: 1px solid #d1d1d1;
-                            border-radius: 12px;
-                            padding: 11px 26px 16px;
-                            @include text(12px, $pb, 12px, #a9a9a9, none);
-                            @include sm {
-                                border-radius: 8px;
-                                padding: 4px 9px 9px;
-                            }
-                            @include xs {
-                                border-radius: 6px;
-                                padding: 4px 8px 6px;
-                            }
-                        }
-                    }
-                }
-                &-title {
-                    @include text(18px, $pb, 25px, $black-cl, none);
-                }
-                .form__introduce-item {
-                    & input {
-                        margin-right: 8px;
-                    }
-                    @include text(14px, $o, 38px, $black-cl, none);
-                }
-                .rating__level {
-                    .rating__level-item {
-                        margin: 8px 0;
-                        @include text(14px, $o, 30px, $black-cl, none);
-                        display: flex;
-                        align-items: center;
-                        &-input {
-                            margin-right: 8px;
-                        }
-                    }
-                }
-                .range-slider {
-                    width: 90%;
-                }
+          width: 90%;
+          margin-bottom: 31px;
+          &-item {
+            padding-right: 5%;
+            width: 45%;
+            p {
+              @include text(12px, $pb, 18px, $black-cl, none);
             }
-            .view__intro-btn {
-                display: flex;
+            .min__max-input {
+              width: 100%;
+              border: 1px solid #d1d1d1;
+              border-radius: 12px;
+              padding: 11px 26px 16px;
+              @include text(12px, $pb, 12px, #a9a9a9, none);
+              @include sm {
+                border-radius: 8px;
+                padding: 4px 9px 9px;
+              }
+              @include xs {
+                border-radius: 6px;
+                padding: 4px 8px 6px;
+              }
             }
+          }
         }
-        &-right {
+        &-title {
+          @include text(18px, $pb, 25px, $black-cl, none);
+        }
+        .form__introduce-item {
+            color:rgb(109, 109, 230) !important;
+            cursor: pointer;
+            line-height: 18px !important;
+            margin:8px 0;
+            width: fit-content;
+            &:hover{
+                color:$main-cl;
+            }
+          & input {
+            margin-right: 8px;
+            width: fit-content;
+          }
+          @include text(14px, $o, 38px, $black-cl, none);
+        }
+        .rating__level {
+          .rating__level-item {
+            margin: 8px 0;
+            @include text(14px, $o, 30px, $black-cl, none);
             display: flex;
-            width: 65%;
+            align-items: center;
+            &-input {
+              margin-right: 8px;
+            }
+            input {
+              width: fit-content;
+            }
+          }
         }
+        .range-slider {
+          width: 90%;
+        }
+      }
+      .view__intro-btn {
+        display: flex;
+      }
     }
+    &-right {
+      display: flex;
+      width: 65%;
+    }
+  }
 }
 .itemProductList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  @include xs {
+    justify-content: center;
+  }
+  .itemProductWrap {
+    border: 1px solid #d1d1d1;
+    border-radius: 12px;
+    width: 30%;
+    margin: 10px 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    @include sm {
+      width: 48%;
+    }
     @include xs {
-        justify-content: center;
+      width: 100%;
     }
-    .itemProductWrap {
-        border: 1px solid #d1d1d1;
+    .itemProduct {
+      margin: 16px;
+      // width: 32%;
+      overflow: hidden;
+      .itemImg {
+        height: 180px;
         border-radius: 12px;
-        width: 30%;
-        margin: 10px 0;
-        display: flex;
-        flex-wrap: wrap;
-        height: fit-content;
+        background: #f9f9f9;
+        margin: auto;
+        margin-bottom: 16px;
         overflow: hidden;
-        @include sm {
-            width: 48%;
+        @include mid(true);
+        &img {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: cover;
         }
-        @include xs {
-            width: 100%;
+      }
+      .productText {
+        overflow: hidden;
+        h4 {
+          font-size: 15px;
+          font-family: "PoppinsSemiBold";
+          line-height: 21px;
+          @include overtext(2);
         }
-        .itemProduct {
-            margin: 16px;
-            // width: 32%;
-            overflow: hidden;
-            .itemImg {
-                height: 180px;
-                border-radius: 12px;
-                background: #f9f9f9;
-                margin: auto;
-                margin-bottom: 16px;
-                overflow: hidden;
-                @include mid(true);
-                &img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    object-fit: cover;
-                }
-            }
-            .productText {
-                overflow: hidden;
-                h4 {
-                    font-size: 15px;
-                    font-family: "PoppinsSemiBold";
-                    line-height: 21px;
-                    @include overtext(2);
-                }
-                p {
-                    font-size: 12px;
-                    line-height: 15px;
-                    font-family: $o;
-                    color: #575757;
-                    @include overtext(3);
-                }
-                .price {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 16px;
-                    flex-wrap: wrap;
-                    h3 {
-                        @include overtext(3);
-                        margin: 5px 0;
-                        font-size: 18px;
-                        font-family: "PoppinsSemiBold";
-                    }
-                }
-            }
+        p {
+          font-size: 12px;
+          line-height: 15px;
+          font-family: $o;
+          color: #575757;
+          @include overtext(3);
         }
+        .price {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 16px;
+          flex-wrap: wrap;
+          h3 {
+            @include overtext(3);
+            margin: 5px 0;
+            font-size: 18px;
+            font-family: "PoppinsSemiBold";
+          }
+        }
+      }
     }
+  }
+}
+.mid {
+  display: flex;
+  justify-content: flex-end;
+  margin:90px 0;
+
 }

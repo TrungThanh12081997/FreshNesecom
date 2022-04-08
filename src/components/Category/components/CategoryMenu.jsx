@@ -7,9 +7,9 @@ export default function Category() {
     "Drinks",
     "Kitchen",
   ];
-  const item = menu.map((item) => {
+  const item = menu.map((item,index) => {
     return (
-      <a href="" className="">
+      <a href="" className="" key={index}>
         {item}
       </a>
     );

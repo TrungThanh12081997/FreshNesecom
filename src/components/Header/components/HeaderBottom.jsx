@@ -7,6 +7,7 @@ import { Link, Navigate } from "react-router-dom"
 import productService from "../../../services/productService";
 import { useDispatch } from "react-redux";
 import authService from "../../../services/authService";
+import { stateLoginSelector } from "../../../store/authenReducer";
 export default function HeaderBottom() {
 
 
@@ -25,7 +26,7 @@ export default function HeaderBottom() {
   //     })
   // if(!login) return <Navigate to="/Login"/>
 
-  const { login } = useSelector(store => store.auth);
+  const { login } = useSelector((store)=> store.auth);
 
   //   }
   // }
