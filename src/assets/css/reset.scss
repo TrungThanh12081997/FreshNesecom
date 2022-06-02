@@ -1,3 +1,4 @@
+@import "./variables.scss";
 html,
 body,
 div,
@@ -101,7 +102,19 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  line-height: 1.4;
+  color: rgb(137, 136, 136) !important;
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  overflow-x: hidden;
+  letter-spacing: 0.1px;
+  cursor: context-menu;
+
+  ::selection {
+    background: $primary-color;
+    color: $white-cl;
+  }
 }
 ol,
 ul {
@@ -126,4 +139,8 @@ table {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+.swiper-slide {
+  width: 550px !important;
+  height: auto;
 }

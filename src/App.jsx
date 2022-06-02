@@ -1,44 +1,40 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./assets/css/style.scss";
+import "assets/css/style.scss";
 
-import MainLayout from "./layout/MainLayout";
+import React, { Suspense, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-import { Provider } from "react-redux"
-import store from "./store";
-import { AuthProvider } from "./context/AuthContext";
-import { createContext } from "react";
-import HomePage from "./pages/Home";
+import "swiper/scss";
+import Loading from "components/Loading/Loading";
 
+// const Loading = React.lazy(() => {
+//   return import("components/Loading/Loading");
+// });
+const HomePage = React.lazy(() => {
+  return import("pages/Home");
+});
 function App() {
+  useEffect(() => {
+    AOS.init({
+      startEvent: "DOMContentLoaded",
 
-  const AuthContext = createContext()
+      animatedClassName: "aos-animate",
+      useClassNames: false,
+      disableMutationObserver: false,
+
+      duration: 1000,
+      easing: "ease-in",
+      once: false,
+      mirror: false,
+    });
+  }, []);
   return (
     <>
-      <div className="App">
-        <Provider
-          store={store}
-        >
-          <AuthProvider >
-            <BrowserRouter>
-
-              <div id="main-content">
-                <Routes>
-                  <Route path="/" element={<MainLayout />}>
-                    <Route index path="/" element={<HomePage />} />
-                    {/* <Route path="/CheckOut" element={<CheckOut />} />
-
-                    <Route path="/Product" element={<Product />} />
-
-                    <Route path="*" element={<NotFound />} /> */}
-                  </Route>
-                  {/* <Route path="/Login" element={<Login />} />
-                  <Route path="/Register" element={<RegisterForm />} /> */}
-                </Routes>
-              </div>
-            </BrowserRouter>
-          </AuthProvider>
-        </Provider>
-      </div>
+      <Suspense fallback={<Loading />}>
+        <div className="App">
+          <HomePage />
+        </div>
+      </Suspense>
     </>
   );
 }
