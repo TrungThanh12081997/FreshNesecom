@@ -56,7 +56,7 @@ const SectionSlider = ({ title, para }) => {
     },
   ];
   return (
-    <div className={classNames(" w-full", "background-main")}>
+    <div className={classNames("w-full", "background-main")}>
       <div className="container">
         <h1
           className={classNames(

@@ -1,15 +1,13 @@
-import "assets/css/style.scss";
 
 import React, { Suspense, useEffect } from "react";
 import AOS from "aos";
+import "assets/css/style.scss";
 import "aos/dist/aos.css";
 
 import "swiper/scss";
 import Loading from "components/Loading/Loading";
 
-// const Loading = React.lazy(() => {
-//   return import("components/Loading/Loading");
-// });
+
 const HomePage = React.lazy(() => {
   return import("pages/Home");
 });

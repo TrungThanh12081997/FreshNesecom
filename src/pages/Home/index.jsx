@@ -23,6 +23,7 @@ import book from "../../assets/img/book.png";
 import runner from "../../assets/img/runner.png";
 import designer from "../../assets/img/designer.png";
 import travel from "../../assets/img/travel.png";
+
 import "./style.scss";
 import BIRDS from "vanta/dist/vanta.birds.min";
 import { VANTA } from "vanta";
@@ -150,34 +151,7 @@ export default function HomePage() {
       };
     }
   }, [darkmode]);
-  // useEffect(() => {
-  //   if ((!darkmode && !vantaEffect) || (vantaEffect && !darkmode)) {
-  //     setVantaEffect(
-  //       VANTA.BIRDS({
-  //         el: ".background-vanta",
 
-  //         gyroControls: false,
-  //         minHeight: 100.0,
-  //         minWidth: 100.0,
-  //         scale: 1.0,
-  //         scaleMobile: 0.3,
-  //         backgroundColor: 0xffffff,
-  //         color1: 0xca2c2c,
-  //         color2: 0xbe1e1e,
-  //         birdSize: 1.0,
-  //         wingSpan: 40.0,
-  //         speedLimit: 7.0,
-  //         separation: 100.0,
-  //         alignment: 98.0,
-  //         cohesion: 100.0,
-  //         quantity: 4.0,
-  //       })
-  //     );
-  //     return () => {
-  //       if (vantaEffect) return vantaEffect.destroy();
-  //     };
-  //   }
-  // }, [darkmode]);
   return (
     <>
       <div className={classNames(" homePage transparent ")}>

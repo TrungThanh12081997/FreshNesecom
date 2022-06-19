@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 import Logo from "../../assets/img/logo.png";
 import "./style.scss";
@@ -17,13 +17,13 @@ const Header = () => {
 
   return (
     <>
-      <div className=" header   py-4">
+      <div className=" header shadow   py-4">
         <div className="container d-flex justify-content-between align-items-center">
           <div className="header_img">
             <img src={Logo} alt="" className="" />
           </div>
           <div
-            class="header_button pointer shadow"
+            class="header_button pointer "
             style={{ width: "35px", height: "35px" }}
             onClick={handleSetDarkMode}
           >
